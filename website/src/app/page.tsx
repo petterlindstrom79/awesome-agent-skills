@@ -2,6 +2,9 @@
 
 import Hero from "@/components/sections/Hero";
 import WhatIsIt from "@/components/sections/WhatIsIt";
+import HowItWorks from "@/components/sections/HowItWorks";
+import FindingSkills from "@/components/sections/FindingSkills";
+import CompatibleAgents from "@/components/sections/CompatibleAgents";
 import SkillDirectory from "@/components/sections/SkillDirectory";
 import QualityStandards from "@/components/sections/QualityStandards";
 import UsingSkills from "@/components/sections/UsingSkills";
@@ -13,9 +16,12 @@ import Contributing from "@/components/sections/Contributing";
 
 export default function Home() {
   return (
-    <div className="w-full max-w-4xl px-6 md:px-10 space-y-36 pb-36 pt-4">
+    <div className="w-full max-w-4xl px-6 md:px-10 space-y-24 pb-36 pt-4">
       <Hero />
       <WhatIsIt />
+      <HowItWorks />
+      <FindingSkills />
+      <CompatibleAgents />
       <SkillDirectory />
       <QualityStandards />
       <UsingSkills />

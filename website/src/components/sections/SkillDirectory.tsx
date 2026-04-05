@@ -2,37 +2,69 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ExternalLink, Cloud, Wrench, Shield, Briefcase, Cpu, Globe } from "lucide-react";
+import { Search, ExternalLink, Cloud, Wrench, Shield, Briefcase, Cpu, Globe, Server, Code, Zap } from "lucide-react";
 
 const skillTabs = [
-  { id: "official", label: "Official AI Providers" },
+  { id: "official", label: "AI Platforms" },
   { id: "cloud", label: "Cloud & Infrastructure" },
   { id: "devtools", label: "Developer Tools" },
-  { id: "business", label: "Business & Utility" },
-  { id: "security", label: "Security & Audit" },
-  { id: "community", label: "Community" },
+  { id: "business", label: "Business & Marketing" },
+  { id: "security", label: "Security & Intelligence" },
 ];
 
 const skills = [
-  // Official
-  { id: "anthropic-docx", name: "anthropics/docx", description: "Create, edit, and analyze Word documents with Claude.", category: "official", tags: ["Document", "Office"], Icon: Cpu },
-  { id: "anthropic-webapp", name: "anthropics/webapp-testing", description: "Test local web applications using Playwright natively.", category: "official", tags: ["Testing", "E2E"], Icon: Cpu },
-  { id: "openai-cloudflare", name: "openai/cloudflare-deploy", description: "Deploy apps to Cloudflare using Workers and Pages.", category: "official", tags: ["Deployment", "Edge"], Icon: Cpu },
-  { id: "gemini-api", name: "google-gemini/gemini-api-dev", description: "Best practices for developing Gemini-powered applications.", category: "official", tags: ["LLM", "Google"], Icon: Cpu },
-  // Cloud
-  { id: "cf-agents", name: "cloudflare/agents-sdk", description: "Build stateful AI agents with scheduling, RPC, and MCP servers.", category: "cloud", tags: ["Workers", "State"], Icon: Cloud },
-  { id: "vercel-react", name: "vercel-labs/react-best-practices", description: "React best practices and modern server component patterns.", category: "cloud", tags: ["React", "UI"], Icon: Cloud },
-  { id: "hashi-tf", name: "hashicorp/terraform-style-guide", description: "Generate Terraform HCL code following HashiCorp's official style.", category: "cloud", tags: ["IaC", "AWS"], Icon: Cloud },
-  // DevTools
-  { id: "figma-impl", name: "figma/figma-implement-design", description: "Translate Figma designs into production-ready code with 1:1 fidelity.", category: "devtools", tags: ["UI", "CSS"], Icon: Wrench },
-  { id: "duckdb-query", name: "duckdb/query", description: "Run SQL queries against attached databases or ad-hoc files.", category: "devtools", tags: ["Data", "SQL"], Icon: Wrench },
-  // Business
-  { id: "stripe-best", name: "stripe/stripe-best-practices", description: "Best practices for building Stripe billing and checkout integrations.", category: "business", tags: ["Payments", "API"], Icon: Briefcase },
-  { id: "notion-intel", name: "makenotion/meeting-intelligence", description: "Prepare meeting materials by gathering real-time Notion context.", category: "business", tags: ["Productivity", "Docs"], Icon: Briefcase },
-  // Security
-  { id: "trail-audit", name: "trailofbits/static-analysis", description: "Static analysis with CodeQL and Semgrep for vulnerability hunting.", category: "security", tags: ["Audit", "CodeQL"], Icon: Shield },
-  // Community
-  { id: "agentops-eval", name: "agentops/eval-framework", description: "Community framework for evaluating agent trajectory behavior.", category: "community", tags: ["Eval", "Testing"], Icon: Globe },
+  // Official - Anthropic
+  { id: "anthropic-docx", name: "anthropics/docx", description: "Create, edit, and analyze Word documents with Claude.", category: "official", tags: ["Document", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-doc-coauthoring", name: "anthropics/doc-coauthoring", description: "Collaborative document editing and co-authoring.", category: "official", tags: ["Collaborative", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-pptx", name: "anthropics/pptx", description: "Create, edit, and analyze PowerPoint presentations.", category: "official", tags: ["Presentation", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-xlsx", name: "anthropics/xlsx", description: "Create, edit, and analyze Excel spreadsheets.", category: "official", tags: ["Spreadsheet", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-pdf", name: "anthropics/pdf", description: "Extract text, create PDFs, and handle forms.", category: "official", tags: ["PDF", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-algorithmic-art", name: "anthropics/algorithmic-art", description: "Create generative art using p5.js with seeded randomness.", category: "official", tags: ["Art", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-canvas-design", name: "anthropics/canvas-design", description: "Design visual art in PNG and PDF formats.", category: "official", tags: ["Design", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-frontend-design", name: "anthropics/frontend-design", description: "Frontend design and UI/UX development tools.", category: "official", tags: ["Frontend", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-webapp-testing", name: "anthropics/webapp-testing", description: "Test local web applications using Playwright natively.", category: "official", tags: ["Testing", "Anthropic"], Icon: Cpu },
+  { id: "anthropic-skill-creator", name: "anthropics/skill-creator", description: "Guide for creating skills that extend Claude's capabilities.", category: "official", tags: ["Meta", "Anthropic"], Icon: Cpu },
+
+  // Official - OpenAI
+  { id: "openai-cloudflare", name: "openai/cloudflare-deploy", description: "Deploy apps to Cloudflare using Workers and Pages.", category: "official", tags: ["Deployment", "OpenAI"], Icon: Zap },
+  { id: "openai-game", name: "openai/develop-web-game", description: "Build and test web games iteratively using Playwright.", category: "official", tags: ["Game", "OpenAI"], Icon: Zap },
+  { id: "openai-doc", name: "openai/doc", description: "Read, create, and edit .docx documents with formatting.", category: "official", tags: ["Document", "OpenAI"], Icon: Zap },
+  { id: "openai-linear", name: "openai/linear", description: "Manage issues, projects, and team workflows in Linear.", category: "official", tags: ["Linear", "OpenAI"], Icon: Zap },
+  { id: "openai-pdf", name: "openai/pdf", description: "Read, create, and review PDFs with layout integrity.", category: "official", tags: ["PDF", "OpenAI"], Icon: Zap },
+  { id: "openai-figma", name: "openai/figma-implement-design", description: "Translate Figma designs into production-ready code.", category: "official", tags: ["Figma", "OpenAI"], Icon: Zap },
+
+  // Official - Google
+  { id: "google-gemini-dev", name: "google-gemini/gemini-api-dev", description: "Best practices for developing Gemini-powered apps.", category: "official", tags: ["Gemini", "Google"], Icon: Globe },
+  { id: "google-vertex-dev", name: "google-gemini/vertex-ai-api-dev", description: "Developing Gemini apps on Google Cloud Vertex AI.", category: "official", tags: ["Vertex", "Google"], Icon: Globe },
+
+  // Cloud & Infrastructure
+  { id: "cloudflare-agents", name: "cloudflare/agents-sdk", description: "Build stateful AI agents with scheduling, RPC, and MCP servers.", category: "cloud", tags: ["Agents", "Cloudflare"], Icon: Cloud },
+  { id: "netlify-functions", name: "netlify/netlify-functions", description: "Build serverless API endpoints and background tasks.", category: "cloud", tags: ["Functions", "Netlify"], Icon: Cloud },
+  { id: "vercel-react", name: "vercel-labs/react-best-practices", description: "React best practices and modern server component patterns.", category: "cloud", tags: ["React", "Vercel"], Icon: Cloud },
+  { id: "vercel-next", name: "vercel-labs/next-best-practices", description: "Next.js best practices and recommended patterns.", category: "cloud", tags: ["Next.js", "Vercel"], Icon: Cloud },
+  { id: "hashicorp-tf", name: "hashicorp/terraform-style-guide", description: "HCL code following HashiCorp's official style conventions.", category: "cloud", tags: ["Terraform", "Infrastructure"], Icon: Cloud },
+  { id: "neon-postgres", name: "neondatabase/neon-postgres", description: "Best practices for Neon Serverless Postgres.", category: "cloud", tags: ["Database", "Neon"], Icon: Cloud },
+
+  // Developer Tools
+  { id: "voltagent-best", name: "voltagent/voltagent-best-practices", description: "Architecture and usage patterns for agents, workflows, and memory.", category: "devtools", tags: ["VoltAgent", "Architecture"], Icon: Wrench },
+  { id: "expo-ui", name: "expo/building-native-ui", description: "Build apps with Expo Router, styling, and animations.", category: "devtools", tags: ["Expo", "Native"], Icon: Wrench },
+  { id: "duckdb-query", name: "duckdb/query", description: "Run SQL queries against attached databases or ad-hoc files.", category: "devtools", tags: ["DuckDB", "SQL"], Icon: Wrench },
+  { id: "gsap-core", name: "greensock/gsap-core", description: "Core API: gsap.to(), from(), fromTo(), animations, and timelines.", category: "devtools", tags: ["GSAP", "Animation"], Icon: Wrench },
+  { id: "remotion-video", name: "remotion-dev/remotion", description: "Programmatic video creation with React.", category: "devtools", tags: ["Video", "React"], Icon: Wrench },
+
+  // Business & Marketing
+  { id: "stripe-best", name: "stripe/stripe-best-practices", description: "Best practices for building Stripe integrations.", category: "business", tags: ["Payments", "Stripe"], Icon: Briefcase },
+  { id: "notion-knowledge", name: "makenotion/knowledge-capture", description: "Transform conversations into structured Notion documentation.", category: "business", tags: ["Documentation", "Notion"], Icon: Briefcase },
+  { id: "resend-email", name: "resend/resend", description: "Send and manage emails via the Resend API.", category: "business", tags: ["Email", "Resend"], Icon: Briefcase },
+  { id: "sanity-best", name: "sanity-io/sanity-best-practices", description: "Sanity Studio and content workflow best practices.", category: "business", tags: ["CMS", "Sanity"], Icon: Briefcase },
+  { id: "better-auth-best", name: "better-auth/best-practices", description: "Best practices for Better Auth integration.", category: "business", tags: ["Auth", "Security"], Icon: Briefcase },
+
+  // Security & Web Intelligence
+  { id: "trailofbits-audit", name: "trailofbits/audit-context-building", description: "Deep architectural context via granular code analysis.", category: "security", tags: ["Audit", "Trail of Bits"], Icon: Shield },
+  { id: "trailofbits-static", name: "trailofbits/static-analysis", description: "Static analysis toolkit with CodeQL and Semgrep.", category: "security", tags: ["Static Analysis", "CodeQL"], Icon: Shield },
+  { id: "getsentry-bugs", name: "getsentry/find-bugs", description: "Find and identify bugs in code using Sentry data.", category: "security", tags: ["Sentry", "Bugs"], Icon: Shield },
+  { id: "firecrawl-cli", name: "firecrawl/firecrawl-cli", description: "Scrape, crawl, search, and map the web via CLI.", category: "security", tags: ["Scraping", "Firecrawl"], Icon: Shield },
+  { id: "binance-audit", name: "binance/query-token-audit", description: "Audit token security to detect scams and honeypots.", category: "security", tags: ["Crypto", "Security"], Icon: Shield },
 ];
 
 export default function SkillDirectory() {
@@ -49,7 +81,7 @@ export default function SkillDirectory() {
     <section id="directory" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
       <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Skill Directory</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl text-base leading-relaxed">
-        Official and community-maintained capabilities organised by category. Click any card to visit the source.
+        Official and community-maintained capabilities organized by category. Click any card to visit the source.
       </p>
 
       {/* Tabs */}
