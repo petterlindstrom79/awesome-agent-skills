@@ -80,9 +80,13 @@ Las skills son **instrucciones**, no código. La IA las lee como un humano leer�
 
 ### SkillsMP Marketplace
 
+[![SkillsMP Marketplace](assets/skills-mp.png)](https://skillsmp.com)
+
 Se recomienda utilizar el **[SkillsMP Marketplace](https://skillsmp.com)**, que indexa automáticamente todos los proyectos de Skills en GitHub y los organiza por categoría, tiempo de actualización, número de estrellas y otras etiquetas.
 
 ### skills.sh Leaderboard (de Vercel)
+
+[![skills.sh Leaderboard](assets/skills-sh.png)](https://skills.sh)
 
 También puedes usar **[skills.sh](https://skills.sh)** —— el leaderboard de Vercel —— para ver intuitivamente los repositorios de Skills más populares y las estadísticas de uso de Skills individuales.
 

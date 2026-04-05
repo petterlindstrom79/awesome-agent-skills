@@ -80,9 +80,13 @@
 
 ### SkillsMP マーケットプレイス
 
+[![SkillsMP Marketplace](assets/skills-mp.png)](https://skillsmp.com)
+
 GitHub 上のすべての Skill プロジェクトを自動的にインデックス化し、カテゴリ、更新時間、スター数などで整理している **[SkillsMP Marketplace](https://skillsmp.com)** の使用をお勧めします。これがスキルを発見し評価する最も簡単な方法です。
 
 ### skills.sh リーダーボード (Vercel 提供)
+
+[![skills.sh Leaderboard](assets/skills-sh.png)](https://skills.sh)
 
 Vercel のリーダーボードである **[skills.sh](https://skills.sh)** を使用して、最も人気のある Skills リポジトリや個々のスキルの使用統計を直感的に確認することもできます。
 

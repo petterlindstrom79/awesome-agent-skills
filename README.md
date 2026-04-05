@@ -85,9 +85,13 @@ Skills are **instructions**, not code. The AI reads them like a human would read
 
 ### SkillsMP Marketplace
 
+[![SkillsMP Marketplace](assets/skills-mp.png)](https://skillsmp.com)
+
 It is recommended to use the **[SkillsMP Marketplace](https://skillsmp.com)**, which automatically indexes all Skill projects on GitHub and organizes them by category, update time, star count, and other tags — making it the easiest way to discover and evaluate skills.
 
 ### skills.sh Leaderboard by Vercel
+
+[![skills.sh Leaderboard](assets/skills-sh.png)](https://skills.sh)
 
 You can also use **[skills.sh](https://skills.sh)** — Vercel's leaderboard — to intuitively view the most popular Skills repositories and individual Skill usage statistics.
 

@@ -80,9 +80,13 @@
 
 ### SkillsMP 마켓플레이스
 
+[![SkillsMP Marketplace](assets/skills-mp.png)](https://skillsmp.com)
+
 GitHub의 모든 스킬 프로젝트를 자동으로 인덱싱하고 카테고리, 스타 수 등으로 정리하여 보여주는 **[SkillsMP Marketplace](https://skillsmp.com)**의 사용을 권장합니다. 스킬을 발견하고 평가하는 가장 쉬운 방법입니다.
 
 ### skills.sh 리더보드 (Vercel 제공)
+
+[![skills.sh Leaderboard](assets/skills-sh.png)](https://skills.sh)
 
 Vercel의 리더보드인 **[skills.sh](https://skills.sh)**를 사용하여 가장 인기 있는 스킬 저장소와 개별 스킬 사용 통계를 직관적으로 확인할 수 있습니다.
 

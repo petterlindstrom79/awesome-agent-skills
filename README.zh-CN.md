@@ -80,9 +80,13 @@
 
 ### SkillsMP 市场
 
+[![SkillsMP Marketplace](assets/skills-mp.png)](https://skillsmp.com)
+
 推荐使用 **[SkillsMP 市场](https://skillsmp.com)**，它会自动索引 GitHub 上的所有 Skill 项目，并按类别、更新时间、星数和其他标签进行组织——这是发现和评估技能最简单的方法。
 
 ### skills.sh 排行榜 (由 Vercel 提供)
+
+[![skills.sh Leaderboard](assets/skills-sh.png)](https://skills.sh)
 
 您也可以使用 **[skills.sh](https://skills.sh)** —— Vercel 的排行榜 —— 直观地查看最受欢迎的 Skills 仓库和单个技能的使用统计数据。
 
