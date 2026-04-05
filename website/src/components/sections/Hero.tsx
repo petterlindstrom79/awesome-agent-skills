@@ -56,9 +56,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="w-full order-1 lg:order-2 flex justify-center lg:justify-end"
+          className="w-full order-1 lg:order-2 flex justify-center lg:justify-end mt-8 lg:mt-0"
         >
-          <div className="w-full max-w-lg hidden md:block">
+          <div className="w-full max-w-[320px] sm:max-w-md md:max-w-lg mx-auto lg:mx-0">
             <AgentFlowChart />
           </div>
         </motion.div>

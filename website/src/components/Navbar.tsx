@@ -29,6 +29,7 @@ const mobileNavItems = [
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [dark, setDark] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -104,8 +105,33 @@ export default function Navbar() {
   const filterSearch = LOCAL_SECTIONS.filter(s => s.label.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-neutral-950/80 border-b border-neutral-200/60 dark:border-neutral-800/60 h-14">
-      <div className="w-full h-full flex items-center justify-between px-6">
+    <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}>
+      {/* Sponsored Banner */}
+      <AnimatePresence>
+        {bannerVisible && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="w-full bg-blue-600 dark:bg-blue-900 text-white flex items-center justify-center py-2 px-4 relative"
+          >
+            <div className="text-xs sm:text-sm font-medium text-center">
+              <span className="bg-yellow-400 text-yellow-900 text-[10px] font-bold px-1.5 py-0.5 rounded-sm uppercase tracking-wider mr-2 align-middle">Sponsored</span>
+              Your ad here. Contact <a href="mailto:haileycheng@proton.me" className="underline font-bold hover:text-blue-200">haileycheng@proton.me</a> for sponsorship.
+            </div>
+            <button 
+              onClick={() => setBannerVisible(false)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 hover:bg-white/20 rounded-md transition-colors"
+              aria-label="Dismiss banner"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <nav className={`backdrop-blur-md bg-white/80 dark:bg-neutral-950/80 border-b border-neutral-200/60 dark:border-neutral-800/60 h-14`}>
+        <div className="w-full h-full flex items-center justify-between px-6">
 
         {/* Left: logo and toggle */}
         <div className="flex items-center gap-3">
@@ -278,6 +304,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+      </nav>
+    </div>
   );
 }
