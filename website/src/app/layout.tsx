@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth scroll-pt-24" suppressHydrationWarning>
       <head>
         {/* Anti-flash: apply saved theme before first paint */}
         <script

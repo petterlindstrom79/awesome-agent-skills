@@ -5,12 +5,12 @@ import * as d3 from "d3";
 import { useTranslations } from "@/lib/i18n";
 
 const trendData = [
-  { name: "Autonomous Execution", value: 95, description: "Agents complete multi-step goals without human intervention at each step." },
-  { name: "MCP Standard", value: 90, description: "Model Context Protocol (a shared language for AI tools) is becoming the universal adapter for tool-calling." },
-  { name: "Multi-Agent Teams", value: 88, description: "Specialized agents collaborate and delegate between themselves." },
-  { name: "Agentic IDEs", value: 82, description: "Cursor, Windsurf, and Claude Code have redefined software development." },
-  { name: "Hierarchical Memory", value: 75, description: "Agents maintain structured context across sessions." },
-  { name: "Context Compression", value: 70, description: "Novel techniques for processing entire codebases in a single pass." },
+  { name: "Autonomous Execution", value: 95, description: "Agents complete multi-step goals without human intervention. Expected in 40% of enterprise apps by late 2026." },
+  { name: "MCP Standard", value: 90, description: "Model Context Protocol (a shared language for AI tools) is becoming the universal adapter, seeing 8,000% growth." },
+  { name: "Multi-Agent Teams", value: 88, description: "Specialized agents collaborate and delegate, moving from monolithic systems to orchestrator-worker patterns." },
+  { name: "Agentic IDEs", value: 82, description: "Cursor, Windsurf, and Claude Code have redefined software development workflows with multi-file edit autonomy." },
+  { name: "Hierarchical Memory", value: 75, description: "Agents maintain structured context, separating episodic recent history from long-term semantic graphing." },
+  { name: "Context Compression", value: 70, description: "Techniques like semantic pruning and dynamic relevance filtering manage massive context windows affordably." },
 ];
 
 export default function Trends() {
@@ -93,7 +93,7 @@ export default function Trends() {
     <section id="trends" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
       <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.trends.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        {t.trends.subtitle}
+        The AI agent ecosystem has shifted from chat interfaces to autonomous, goal-driven systems. Here is what defines the landscape today.
       </p>
 
       <div className="grid lg:grid-cols-5 gap-8 items-start">

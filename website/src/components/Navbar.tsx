@@ -18,6 +18,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
   const langRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const { lang, setLang } = useLanguage();
@@ -99,10 +100,19 @@ export default function Navbar() {
             <input
               ref={searchRef}
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && searchQuery.trim()) {
+                  window.open(`https://github.com/heilcheng/awesome-agent-skills/search?q=${encodeURIComponent(searchQuery.trim())}`, '_blank');
+                  setSearchQuery("");
+                  searchRef.current?.blur();
+                }
+              }}
               placeholder={t.nav.search}
               className="w-full pl-9 pr-10 py-1.5 text-sm bg-neutral-100/80 dark:bg-neutral-800/80 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-300 dark:focus:ring-neutral-600 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400"
             />
-            <kbd className="absolute right-2 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono font-semibold text-neutral-400 bg-neutral-200 dark:bg-neutral-700 rounded">
+            <kbd className="absolute right-2 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono font-semibold text-neutral-400 bg-neutral-200 dark:bg-neutral-700 rounded pointer-events-none">
               ⌘K
             </kbd>
           </div>

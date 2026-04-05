@@ -16,6 +16,9 @@ export default function Footer() {
             <p className="max-w-xs text-sm text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed">
               Curated capabilities for the next leap in agentic engineering. Standardizing the instructions that power the world&apos;s most intelligent autonomous assistants.
             </p>
+            <p className="max-w-xs text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+              Maintained by <a href="https://www.linkedin.com/in/heilcheng/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 dark:text-white hover:underline">Hailey Cheng</a> &middot; X <a href="https://x.com/haileyhmt" target="_blank" rel="noopener noreferrer" className="text-zinc-900 dark:text-white hover:underline">@haileyhmt</a> &middot; <a href="mailto:haileycheng@proton.me" className="text-zinc-900 dark:text-white hover:underline">haileycheng@proton.me</a> for inquiry about collab / being maintainer / ads / support.
+            </p>
             <div className="flex items-center gap-4">
               <a href="https://agent-skill.co" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg text-xs font-semibold hover:opacity-80 transition-opacity">
                 agent-skill.co
