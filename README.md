@@ -2,29 +2,76 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
-A curated list of skills, tools, and capabilities for AI coding agents.
+A curated list of skills, tools, and capabilities for AI coding agents. Unlike bulk-generated skill repositories, this collection focuses on real-world Agent Skills created and used by actual engineering teams.
+
+Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 ---
 
 ## Table of Contents
 
 - [What Are Agent Skills?](#what-are-agent-skills)
+- [How to Find Skills (Recommended)](#how-to-find-skills-recommended)
 - [Compatible Agents](#compatible-agents)
-- [Skill List](#skill-list)
-- [Official Tutorials and Guides](#official-tutorials-and-guides)
+- [Official Skill Directories](#official-skill-directories)
+  - [Official Claude Skills](#official-claude-skills)
+  - [Skills by VoltAgent](#skills-by-voltagent)
+  - [Skills by Composio](#skills-by-composio)
+  - [Skills by Supabase](#skills-by-supabase)
+  - [Skills by Google Gemini](#skills-by-google-gemini)
+  - [Skills by Stripe](#skills-by-stripe)
+  - [Skills by Courier](#skills-by-courier)
+  - [Skills by CallStack](#skills-by-callstack)
+  - [Skills by Expo](#skills-by-expo)
+  - [Skills by Better Auth](#skills-by-better-auth)
+  - [Skills by Tinybird](#skills-by-tinybird)
+  - [Skills by HashiCorp](#skills-by-hashicorp)
+  - [Skills by Sanity](#skills-by-sanity)
+  - [Skills by Firecrawl](#skills-by-firecrawl)
+  - [Skills by Neon](#skills-by-neon)
+  - [Skill by ClickHouse](#skill-by-clickhouse)
+  - [Skills by Remotion](#skills-by-remotion)
+  - [Skills by Replicate](#skills-by-replicate)
+  - [Skills by Typefully](#skills-by-typefully)
+  - [Skills by Vercel](#skills-by-vercel)
+  - [Skills by Cloudflare](#skills-by-cloudflare)
+  - [Skills by Netlify](#skills-by-netlify)
+  - [Skills by Google Labs (Stitch)](#skills-by-google-labs-stitch)
+  - [Skills by Google Workspace CLI](#skills-by-google-workspace-cli)
+  - [Skills by Hugging Face](#skills-by-hugging-face)
+  - [Skills by Trail of Bits](#skills-by-trail-of-bits)
+  - [Skills by Sentry](#skills-by-sentry)
+  - [Skills by Microsoft](#skills-by-microsoft)
+  - [Skills by fal.ai](#skills-by-falai)
+  - [Skills by WordPress](#skills-by-wordpress)
+  - [Skills by OpenAI](#skills-by-openai)
+  - [Skills by Figma](#skills-by-figma)
+  - [Marketing Skills by Corey Haines](#marketing-skills-by-corey-haines)
+  - [Skills by Binance](#skills-by-binance)
+  - [Product Manager Skills by Dean Peters](#product-manager-skills-by-dean-peters)
+  - [Product Management Skills by Pawel Huryn](#product-management-skills-by-pawel-huryn)
+  - [Skills by MiniMax](#skills-by-minimax)
+  - [Skills by DuckDB](#skills-by-duckdb)
+  - [Skills by GSAP](#skills-by-gsap)
+  - [Skills by Garry Tan (gstack)](#skills-by-garry-tan-gstack)
+  - [Skills by Notion](#skills-by-notion)
+  - [Skills by Resend](#skills-by-resend)
+- [Community Skills](#community-skills)
+- [Skill Quality Standards](#skill-quality-standards)
 - [Using Skills](#using-skills)
 - [Creating Skills](#creating-skills)
-- [Community Resources](#community-resources)
+- [Official Tutorials and Guides](#official-tutorials-and-guides)
+- [Additional Vendor Repositories](#additional-vendor-repositories)
+- [Trends & Capabilities (2026)](#trends--capabilities-2026)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Contributing](#contributing)
 - [License](#license)
-- [References](#references)
 
 ---
 
 ## What Are Agent Skills?
 
-Think of **Agent Skills** as "how-to guides" for AI assistants. Instead of the AI needing to know everything upfront, skills let it learn new abilities on the fly, like giving someone a recipe card instead of making them memorize an entire cookbook.
+Think of **Agent Skills** as "how-to guides" for AI assistants. Instead of the AI needing to know everything upfront, skills let it learn new abilities on the fly — like giving someone a recipe card instead of making them memorize an entire cookbook.
 
 Skills are simple text files (called `SKILL.md`) that teach an AI how to do specific tasks. When you ask the AI to do something, it finds the right skill, reads the instructions, and gets to work.
 
@@ -32,23 +79,46 @@ Skills are simple text files (called `SKILL.md`) that teach an AI how to do spec
 
 Skills load in three stages:
 
-1. **Browse** - The AI sees a list of available skills (just names and short descriptions)
-2. **Load** - When a skill is needed, the AI reads the full instructions
-3. **Use** - The AI follows the instructions and accesses any helper files
+1. **Browse** — The AI sees a list of available skills (just names and short descriptions)
+2. **Load** — When a skill is needed, the AI reads the full instructions
+3. **Use** — The AI follows the instructions and accesses any helper files
 
 ### Why This Matters
 
-- **Faster and lighter** - The AI only loads what it needs, when it needs it
-- **Works everywhere** - Create a skill once, use it with any compatible AI tool
-- **Easy to share** - Skills are just files you can copy, download, or share on GitHub
+- **Faster and lighter** — The AI only loads what it needs, when it needs it
+- **Works everywhere** — Create a skill once, use it with any compatible AI tool
+- **Easy to share** — Skills are just files you can copy, download, or share on GitHub
 
 Skills are **instructions**, not code. The AI reads them like a human would read a guide, then follows the steps.
 
 ---
 
-## Compatible Agents
+## How to Find Skills (Recommended)
 
-The following platforms have documented support for Agent Skills:
+### SkillsMP Marketplace
+
+It is recommended to use the **[SkillsMP Marketplace](https://skillsmp.com)**, which automatically indexes all Skill projects on GitHub and organizes them by category, update time, star count, and other tags — making it the easiest way to discover and evaluate skills.
+
+### skills.sh Leaderboard by Vercel
+
+You can also use **[skills.sh](https://skills.sh)** — Vercel's leaderboard — to intuitively view the most popular Skills repositories and individual Skill usage statistics.
+
+### npx skills CLI Tool
+
+For specific skills, use the `npx skills` command-line tool to quickly discover, add, and manage skills. For detailed parameters, see [vercel-labs/skills](https://github.com/vercel-labs/skills).
+
+```bash
+npx skills find [query]            # Search for related skills
+npx skills add <owner/repo>        # Install skills (supports GitHub shorthand, full URL, local path)
+npx skills list                    # List installed skills
+npx skills check                   # Check for available updates
+npx skills update                  # Upgrade all skills
+npx skills remove [skill-name]     # Uninstall skills
+```
+
+---
+
+## Compatible Agents
 
 | Agent | Documentation |
 |-------|---------------|
@@ -64,11 +134,11 @@ The following platforms have documented support for Agent Skills:
 
 ---
 
-## Skill List
+## Official Skill Directories
 
-### Official Claude Skills (Document Processing)
+### Official Claude Skills
 
-Claude provides built-in skills for common document types:
+Claude provides built-in skills for common document types and workflows:
 
 | Skill | Description | Source |
 |-------|-------------|--------|
@@ -76,34 +146,340 @@ Claude provides built-in skills for common document types:
 | xlsx | Spreadsheet manipulation: formulas, charts, data transformations | [anthropics/skills](https://github.com/anthropics/skills) |
 | pptx | Read, generate, and adjust slides, layouts, templates | [anthropics/skills](https://github.com/anthropics/skills) |
 | pdf | Extract text, tables, metadata from PDFs | [anthropics/skills](https://github.com/anthropics/skills) |
+| algorithmic-art | Create generative art using p5.js with seeded randomness | [anthropics/skills](https://github.com/anthropics/skills) |
+| canvas-design | Design visual art in PNG and PDF formats | [anthropics/skills](https://github.com/anthropics/skills) |
+| frontend-design | Frontend design and UI/UX development tools | [anthropics/skills](https://github.com/anthropics/skills) |
+| webapp-testing | Test local web applications using Playwright | [anthropics/skills](https://github.com/anthropics/skills) |
+| mcp-builder | Create MCP servers to integrate external APIs and services | [anthropics/skills](https://github.com/anthropics/skills) |
+| skill-creator | Guide for creating skills that extend Claude's capabilities | [anthropics/skills](https://github.com/anthropics/skills) |
 
-### Official OpenAI Codex Skills
+### Skills by VoltAgent
+
+Official skills for building AI agents with the VoltAgent TypeScript framework.
+
+| Skill | Description |
+|-------|-------------|
+| [create-voltagent](https://officialskills.sh/voltagent/skills/create-voltagent) | Project setup guide with CLI and manual steps |
+| [voltagent-best-practices](https://officialskills.sh/voltagent/skills/voltagent-best-practices) | Architecture and usage patterns for agents, workflows, memory, and servers |
+| [voltagent-core-reference](https://officialskills.sh/voltagent/skills/voltagent-core-reference) | Reference for the VoltAgent class options and lifecycle methods |
+| [voltagent-docs-bundle](https://officialskills.sh/voltagent/skills/voltagent-docs-bundle) | Lookup embedded docs from @voltagent/core for version-matched documentation |
+
+### Skills by Composio
+
+| Skill | Description |
+|-------|-------------|
+| [composio](https://officialskills.sh/composiohq/skills/composio) | Connect AI agents to 1000+ external apps with managed authentication |
+
+### Skills by Supabase
+
+| Skill | Description |
+|-------|-------------|
+| [postgres-best-practices](https://officialskills.sh/supabase/skills/postgres-best-practices) | PostgreSQL best practices for Supabase |
+
+### Skills by Google Gemini
+
+| Skill | Description |
+|-------|-------------|
+| [gemini-api-dev](https://officialskills.sh/google-gemini/skills/gemini-api-dev) | Best practices for developing Gemini-powered apps using the Gemini API |
+| [vertex-ai-api-dev](https://officialskills.sh/google-gemini/skills/vertex-ai-api-dev) | Developing Gemini-powered apps on Google Cloud Vertex AI |
+| [gemini-live-api-dev](https://officialskills.sh/google-gemini/skills/gemini-live-api-dev) | Building real-time bidirectional streaming apps with the Gemini Live API |
+| [gemini-interactions-api](https://officialskills.sh/google-gemini/skills/gemini-interactions-api) | Building apps with the Gemini Interactions API for text, chat, streaming, and image generation |
+
+### Skills by Stripe
+
+| Skill | Description |
+|-------|-------------|
+| [stripe-best-practices](https://officialskills.sh/stripe/skills/stripe-best-practices) | Best practices for building Stripe integrations |
+| [upgrade-stripe](https://officialskills.sh/stripe/skills/upgrade-stripe) | Upgrade Stripe SDK and API versions |
+
+### Skills by Courier
+
+| Skill | Description |
+|-------|-------------|
+| [courier-skills](https://github.com/trycourier/courier-skills) | Multi-channel notifications via email, SMS, push, and chat |
+
+### Skills by CallStack
+
+| Skill | Description |
+|-------|-------------|
+| [react-native-best-practices](https://officialskills.sh/callstackincubator/skills/react-native-best-practices) | Performance optimization for React Native apps |
+| [github](https://officialskills.sh/callstackincubator/skills/github) | GitHub workflow patterns for PRs, code review, branching |
+| [upgrading-react-native](https://officialskills.sh/callstackincubator/skills/upgrading-react-native) | React Native upgrade workflow: templates, dependencies, and common pitfalls |
+
+### Skills by Expo
+
+Official AI agent skills from the Expo team for building, deploying, and debugging Expo apps.
+
+| Skill | Description |
+|-------|-------------|
+| [building-native-ui](https://officialskills.sh/expo/skills/building-native-ui) | Build apps with Expo Router, styling, components, navigation, and animations |
+| [expo-api-routes](https://officialskills.sh/expo/skills/expo-api-routes) | Create API routes in Expo Router with EAS Hosting |
+| [expo-deployment](https://officialskills.sh/expo/skills/expo-deployment) | Deploy Expo apps to production |
+| [expo-tailwind-setup](https://officialskills.sh/expo/skills/expo-tailwind-setup) | Set up Tailwind CSS v4 in Expo with NativeWind v5 |
+| [upgrading-expo](https://officialskills.sh/expo/skills/upgrading-expo) | Upgrade Expo SDK versions |
+
+### Skills by Better Auth
+
+| Skill | Description |
+|-------|-------------|
+| [best-practices](https://officialskills.sh/better-auth/skills/best-practices) | Best practices for Better Auth integration |
+| [explain-error](https://officialskills.sh/better-auth/skills/explain-error) | Explain Better Auth error messages |
+| [create-auth](https://officialskills.sh/better-auth/skills/create-auth) | Create authentication setup with Better Auth |
+| [twoFactor](https://officialskills.sh/better-auth/skills/twoFactor) | Two-factor authentication with Better Auth |
+
+### Skills by Tinybird
+
+| Skill | Description |
+|-------|-------------|
+| [tinybird-best-practices](https://officialskills.sh/tinybirdco/skills/tinybird-best-practices) | Tinybird project guidelines for datasources, pipes, endpoints, and SQL |
+| [tinybird-cli-guidelines](https://officialskills.sh/tinybirdco/skills/tinybird-cli-guidelines) | Tinybird CLI usage guidelines and commands |
+| [tinybird-python-sdk-guidelines](https://officialskills.sh/tinybirdco/skills/tinybird-python-sdk-guidelines) | Tinybird Python SDK usage guidelines |
+| [tinybird-typescript-sdk-guidelines](https://officialskills.sh/tinybirdco/skills/tinybird-typescript-sdk-guidelines) | Tinybird TypeScript SDK usage guidelines |
+
+### Skills by HashiCorp
+
+Terraform provider construction, module refactoring, state management, and testing methodologies.
+
+| Skill | Description |
+|-------|-------------|
+| [new-terraform-provider](https://officialskills.sh/hashicorp/skills/new-terraform-provider) | Scaffold a new Terraform provider project using the Plugin Framework |
+| [provider-resources](https://officialskills.sh/hashicorp/skills/provider-resources) | Implement Terraform Provider resources and data sources |
+| [provider-test-patterns](https://officialskills.sh/hashicorp/skills/provider-test-patterns) | Acceptance test patterns for Terraform providers |
+| [refactor-module](https://officialskills.sh/hashicorp/skills/refactor-module) | Transform monolithic Terraform configurations into reusable modules |
+| [terraform-style-guide](https://officialskills.sh/hashicorp/skills/terraform-style-guide) | Generate Terraform HCL code following HashiCorp's official style conventions |
+
+### Skills by Sanity
+
+| Skill | Description |
+|-------|-------------|
+| [sanity-best-practices](https://officialskills.sh/sanity-io/skills/sanity-best-practices) | Best practices for Sanity Studio, GROQ queries, and content workflows |
+| [content-modeling-best-practices](https://officialskills.sh/sanity-io/skills/content-modeling-best-practices) | Guidelines for designing scalable content models in Sanity |
+| [seo-aeo-best-practices](https://officialskills.sh/sanity-io/skills/seo-aeo-best-practices) | SEO and answer engine optimization patterns for content sites |
+
+### Skills by Firecrawl
+
+| Skill | Description |
+|-------|-------------|
+| [firecrawl-cli](https://officialskills.sh/firecrawl/skills/firecrawl-cli) | Scrape, crawl, search, and map the web via CLI |
+| [firecrawl-agent](https://officialskills.sh/firecrawl/skills/firecrawl-agent) | AI agent for autonomous web scraping and data extraction |
+| [firecrawl-scrape](https://officialskills.sh/firecrawl/skills/firecrawl-scrape) | Scrape web pages and extract content |
+| [firecrawl-search](https://officialskills.sh/firecrawl/skills/firecrawl-search) | Search the web and extract results |
+
+### Skills by Neon
+
+| Skill | Description |
+|-------|-------------|
+| [neon-postgres](https://officialskills.sh/neondatabase/skills/neon-postgres) | Best practices for Neon Serverless Postgres |
+| [claimable-postgres](https://officialskills.sh/neondatabase/skills/claimable-postgres) | Claimable Postgres database provisioning with Neon |
+
+### Skill by ClickHouse
+
+| Skill | Description |
+|-------|-------------|
+| [clickhouse-best-practices](https://officialskills.sh/clickhouse/skills/clickhouse-best-practices) | Best practices for working with ClickHouse |
+
+### Skills by Remotion
+
+| Skill | Description |
+|-------|-------------|
+| [remotion](https://officialskills.sh/remotion-dev/skills/remotion) | Programmatic video creation with React |
+
+### Skills by Replicate
+
+| Skill | Description |
+|-------|-------------|
+| [replicate](https://officialskills.sh/replicate/skills/replicate) | Discover, compare, and run AI models using Replicate's API |
+
+### Skills by Typefully
+
+| Skill | Description |
+|-------|-------------|
+| [typefully](https://officialskills.sh/typefully/skills/typefully) | Create, schedule, and publish social media content across X, LinkedIn, Threads, Bluesky, and Mastodon |
+
+### Skills by Vercel
+
+| Skill | Description |
+|-------|-------------|
+| [react-best-practices](https://officialskills.sh/vercel-labs/skills/react-best-practices) | React best practices and patterns |
+| [web-design-guidelines](https://officialskills.sh/vercel-labs/skills/web-design-guidelines) | Web design guidelines and standards |
+| [next-best-practices](https://officialskills.sh/vercel-labs/skills/next-best-practices) | Next.js best practices and recommended patterns |
+| [next-cache-components](https://officialskills.sh/vercel-labs/skills/next-cache-components) | Caching strategies and cache-aware components in Next.js |
+| [next-upgrade](https://officialskills.sh/vercel-labs/skills/next-upgrade) | Upgrade Next.js projects to newer versions |
+
+### Skills by Cloudflare
+
+| Skill | Description |
+|-------|-------------|
+| [agents-sdk](https://officialskills.sh/cloudflare/skills/agents-sdk) | Build stateful AI agents with scheduling, RPC, and MCP servers |
+| [building-ai-agent-on-cloudflare](https://officialskills.sh/cloudflare/skills/building-ai-agent-on-cloudflare) | Build AI agents with state and WebSockets on Cloudflare |
+| [building-mcp-server-on-cloudflare](https://officialskills.sh/cloudflare/skills/building-mcp-server-on-cloudflare) | Build remote MCP servers with tools and OAuth |
+| [durable-objects](https://officialskills.sh/cloudflare/skills/durable-objects) | Stateful coordination with RPC, SQLite, and WebSockets |
+| [wrangler](https://officialskills.sh/cloudflare/skills/wrangler) | Deploy and manage Workers, KV, R2, D1, Vectorize, Queues, Workflows |
+
+### Skills by Netlify
+
+| Skill | Description |
+|-------|-------------|
+| [netlify-functions](https://officialskills.sh/netlify/skills/netlify-functions) | Build serverless API endpoints and background tasks |
+| [netlify-edge-functions](https://officialskills.sh/netlify/skills/netlify-edge-functions) | Low-latency edge middleware and geolocation logic |
+| [netlify-db](https://officialskills.sh/netlify/skills/netlify-db) | Managed Postgres with deploy preview branching |
+| [netlify-ai-gateway](https://officialskills.sh/netlify/skills/netlify-ai-gateway) | Access AI models via unified gateway endpoint |
+| [netlify-cli-and-deploy](https://officialskills.sh/netlify/skills/netlify-cli-and-deploy) | CLI setup, local dev, and deployment workflows |
+
+### Skills by Google Labs (Stitch)
+
+Agent Skills for the Stitch MCP server, compatible with Claude Code, Gemini CLI, Cursor, and more.
+
+| Skill | Description |
+|-------|-------------|
+| [design-md](https://officialskills.sh/google-labs-code/skills/design-md) | Create and manage DESIGN.md files |
+| [enhance-prompt](https://officialskills.sh/google-labs-code/skills/enhance-prompt) | Improve prompts with design specs and UI/UX vocabulary |
+| [react-components](https://officialskills.sh/google-labs-code/skills/react-components) | Stitch to React components conversion |
+| [shadcn-ui](https://officialskills.sh/google-labs-code/skills/shadcn-ui) | Build UI components with shadcn/ui |
+| [stitch-loop](https://officialskills.sh/google-labs-code/skills/stitch-loop) | Iterative design-to-code feedback loop |
+
+### Skills by Google Workspace CLI
+
+Official Google Workspace CLI skills for managing Google Workspace services via the `gws` CLI tool.
+
+| Skill | Description |
+|-------|-------------|
+| [gws-drive](https://officialskills.sh/googleworkspace/skills/gws-drive) | Manage Google Drive files, folders, and shared drives |
+| [gws-sheets](https://officialskills.sh/googleworkspace/skills/gws-sheets) | Read and write Google Sheets spreadsheets |
+| [gws-gmail](https://officialskills.sh/googleworkspace/skills/gws-gmail) | Send, read, and manage Gmail email |
+| [gws-calendar](https://officialskills.sh/googleworkspace/skills/gws-calendar) | Manage Google Calendar calendars and events |
+| [gws-docs](https://officialskills.sh/googleworkspace/skills/gws-docs) | Read and write Google Docs documents |
+| [gws-chat](https://officialskills.sh/googleworkspace/skills/gws-chat) | Manage Google Chat spaces and messages |
+| [gws-workflow](https://officialskills.sh/googleworkspace/skills/gws-workflow) | Cross-service Google Workspace productivity workflows |
+
+### Skills by Hugging Face
+
+Official AI agent skills from the Hugging Face team for ML workflows.
+
+| Skill | Description |
+|-------|-------------|
+| [hf-cli](https://officialskills.sh/huggingface/skills/hf-cli) | HF CLI tool for Hub operations |
+| [hf_dataset_creator](https://github.com/huggingface/skills) | Prompts, templates, and scripts for creating structured training datasets |
+| [hf_model_evaluation](https://github.com/huggingface/skills) | Instructions for orchestrating evaluation jobs and generating reports |
+| [hf-llm-trainer](https://github.com/huggingface/skills) | Comprehensive training skill with guidance, helper scripts, cost estimators |
+| [hf-paper-publisher](https://github.com/huggingface/skills) | Tools for publishing and managing research papers on Hugging Face Hub |
+
+### Skills by Trail of Bits
+
+| Skill | Description |
+|-------|-------------|
+| [safe-encryption-skill](https://github.com/grittygrease/safe-encryption-skill) | Modern encryption alternative to GPG/PGP with post-quantum support |
+| [Threat Hunting](https://github.com/jthack/threat-hunting-with-sigma-rules-skill) | Hunt for threats using Sigma detection rules |
+
+### Skills by Sentry
+
+| Skill | Description |
+|-------|-------------|
+| [sentry-skills](https://github.com/getsentry/skills) | Debug errors, performance issues, and traces directly with Sentry integration |
+
+### Skills by Microsoft
+
+| Skill | Description |
+|-------|-------------|
+| [agent-skills](https://github.com/microsoft/agent-skills) | Official Microsoft agent skills collection |
+
+### Skills by fal.ai
+
+| Skill | Description |
+|-------|-------------|
+| [fal-ai](https://github.com/fal-ai/skills) | Run AI inference, image generation, and video models via fal.ai |
+
+### Skills by WordPress
+
+| Skill | Description |
+|-------|-------------|
+| [agent-skills](https://github.com/WordPress/agent-skills) | WordPress development, block editor, and plugin authoring skills |
+
+### Skills by OpenAI
 
 Codex supports skills at different scopes:
 
 | Skill Scope | Location | Suggested Use |
 |-------------|----------|---------------|
-| REPO | `$CWD/.codex/skills` | Skills relevant to a working folder (e.g., microservice or module) |
-| REPO | `$CWD/../.codex/skills` | Skills for shared areas in parent folders |
+| REPO | `$CWD/.codex/skills` | Skills relevant to a working folder |
 | REPO | `$REPO_ROOT/.codex/skills` | Root skills for everyone using the repository |
 | USER | `$CODEX_HOME/skills` (default: `~/.codex/skills`) | Personal skills that apply to any repository |
 | ADMIN | `/etc/codex/skills` | SDK scripts, automation, and default admin skills |
 | SYSTEM | Bundled with Codex | Built-in skills like skill-creator and plan |
 
-### Official HuggingFace Skills
+### Skills by Figma
 
-| Skill | Description | Source |
-|-------|-------------|--------|
-| hf_dataset_creator | Prompts, templates, and scripts for creating structured training datasets | [huggingface/skills](https://github.com/huggingface/skills) |
-| hf_model_evaluation | Instructions plus utilities for orchestrating evaluation jobs, generating reports, and mapping metrics | [huggingface/skills](https://github.com/huggingface/skills) |
-| hf-llm-trainer | Comprehensive training skill with guidance, helper scripts, cost estimators | [huggingface/skills](https://github.com/huggingface/skills) |
-| hf-paper-publisher | Tools for publishing and managing research papers on Hugging Face Hub | [huggingface/skills](https://github.com/huggingface/skills) |
+| Skill | Description |
+|-------|-------------|
+| [figma](https://github.com/figma/skills) | Design token extraction, component documentation, and Dev Mode workflows |
 
-### Community Skills
+### Marketing Skills by Corey Haines
+
+| Skill | Description |
+|-------|-------------|
+| [agent-gtm-skills](https://github.com/chadboyda/agent-gtm-skills) | 18 go-to-market skills: pricing, outbound, SEO, ads, retention, and ops |
+
+### Skills by Binance
+
+| Skill | Description |
+|-------|-------------|
+| [kyberswap-skills](https://github.com/kybernetwork/kyberswap-skills) | Token swap quotes and transactions across 18 EVM chains |
+
+### Product Manager Skills by Dean Peters
+
+| Skill | Description |
+|-------|-------------|
+| [pm-skills](https://github.com/product-on-purpose/pm-skills) | 24 product management skills covering discovery, definition, delivery, and optimization |
+
+### Product Management Skills by Pawel Huryn
+
+| Skill | Description |
+|-------|-------------|
+| [pm-skills](https://github.com/product-on-purpose/pm-skills) | Advanced product management frameworks, OKRs, and strategy skills |
+
+### Skills by MiniMax
+
+| Skill | Description |
+|-------|-------------|
+| [minimax-skills](https://github.com/MiniMax-AI/skills) | MiniMax model API usage, video generation, and multimodal integration |
+
+### Skills by DuckDB
+
+| Skill | Description |
+|-------|-------------|
+| [duckdb-skills](https://github.com/duckdb/skills) | DuckDB SQL patterns, in-process analytics, and Parquet file handling |
+
+### Skills by GSAP
+
+| Skill | Description |
+|-------|-------------|
+| [gsap-skills](https://github.com/greensock/gsap-skills) | GSAP animation libraries, ScrollTrigger, and timeline management |
+
+### Skills by Garry Tan (gstack)
+
+| Skill | Description |
+|-------|-------------|
+| [gstack](https://github.com/garrytan/gstack) | YC founder stack recommendations for infra, tooling, and deployment |
+
+### Skills by Notion
+
+| Skill | Description |
+|-------|-------------|
+| [skills](https://github.com/makenotion/skills) | Notion API integration, database operations, and content management |
+
+### Skills by Resend
+
+| Skill | Description |
+|-------|-------------|
+| [resend-skills](https://github.com/resend/skills) | Transactional email sending, templates, and domain configuration |
+
+---
+
+## Community Skills
 
 Community-maintained skills and collections (verify before use):
 
-#### Skill Collections
+### Skill Collections
 
 | Repository | Description |
 |------------|-------------|
@@ -112,139 +488,76 @@ Community-maintained skills and collections (verify before use):
 | [huggingface/skills](https://github.com/huggingface/skills) | HuggingFace skills (compatible with Claude, Codex, Gemini) |
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | SkillCreator.ai collection with CLI installer |
 | [agentskill.sh](https://agentskill.sh) | 44k+ skills directory with security scanning and `/learn` installer |
-| [TutuoAI](https://www.tutuoai.com/) | Agent-native marketplace for skills, tools, and workflow blueprints (machine-readable catalog) |
+| [TutuoAI](https://www.tutuoai.com/) | Agent-native marketplace for skills, tools, and workflow blueprints |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | 50+ verified skills for Claude Code and Claude.ai |
-| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5 UX/UI skills: evaluate interfaces against 168 research-backed principles, detect antipatterns, inject UX context into AI coding sessions |
-| [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | Skills for specialized capabilities |
-| [GuDaStudio/skills](https://github.com/GuDaStudio/skills) | Multi-agent collaboration skills |
-| [DougTrajano/pydantic-ai-skills](https://github.com/DougTrajano/pydantic-ai-skills) | Pydantic AI integration |
-| [OmidZamani/dspy-skills](https://github.com/OmidZamani/dspy-skills) | Skills for DSPy framework |
-| [hikanner/agent-skills](https://github.com/hikanner/agent-skills) | Curated Claude Agent Skills collection |
-| [gradion-ai/freeact-skills](https://github.com/gradion-ai/freeact-skills) | Freeact agent library skills |
-| [dmgrok/agent_skills_directory](https://github.com/dmgrok/agent_skills_directory) | npm-like CLI for skills (`brew install dmgrok/tap/skills`) - aggregates 177+ skills from 24 providers |
+| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5 UX/UI skills: evaluate interfaces against 168 research-backed principles |
+| [dmgrok/agent_skills_directory](https://github.com/dmgrok/agent_skills_directory) | npm-like CLI for skills — aggregates 177+ skills from 24 providers |
 | [gotalab/skillport](https://github.com/gotalab/skillport) | Skills distribution via CLI or MCP |
-| [mhattingpete/claude-skills-marketplace](https://github.com/mhattingpete/claude-skills-marketplace) | Git, code review, and testing skills |
 | [kukapay/crypto-skills](https://github.com/kukapay/crypto-skills) | Cryptocurrency, web3 and blockchain skills |
-| [chadboyda/agent-gtm-skills](https://github.com/chadboyda/agent-gtm-skills) | 18 go-to-market skills: pricing, outbound, SEO, ads, retention, and ops |
-| [product-on-purpose/pm-skills](https://github.com/product-on-purpose/pm-skills) | 24 product management skills covering discovery, definition, delivery, and optimization |
-| [sanjay3290/ai-skills](https://github.com/sanjay3290/ai-skills) | Google Workspace (Gmail, Chat, Calendar, Docs, Drive, Sheets, Slides), AI delegation (Jules, Manus, Deep Research), and database skills |
-| [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Crowdfunding for AI agents on Base chain - milestone escrow |
-| [browser-act/skills](https://github.com/browser-act/skills) | 22 browser automation skills for structured data extraction from Amazon, YouTube, Google Maps, Reddit, WeChat, and Zhihu |
-| [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | Cross-agent UI design skill collection for turning briefs and mockups into screens, variants, HTML, and screenshots |
-| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | Repo audit, market research, positioning, and community outreach planning |
+| [browser-act/skills](https://github.com/browser-act/skills) | 22 browser automation skills for structured data extraction |
 | [noizai/skills](https://github.com/noizai/skills) | Voice-first skills: TTS with SRT dubbing and companion voice presets |
 
-#### Document Processing
-
-| Skill | Description |
-|-------|-------------|
-| [Markdown to EPUB](https://github.com/smerchek/claude-epub-skill) | Converts markdown documents into professional EPUB ebook files |
-| [ru-text](https://github.com/talkstream/ru-text) | Russian text quality: ~1,040 rules for typography, info-style, editorial, UX writing, business correspondence |
-
-#### Development & Code Tools
+### Development & Code Tools
 
 | Skill | Description |
 |-------|-------------|
 | [aws-skills](https://github.com/zxkane/aws-skills) | AWS development with CDK best practices |
 | [D3.js Visualization](https://github.com/chrisvoncsefalvay/claude-d3js-skill) | D3 charts and interactive data visualizations |
-| [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams) | Generate hand-drawn Excalidraw diagrams from a prompt — animated SVG, hosted edit link, and PNG export. Works with Claude Code, Codex, and any agent supporting standard skill paths |
 | [Playwright Automation](https://github.com/lackeyjb/playwright-skill) | Browser automation for testing web apps |
-| [Specrate](https://github.com/rickygao/specrate) | Manage specs and changes in a structured workflow |
 | [iOS Simulator](https://github.com/conorluddy/ios-simulator-skill) | Interact with iOS Simulator for testing |
-| [Swift Concurrency Migration](https://github.com/kylehughes/the-unofficial-swift-concurrency-migration-skill) | Swift Concurrency Migration guide |
-| [Obsidian Plugin](https://github.com/gapmiss/obsidian-plugin-skill) | Obsidian.md plugin development |
-| [Stream Coding](https://github.com/frmoretto/stream-coding) | Stream Coding methodology |
 | [SwiftUI Skills](https://github.com/ameyalambat128/swiftui-skills) | Apple-authored SwiftUI and platform guidance extracted from Xcode |
-| [Tool Advisor](https://github.com/dragon1086/claude-skills) | Analyzes prompts and recommends optimal tools, skills, agents, and orchestration patterns |
-| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | Convert AI IDE rules between Cursor (.mdc), CLAUDE.md, AGENTS.md, Copilot, and Windsurf. Bidirectional, zero dependencies |
-| [Vibe Testing](https://github.com/knot0-com/vibe-testing) | Pressure-test spec documents with LLM reasoning before writing code |
-| [codex-stitch-local](https://github.com/yshishenya/codex-stitch-local) | Stitch UI generation with local HTML and screenshots |
-| [Mantra](https://mantra.gonewx.com) | AI coding session management - save, restore, and time-travel through Claude Code, Cursor, and Windsurf sessions |
-| [IWE](https://github.com/iwe-org/iwe) | CLI-based knowledge graph access for AI agents — structured persistent memory via plain markdown files |
-| [naming](https://github.com/glacierphonk/naming) | Metaphor-driven naming for products, SaaS, brands, and open source projects |
-| [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | CLI design spec — 98 rules for building agent-safe CLI tools |
-| [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | Turns Claude into a Tech Lead orchestrating parallel Worker Agents through a full dev workflow: PRD alignment, architecture, coding, QA, and PR review |
-| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | Skill for reviewing and structuring agent products around harnesses, memory, permissions, recovery, and UX |
-| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | Harness blueprint skill for request assembly, control loops, memory boundaries, permissions, and recovery |
-| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Generate AI coding rules from your codebase using Google Gemini. Outputs rules for Cursor, Claude Code, Copilot, and Windsurf |
-| [AppDeploy](https://github.com/AppDeploy-AI/skills) | Deploy apps with frontend, backend, database, cron, file storage, AI capabilities, auth, and notifications and get a live URL back |
-| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | Community Flutter skills for implementation, testing, API integration, debugging, and release workflows |
+| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | Convert AI IDE rules between Cursor, CLAUDE.md, AGENTS.md, Copilot, and Windsurf |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | Deploy apps with full stack and get a live URL back |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | Community Flutter skills for implementation, testing, and release workflows |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Generate AI coding rules from your codebase using Google Gemini |
 
-#### Data & Analysis
+### Data & Analysis
 
 | Skill | Description |
 |-------|-------------|
 | [CSV Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | Analyze CSV files and generate insights with visualizations |
-| [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | Complete Kaggle integration — account setup, competition reports, dataset/model downloads, notebook execution, submissions, and badge collection |
-| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | Personal genome analysis toolkit with Python scripts analyzing raw DNA data across 17 categories and generating terminal-style HTML visualization |
+| [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | Complete Kaggle integration — competition reports, dataset downloads, submissions |
+| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | Personal genome analysis toolkit across 17 categories |
 
-#### Integration & Automation
+### Integration & Automation
 
 | Skill | Description |
 |-------|-------------|
 | [Dev Browser](https://github.com/SawyerHood/dev-browser) | Web browser capability for agents |
-| [Lumen](https://github.com/omxyz/lumen) | Vision-first browser agent with self-healing deterministic replay over CDP |
-| [Vectorize MCP Worker](https://github.com/dannwaneri/vectorize-mcp-worker) | Edge-native MCP server patterns for production RAG |
-| [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | Manage local CLI AI agents via tmux (start/stop/monitor/assign + cron scheduling) |
-| [HOL Claude Skills](https://github.com/hashgraph-online/hol-claude-skills) | AI agent discovery via Registry Broker - /hol-search, /hol-resolve, /hol-chat |
+| [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | Manage local CLI AI agents via tmux |
 | [Sheets CLI](https://github.com/gmickel/sheets-cli) | Google Sheets CLI automation |
-| [Notification Skill](https://github.com/caopulan/Notification-Skill) | Send message notifications for agent workflows |
 | [Spotify Skill](https://github.com/fabioc-aloha/spotify-skill) | Spotify API integration |
-| [AgentStore](https://github.com/techgangboss/agentstore) | Open-source plugin marketplace with gasless USDC payments, CLI install, and 3-field publishing API |
-| [Transloadit Skills](https://github.com/transloadit/skills) | Media processing: video encoding, image manipulation, OCR, and 86+ Robots |
-| [commune](https://github.com/shanjairaj7/commune-skill) | Agent-native email inbox — permanent @commune.ai address with full send/receive, semantic search, triage, and webhooks |
-| [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | Bitcoin MCP server with 49 tools — fee intelligence, mempool analysis, block/transaction inspection, mining stats, price and supply data |
-| [datadog-observability](https://github.com/Ivlad003/plugins) | Query and analyze Datadog logs, metrics, monitors, and traces directly from Claude Code via REST API |
-| [meyhem-search](https://github.com/c5huracan/meyhem) | Agent-native web search with feedback-driven ranking via REST API and MCP server |
-| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | Session-backed browser automation skill for web navigation, extraction, screenshots, and PDFs |
-| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | Token swap quotes and transactions across 18 EVM chains |
+| [AgentStore](https://github.com/techgangboss/agentstore) | Open-source plugin marketplace with CLI install |
+| [Transloadit Skills](https://github.com/transloadit/skills) | Media processing: video encoding, image manipulation, OCR |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | Session-backed browser automation skill |
 
-#### Collaboration & Project Management
-
-| Skill | Description |
-|-------|-------------|
-| [git-pushing](https://github.com/mhattingpete/claude-skills-marketplace) | Automate git operations and repository interactions |
-| [review-implementing](https://github.com/mhattingpete/claude-skills-marketplace) | Evaluate code implementation plans |
-| [test-fixing](https://github.com/mhattingpete/claude-skills-marketplace) | Detect failing tests and propose fixes |
-
-#### Security & Systems
+### Security & Systems
 
 | Skill | Description |
 |-------|-------------|
 | [computer-forensics](https://github.com/mhattingpete/claude-skills-marketplace) | Digital forensics analysis and investigation |
-| [safe-encryption-skill](https://github.com/grittygrease/safe-encryption-skill) | Modern encryption alternative to GPG/PGP with post-quantum support, composable authentication, and agent-to-agent communication |
-| [Threat Hunting](https://github.com/jthack/threat-hunting-with-sigma-rules-skill) | Hunt for threats using Sigma detection rules |
-| [Vincent Wallet](https://github.com/HeyVincent-ai/agent-skills/tree/main/wallet) | Secure EVM wallet for agent transfers, swaps, and transactions |
-| [Vincent Polymarket](https://github.com/HeyVincent-ai/agent-skills/tree/main/polymarket) | Polymarket prediction market trading for agents |
-| [Agent OS Governance](https://github.com/imran-siddique/agent-os) | Kernel-level governance for AI agents — deterministic policy enforcement, compliance checking, audit logging |
+| [Agent OS Governance](https://github.com/imran-siddique/agent-os) | Kernel-level governance for AI agents — deterministic policy enforcement |
 
-#### Advanced & Research
+### Advanced & Research
 
 | Skill | Description |
 |-------|-------------|
 | [Context Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | Context engineering techniques |
-| [Pomodoro System Skill](https://github.com/jakedahn/pomodoro) | System Skill Pattern (skills that remember & improve) |
+| [Pomodoro System Skill](https://github.com/jakedahn/pomodoro) | System Skill Pattern — skills that remember and improve |
 | [Mind Cloning](https://github.com/yzfly/Mind-Cloning-Engineering) | Mind cloning with LLM skills |
 
 ---
 
-## Official Tutorials and Guides
+## Skill Quality Standards
 
-### Claude and Anthropic
-- [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude) - Official quick start guide
-- [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills) - Step-by-step authoring
-- [Claude Code Skills Documentation](https://code.claude.com/docs/en/skills) - Official reference
+When evaluating or contributing skills, look for:
 
-### GitHub Copilot
-- [About Agent Skills](https://docs.github.com/copilot/concepts/agents/about-agent-skills) - GitHub documentation
-- [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) - VS Code integration
-
-### Model Context Protocol (MCP)
-- [MCP Official Documentation](https://modelcontextprotocol.io/) - The open standard
-- [Build your first MCP Server](https://modelcontextprotocol.io/docs/first-server) - Python/TypeScript guide
-- [MCP Server Examples](https://github.com/modelcontextprotocol/servers) - Official server implementations
-
-
+- **Clear instructions**: Steps are unambiguous and actionable
+- **Appropriate scope**: Skill handles one focused task, not everything
+- **Working examples**: Demonstrates real usage, not just theory
+- **Documented trade-offs**: Honest about limitations and edge cases
+- **Size limit**: SKILL.md under 500 lines for optimal agent performance
+- **Tested**: Verified to actually work with the agent it targets
 
 ---
 
@@ -259,13 +572,12 @@ Community-maintained skills and collections (verify before use):
 
 Antigravity supports two types of skills:
 
-*   **Workspace Skills**: Project-specific skills located in `/.agent/skills/`
-*   **Global Skills**: User-wide skills located in `~/.gemini/antigravity/skills`
+- **Workspace Skills**: Project-specific skills located in `/.agent/skills/`
+- **Global Skills**: User-wide skills located in `~/.gemini/antigravity/skills`
 
 For more details, see the [official documentation](https://antigravity.google/docs/skills).
 
 ### Using Skills in Claude Code
-Place the skill in your configuration directory:
 
 ```bash
 mkdir -p ~/.claude/skills/
@@ -281,94 +593,25 @@ The skill loads automatically and activates when relevant.
 
 ### Using Skills in Codex
 
-**Create a skill:**
-
-Use the built-in `$skill-creator` skill in Codex. Describe what you want your skill to do, and Codex will bootstrap it for you.
-
-If you install `$create-plan` (experimental) with `$skill-installer create-plan`, Codex will create a plan before writing files.
-
-You can also create a skill manually by creating a folder with a `SKILL.md` file:
-
-```markdown
----
-name: skill-name
-description: Description that helps Codex select the skill
-metadata:
-  short-description: Optional user-facing description
----
-
-Skill instructions for the Codex agent to follow when using this skill.
-```
-
-**Install new skills:**
-
-Download skills from GitHub using the `$skill-installer` skill:
+Use the built-in `$skill-creator` skill in Codex. Or install manually:
 
 ```bash
 $skill-installer linear
 ```
 
-You can also prompt the installer to download skills from other repositories. After installing a skill, restart Codex to pick up new skills.
+Restart Codex after installing a skill to pick it up.
 
-### Using Skills in VS Code
+### Using Skills in VS Code / GitHub Copilot
 
-Skills are stored in directories with a `SKILL.md` file. VS Code supports skills in two locations:
+Skills are stored in directories with a `SKILL.md` file:
 
-- `.github/skills/` - Recommended location for all new skills
-- `.claude/skills/` - Legacy location, also supported
-
-**Create a skill:**
-
-1. Create a `.github/skills` directory in your workspace
-2. Create a subdirectory for your skill (e.g., `.github/skills/webapp-testing`)
-3. Create a `SKILL.md` file with the following structure:
-
-```markdown
----
-name: skill-name
-description: Description of what the skill does and when to use it
----
-
-# Skill Instructions
-
-Your detailed instructions, guidelines, and examples go here...
-```
-
-4. Optionally, add scripts, examples, or other resources to your skill's directory
-
-### Using Skills in Copilot CLI
-
-**Adding skills to your repository:**
-
-1. Create a `.github/skills` directory (skills in `.claude/skills` are also supported)
-2. Create a subdirectory for your skill (e.g., `.github/skills/webapp-testing`)
-3. Create a `SKILL.md` file with your skill's instructions
+- `.github/skills/` — Recommended location for all new skills
+- `.claude/skills/` — Legacy location, also supported
 
 **SKILL.md structure:**
-
 - `name` (required): A unique lowercase identifier using hyphens for spaces
-- `description` (required): What the skill does and when Copilot should use it
-- `license` (optional): License that applies to this skill
+- `description` (required): What the skill does and when the agent should use it
 - Markdown body with instructions, examples, and guidelines
-
-**Example SKILL.md:**
-
-```markdown
----
-name: github-actions-failure-debugging
-description: Guide for debugging failing GitHub Actions workflows.
----
-
-To debug failing GitHub Actions workflows:
-
-1. Use `list_workflow_runs` to look up recent workflow runs
-2. Use `summarize_job_log_failures` to get an AI summary of failed jobs
-3. Use `get_job_logs` for full detailed failure logs if needed
-4. Try to reproduce the failure in your environment
-5. Fix the failing build
-```
-
-When performing tasks, Copilot decides when to use skills based on your prompt and the skill's description. The `SKILL.md` file is injected into the agent's context.
 
 ### Using MCP Servers (Claude Desktop)
 
@@ -376,17 +619,12 @@ Edit your configuration file:
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
-Example Configuration:
 ```json
 {
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/Desktop"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/Desktop"]
     }
   }
 }
@@ -396,7 +634,7 @@ Example Configuration:
 
 ## Creating Skills
 
-Skills are instruction bundles that tell the agent how to perform specific tasks. They are not executable code by default.
+Skills are instruction bundles that tell the agent how to perform specific tasks. They are not executable code.
 
 ### Skill Structure
 
@@ -436,13 +674,12 @@ Detailed description of the skill's purpose.
 
 ### MCP Server Example (Python)
 
-For skills that need to connect to external data sources, you can create an MCP server:
+For skills that need to connect to external data sources:
 
 ```bash
 pip install fastmcp
 ```
 
-server.py:
 ```python
 from fastmcp import FastMCP
 
@@ -459,17 +696,75 @@ if __name__ == "__main__":
 
 ---
 
-## Community Resources
+## Official Tutorials and Guides
 
-### LangChain Tools
-- [Google Search](https://python.langchain.com/docs/integrations/tools/google_search/) - Wrapper around SerpApi
-- [Wikipedia](https://python.langchain.com/docs/integrations/tools/wikipedia/) - Fetch summaries from Wikipedia
-- [Python REPL](https://python.langchain.com/docs/integrations/tools/python/) - Execute Python code
-- [Custom Tools Guide](https://python.langchain.com/docs/how_to/custom_tools/) - How to use the `@tool` decorator
+### Claude and Anthropic
+- [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude) — Official quick start guide
+- [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills) — Step-by-step authoring
+- [Claude Code Skills Documentation](https://code.claude.com/docs/en/skills) — Official reference
 
-### Articles & Research
-- [I found 50 companies accidentally breaking HIPAA with ChatGPT](https://dev.to/dannwaneri/i-found-50-companies-accidentally-breaking-hipaa-with-chatgpt-1olc) - Analysis of privacy risks in AI
-- [I built a Production RAG System for $5/month](https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj) - Cost-optimization guide for RAG architectures
+### GitHub Copilot
+- [About Agent Skills](https://docs.github.com/copilot/concepts/agents/about-agent-skills) — GitHub documentation
+- [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) — VS Code integration
+
+### Model Context Protocol (MCP)
+- [MCP Official Documentation](https://modelcontextprotocol.io/) — The open standard
+- [Build your first MCP Server](https://modelcontextprotocol.io/docs/first-server) — Python/TypeScript guide
+- [MCP Server Examples](https://github.com/modelcontextprotocol/servers) — Official server implementations
+
+---
+
+## Additional Vendor Repositories
+
+The following organizations maintain official GitHub repositories with curated `SKILL.md` collections:
+
+| Organization | Repository |
+|-------------|------------|
+| Anthropic | [anthropics/skills](https://github.com/anthropics/skills) |
+| OpenAI | [openai/skills](https://github.com/openai/skills) |
+| Google Gemini | [google-gemini/gemini-skills](https://github.com/google-gemini/gemini-skills) |
+| HuggingFace | [huggingface/skills](https://github.com/huggingface/skills) |
+| Replicate | [replicate/skills](https://github.com/replicate/skills) |
+| ElevenLabs | [elevenlabs/skills](https://github.com/elevenlabs/skills) |
+| Black Forest Labs | [black-forest-labs/skills](https://github.com/black-forest-labs/skills) |
+| Cloudflare | [cloudflare/skills](https://github.com/cloudflare/skills) |
+| HashiCorp | [hashicorp/agent-skills](https://github.com/hashicorp/agent-skills) |
+| Databricks | [databricks/databricks-agent-skills](https://github.com/databricks/databricks-agent-skills) |
+| ClickHouse | [ClickHouse/agent-skills](https://github.com/ClickHouse/agent-skills) |
+| Supabase | [supabase/agent-skills](https://github.com/supabase/agent-skills) |
+| Stripe | [stripe/ai](https://github.com/stripe/ai) |
+| LaunchDarkly | [launchdarkly/agent-skills](https://github.com/launchdarkly/agent-skills) |
+| Sentry | [getsentry/skills](https://github.com/getsentry/skills) |
+| Vercel | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) |
+| Microsoft | [microsoft/agent-skills](https://github.com/microsoft/agent-skills) |
+| Expo | [expo/skills](https://github.com/expo/skills) |
+| Better Auth | [better-auth/skills](https://github.com/better-auth/skills) |
+| Remotion | [remotion-dev/skills](https://github.com/remotion-dev/skills) |
+| GSAP | [greensock/gsap-skills](https://github.com/greensock/gsap-skills) |
+| Notion | [makenotion/skills](https://github.com/makenotion/skills) |
+| WordPress | [WordPress/agent-skills](https://github.com/WordPress/agent-skills) |
+
+---
+
+## Trends & Capabilities (2026)
+
+The AI agent ecosystem has dramatically shifted from reactive chat interfaces to **autonomous, goal-driven systems** executing end-to-end multi-step workflows — a period often called the "Agent Leap."
+
+### 1. Autonomous Execution
+
+Modern agents move past simple "prompt-response" models. They break down broad objectives into multi-step strategic plans, weighing trade-offs and executing sequences independently.
+
+### 2. Multi-Agent Orchestration
+
+Complex tasks are managed by specialized agent teams (documentation, testing, coding) coordinated by "manager" agents that synthesize deliverables and resolve conflicts.
+
+### 3. Agentic IDEs
+
+Environments like Cursor, Windsurf, Claude Code, and GitHub Copilot have evolved into full "Agentic IDEs" where agents execute terminal commands, monitor telemetry, and manage files natively via MCP and direct filesystem access.
+
+### 4. Domain-Specific Skills at Scale
+
+Organizations are moving from general-purpose prompting to highly specialized skills for each platform and workflow — reducing hallucinations and improving reliability in production deployments.
 
 ---
 
@@ -477,25 +772,25 @@ if __name__ == "__main__":
 
 ### What are Agent Skills?
 
-Agent Skills are instruction files that teach AI assistants how to do specific tasks. Think of them as "how-to guides" that the AI reads and follows. They only load when needed, so the AI stays fast and focused.
+Agent Skills are instruction files that teach AI assistants how to do specific tasks. They only load when needed, so the AI stays fast and focused.
 
 ### How are Agent Skills different from fine-tuning?
 
-Fine-tuning permanently changes how an AI thinks (expensive and hard to update). Agent Skills are just instruction files, you can update, swap, or share them anytime without touching the AI itself.
+Fine-tuning permanently changes how an AI thinks (expensive and hard to update). Agent Skills are just instruction files — you can update, swap, or share them anytime without touching the AI itself.
 
 ### What's the difference between Agent Skills and MCP?
 
-They do different things and work great together:
-- **Agent Skills** = teach the AI *how* to do something (workflows, best practices)
-- **MCP** = help the AI *access* things (APIs, databases, external tools)
+They work great together:
+- **Agent Skills** — teach the AI *how* to do something (workflows, best practices)
+- **MCP** — help the AI *access* things (APIs, databases, external tools)
 
 ### Which AI tools support Agent Skills?
 
-Currently supported: **Claude** (Claude.ai and Claude Code), **GitHub Copilot**, **VS Code**, **Codex** (OpenAI), **Antigravity** (Google), **Gemini CLI**, and **Kiro**. The list is growing as more tools adopt the standard.
+Currently supported: **Claude** (Claude.ai and Claude Code), **GitHub Copilot**, **VS Code**, **Codex** (OpenAI), **Antigravity** (Google), **Gemini CLI**, **Kiro**, and **Junie**. The ecosystem is growing rapidly.
 
 ### Do Agent Skills run code?
 
-No. Skills are just text instructions, the AI reads and follows them like a recipe. If you need to run actual code, you'd use something like MCP servers alongside skills.
+No. Skills are just text instructions — the AI reads and follows them like a recipe. If you need to run actual code, you'd use MCP servers alongside skills.
 
 ### How do I create my first Agent Skill?
 
@@ -524,75 +819,4 @@ Quick summary:
 
 ## License
 
-MIT License - see LICENSE file for details.
-
----
-
-## References
-
-The principles in these skills are derived from research and production experience at leading AI labs and framework developers.
-
-- [Anthropic: Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-- [Anthropic: Creating custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
-- [Claude Code Skills Documentation](https://code.claude.com/docs/en/skills)
-- [GitHub Copilot: About Agent Skills](https://docs.github.com/copilot/concepts/agents/about-agent-skills)
-- [Model Context Protocol Documentation](https://modelcontextprotocol.io/)
-
-
----
-
-
-## Official Vendor Skills (Summarized via VoltAgent)
-
-VoltAgent curates a massive list of highly useful, official skills authored by enterprise development teams. These skills instruct AI agents on best practices, APIs, and complex configurations across modern platforms.
-
-### Key AI & Infrastructure Vendors
-* **Anthropic**: Official agent skills for handling DOCX, PPTX, XLSX, PDFs, generating internal comms, and building MCP servers.
-* **Google Gemini & Workspace**: Agent guides for `gemini-live-api-dev`, Vertex AI integration, and the official Google Workspace CLI components (Drive, Mail, Sheets).
-* **Cloudflare**: Guidelines for the Agents SDK, Durable Objects, caching workflows, and `wrangler` configuration.
-* **Netlify**: Skill sets outlining Edge Functions, Blobs, AI gateway management, and serverless architectures.
-* **HashiCorp**: Terraform provider construction, module refactoring, state management, and acceptance testing methodologies.
-
-### Frameworks & DevOps
-* **Vercel / React**: Best practices for React architectures, Next.js cache components, and web design composition patterns.
-* **Expo**: React Native styling, UI hooks, Jetpack Compose, mapping workflows, and EAS deployments.
-* **Stripe**: SDK configuration, webhook handling, and API integration guidelines.
-* **Firecrawl**: Headless browser definitions for scraping, mapping, and structured semantic searches.
-* **Sanity**: Content modeling schemas, GROQ queries, and SEO layout best practices.
-
-*(Note: The above list is a summary. Hundreds of additional specialized skills exist in the larger directories.)*
-
-
----
-
-## Additional Vendor Repositories (Summarized via libukai)
-
-Libukai tracks official GitHub repositories serving out curated `SKILL.md` collections. Key organizations maintaining official agent instructions include:
-- `anthropics/skills`
-- `openai/skills`
-- `huggingface/skills`
-- `google-gemini/gemini-skills`
-- `replicate/skills`
-- `elevenlabs/skills`
-- `supabase/agent-skills`
-- `databricks/databricks-agent-skills`
-- `cloudflare/skills`
-- `getsentry/skills`
-
-These repositories can typically be cloned directly into your `.github/skills/` or `~/.claude/skills` directory, providing native contextual enhancements to tools like Claude Code, Cursor, and Copilot.
-
-
----
-
-## Agent Skills Trends & Capabilities (2026)
-
-In 2026, the AI agent ecosystem has dramatically shifted from reactive chat interfaces to **autonomous, goal-driven systems** executing end-to-end multi-step workflows. This period, often called the "Agent Leap", is defined by a move toward end-to-end execution of complex tasks.
-
-### 1. Autonomous Execution & Goal Orientation
-Modern agents move past simple "prompt-response" models. They break down broad, abstract objectives into multi-step strategic plans, weighing trade-offs and executing sequences independently over long horizons.
-
-### 2. Multi-Agent Orchestration
-Complex repositories and operations are managed by specialized agent teams (e.g., a documentation agent, a testing agent, and a coding agent). These teams are coordinated by "manager" agents that synthesize deliverables and resolve conflicts securely.
-
-### 3. Direct Access & Agentic IDEs
-Instead of just returning textual code solutions, AI agents are increasingly given deep, authorized access to terminals, environments, and filesystems through protocols like Model Context Protocol (MCP). Environments like Cursor, Windsurf, Copilot, and Claude Code have evolved into "Agentic IDEs" where agents natively execute commands and monitor telemetry in real-time.
+MIT License — see LICENSE file for details.
