@@ -3,93 +3,58 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
 }
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #09090b;
-    --card: #ffffff;
-    --card-foreground: #09090b;
-    --border: #e4e4e7;
-    --input: #e4e4e7;
-    --ring: #18181b;
-    --radius: 1rem;
+    color-scheme: light;
   }
-
   .dark {
-    --background: #000000;
-    --foreground: #ffffff;
-    --card: rgba(255, 255, 255, 0.03);
-    --card-foreground: #ffffff;
-    --border: rgba(255, 255, 255, 0.1);
-    --input: rgba(255, 255, 255, 0.1);
-    --ring: rgba(255, 255, 255, 0.2);
+    color-scheme: dark;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05) 0%, transparent 50%), 
-                      radial-gradient(circle at 100% 100%, rgba(255,255,255,0.02) 0%, transparent 50%);
-    background-attachment: fixed;
+    box-sizing: border-box;
   }
 
-  code, pre {
-    @apply font-mono;
+  body {
+    @apply bg-white text-neutral-900 font-sans antialiased;
+  }
+
+  .dark body {
+    @apply bg-neutral-950 text-neutral-100;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-bold;
+    @apply tracking-tight font-bold text-neutral-900;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-neutral-100;
+  }
+
+  p {
+    @apply text-neutral-600 leading-relaxed;
+  }
+
+  .dark p {
+    @apply text-neutral-400;
+  }
+
+  code {
+    @apply font-mono text-neutral-800 bg-neutral-100 px-1.5 py-0.5 rounded text-[0.85em];
+  }
+
+  .dark code {
+    @apply text-neutral-200 bg-neutral-800;
   }
 }
 
-/* iOS Glassmorphism Utilities */
-.glass {
-  @apply bg-white/70 dark:bg-black/40 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-xl;
-}
-
-.glass-panel {
-  @apply bg-white/40 dark:bg-white/[0.02] backdrop-blur-3xl border border-white/20 dark:border-white/5 rounded-3xl shadow-2xl;
-}
-
-.glass-pill {
-  @apply bg-white/60 dark:bg-white/10 backdrop-blur-md border border-white/40 dark:border-white/10 rounded-full shadow-sm;
-}
-
-/* Glow effects */
-.glow-text {
-  text-shadow: 0 0 40px rgba(255,255,255,0.5);
-}
-
-.dark .glow-text {
-  text-shadow: 0 0 30px rgba(255,255,255,0.8);
-}
-
-/* Scrollbar hide */
+/* Scrollbar utilities */
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-.sidebar-scroll::-webkit-scrollbar { width: 4px; }
+.sidebar-scroll::-webkit-scrollbar { width: 3px; }
 .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
-.sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
-.sidebar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+.sidebar-scroll::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 99px; }
+.sidebar-scroll::-webkit-scrollbar-thumb:hover { background: #d1d5db; }

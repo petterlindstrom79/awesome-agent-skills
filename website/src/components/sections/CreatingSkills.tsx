@@ -1,80 +1,64 @@
-"use client";
+import { FolderOpen, FileText, Code2, Layers, ArrowRight } from "lucide-react";
 
-import { motion } from "framer-motion";
-import { FolderPlus, FileText, Code2, Layers, ArrowRight } from "lucide-react";
+const structure = [
+  { Icon: FolderOpen, path: "my-skill/", desc: "Kebab-case root folder" },
+  { Icon: FileText, path: "├── SKILL.md", desc: "Required — the core instructions" },
+  { Icon: Code2, path: "├── scripts/", desc: "Optional — helper scripts" },
+  { Icon: Layers, path: "└── templates/", desc: "Optional — file output templates" },
+];
 
 export default function CreatingSkills() {
   return (
-    <section id="creating-skills" className="scroll-mt-32">
-      <div className="mb-12">
-        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-yellow-400 mb-4">
-          BUILD YOUR OWN
-        </div>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Creating Skills</h2>
-        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-          Skills aren't code — they're <em>curated instructions</em>. Think of them like very well-written README files that AI agents can truly internalize and act on.
-        </p>
-      </div>
+    <section id="creating-skills" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Creating Skills</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
+        Skills are not code — they are structured instruction files. Think of a well-written README that an AI agent can truly internalize and act on reliably.
+      </p>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Anatomy */}
-        <div className="glass-panel p-8 space-y-8">
-          <div className="space-y-3">
-            <h3 className="text-2xl font-bold tracking-tight text-white">Anatomy of a Skill</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Every skill lives in a predictable folder structure so any agent can discover it automatically.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {[
-              { icon: <FolderPlus className="w-5 h-5 text-blue-400" />, path: "my-skill/", desc: "A kebab-case root folder" },
-              { icon: <FileText className="w-5 h-5 text-purple-400" />, path: "├── SKILL.md", desc: "Required — the brains of the skill" },
-              { icon: <Code2 className="w-5 h-5 text-green-400" />, path: "├── scripts/", desc: "Optional — helper scripts" },
-              { icon: <Layers className="w-5 h-5 text-orange-400" />, path: "└── templates/", desc: "Optional — file output templates" },
-            ].map((item, i) => (
-              <motion.div
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Folder anatomy */}
+        <div>
+          <h3 className="text-base font-semibold text-neutral-900 dark:text-white mb-4">Folder structure</h3>
+          <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
+            {structure.map((item, i) => (
+              <div
                 key={item.path}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-5 group p-3 rounded-2xl hover:bg-white/5 transition-colors"
+                className={`flex items-center gap-4 px-4 py-3 ${i < structure.length - 1 ? "border-b border-neutral-100 dark:border-neutral-800" : ""}`}
               >
-                <div className="p-3 bg-black/50 rounded-xl border border-white/10 transition-transform group-hover:scale-110">
-                  {item.icon}
-                </div>
-                <div>
-                  <code className="text-sm font-bold tracking-tight text-zinc-200">{item.path}</code>
-                  <p className="text-[11px] uppercase font-bold tracking-widest text-zinc-500 mt-0.5">{item.desc}</p>
-                </div>
-              </motion.div>
+                <item.Icon className="w-4 h-4 text-neutral-400 dark:text-neutral-500 shrink-0" />
+                <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono flex-1">{item.path}</code>
+                <span className="text-xs text-neutral-400 dark:text-neutral-500">{item.desc}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* SKILL.md Blueprint */}
-        <div className="glass-panel p-8 space-y-6 relative">
-          <div className="space-y-3">
-            <h3 className="text-2xl font-bold tracking-tight text-white">The SKILL.md Blueprint</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              The SKILL.md front-matter tells the agent exactly when to activate this skill. Be precise.
-            </p>
+        {/* SKILL.md blueprint */}
+        <div>
+          <h3 className="text-base font-semibold text-neutral-900 dark:text-white mb-4">SKILL.md blueprint</h3>
+          <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
+            <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+              <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">SKILL.md</span>
+            </div>
+            <pre className="px-4 py-4 text-sm leading-7 font-mono text-neutral-600 dark:text-neutral-400 overflow-x-auto">
+              <code>{`---
+name: your-skill-name
+description: Clear, accurate use-case summary.
+---
+
+# Instructions
+
+1. Use explicit headers for each stage.
+2. Provide step-by-step logic.
+3. Define success and failure criteria.`}</code>
+            </pre>
           </div>
-          <div className="bg-black/60 rounded-2xl border border-white/10 p-6 font-mono text-sm leading-8 text-zinc-400">
-            <span className="text-zinc-600">---</span><br />
-            <span className="text-blue-400 font-bold">name:</span> <span className="text-green-400">your-skill-name</span><br />
-            <span className="text-blue-400 font-bold">description:</span> <span className="text-zinc-300">Clear, accurate use-case summary.</span><br />
-            <span className="text-zinc-600">---</span><br /><br />
-            <span className="text-purple-400 font-bold"># Instructions</span><br />
-            <span className="text-zinc-500">1. Use explicit headers for each stage.</span><br />
-            <span className="text-zinc-500">2. Provide step-by-step logic.</span><br />
-            <span className="text-zinc-500">3. Define clear success & failure criteria.</span>
-          </div>
+
           <a
             href="https://github.com/heilcheng/awesome-agent-skills"
-            className="w-full py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl font-bold flex items-center justify-center gap-2 transition-colors text-white text-sm"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
-            Get the Full Template <ArrowRight className="w-4 h-4" />
+            View full template on GitHub <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>

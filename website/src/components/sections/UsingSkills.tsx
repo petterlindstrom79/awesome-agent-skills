@@ -1,25 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Terminal, Copy, Check, Play, Combine, Settings } from "lucide-react";
 import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 
 const steps = [
   {
-    icon: <Terminal className="w-5 h-5 text-blue-400" />,
-    title: "1. Find a skill",
-    description: "Browse the Directory to find an official or community skill that matches your workflow. Each one is a self-contained folder you can inspect before adding it."
+    step: "01",
+    title: "Find a skill",
+    description: "Browse the Directory above to find an official or community skill that fits your workflow. Each one is a self-contained folder you can read and understand before adding it.",
   },
   {
-    icon: <Play className="w-5 h-5 text-purple-400" />,
-    title: "2. Add it to your project",
-    description: "Drop the skill folder into `.github/skills/` (or wherever your agent indexes skills). The agent reads SKILL.md automatically next time it starts."
+    step: "02",
+    title: "Add it to your project",
+    description: "Drop the skill folder into `.github/skills/` in your repo. Modern agentic IDEs — Cursor, Claude Code, Windsurf — automatically index this directory on startup.",
   },
   {
-    icon: <Combine className="w-5 h-5 text-green-400" />,
-    title: "3. It just works",
-    description: "Your agent now knows exactly when and how to run this capability. No prompting needed — the skill activates based on semantic context."
-  }
+    step: "03",
+    title: "It just works",
+    description: "Your agent now knows when and how to run this capability based on semantic context. No manual prompting needed — the skill activates automatically.",
+  },
 ];
 
 export default function UsingSkills() {
@@ -32,73 +31,55 @@ export default function UsingSkills() {
   };
 
   return (
-    <section id="using-skills" className="scroll-mt-32">
-      <div className="mb-12">
-        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-purple-400 mb-4">
-          GET STARTED
-        </div>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Using Skills</h2>
-        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-          Adding a skill to your project is a three-step process and takes under a minute. No config files, no complicated setup.
-        </p>
-      </div>
+    <section id="using-skills" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Using Skills</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
+        Adding a skill takes under a minute. No configuration files, no runtime changes.
+      </p>
 
-      <div className="grid lg:grid-cols-2 gap-10 items-start">
-        <div className="space-y-6">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex gap-6 group glass-panel p-6"
-            >
-              <div className="flex-shrink-0 w-12 h-12 bg-black/40 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
-                {step.icon}
-              </div>
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Steps */}
+        <div className="space-y-4">
+          {steps.map((s) => (
+            <div key={s.step} className="flex gap-5 p-5 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900">
+              <span className="text-xs font-bold font-mono text-neutral-300 dark:text-neutral-600 mt-0.5 w-5 shrink-0">{s.step}</span>
               <div>
-                <h3 className="text-lg font-bold mb-1 tracking-tight text-white">{step.title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
+                <h3 className="text-sm font-semibold text-neutral-900 dark:text-white mb-1">{s.title}</h3>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{s.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <div className="space-y-6">
-          {/* CLI */}
-          <div className="glass-panel p-8 space-y-5">
-            <h3 className="text-xl font-bold tracking-tight text-white">CLI Quick-add</h3>
-            <div className="relative group">
-              <pre className="bg-black/60 text-zinc-300 p-6 rounded-2xl font-mono text-sm overflow-x-auto border border-white/10">
-                <code>npx skills add anthropics/skills/docx</code>
-              </pre>
+        {/* Code panels */}
+        <div className="space-y-4">
+          <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
+            <div className="flex items-center justify-between px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+              <span className="text-xs font-semibold text-neutral-600 dark:text-neutral-300">CLI</span>
               <button
                 onClick={copyCode}
-                className="absolute top-3 right-3 p-2 rounded-lg bg-white/5 hover:bg-white/20 transition-colors text-zinc-400 hover:text-white"
+                className="p-1.5 rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200"
               >
-                {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-neutral-700 dark:text-neutral-300" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
-            <p className="text-xs text-zinc-600 italic">
-              Supports GitHub shorthand, full URLs, or local relative paths.
-            </p>
+            <pre className="px-4 py-4 text-sm font-mono text-neutral-700 dark:text-neutral-300 overflow-x-auto">
+              <code>npx skills add anthropics/skills/docx</code>
+            </pre>
           </div>
 
-          {/* Manual */}
-          <div className="glass-panel p-8 space-y-5">
-            <h3 className="text-xl font-bold tracking-tight text-white">Manual Drop-in</h3>
-            <div className="flex items-center gap-4 p-4 bg-black/40 rounded-xl border border-white/10">
-              <Settings className="w-5 h-5 text-zinc-400" />
-              <div className="text-sm font-medium text-zinc-300">
-                <span className="text-zinc-500">Path: </span>
-                <code className="text-white">.github/skills/skill-name/</code>
-              </div>
+          <div className="border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden bg-white dark:bg-neutral-900">
+            <div className="px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+              <span className="text-xs font-semibold text-neutral-600 dark:text-neutral-300">Manual drop-in path</span>
             </div>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Drop your SKILL.md (and optional scripts) into this directory. Modern agents automatically index these folders on startup — no restart needed.
-            </p>
+            <pre className="px-4 py-4 text-sm font-mono text-neutral-700 dark:text-neutral-300 overflow-x-auto">
+              <code>.github/skills/skill-name/</code>
+            </pre>
           </div>
+
+          <p className="text-xs text-neutral-400 dark:text-neutral-500 leading-relaxed px-1">
+            Supports GitHub shorthand, full URLs, or local relative paths. Drop-in paths support GitHub shorthand or full URLs.
+          </p>
         </div>
       </div>
     </section>

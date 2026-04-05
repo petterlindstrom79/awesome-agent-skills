@@ -1,107 +1,79 @@
-"use client";
-
-import { BookOpen, Video, FileText, ArrowUpRight, GraduationCap } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const resources = [
   {
     title: "Official Skills Guide",
     type: "Documentation",
-    difficulty: "Beginner",
-    summary: "Anthropic's official step-by-step guide to authoring skills for Claude Code. The definitive starting point.",
-    icon: <BookOpen className="w-5 h-5 text-blue-400" />,
-    link: "https://support.claude.com/en/articles/12512180-using-skills-in-claude",
-    color: "border-blue-500/20"
+    level: "Beginner",
+    description: "Anthropic's official step-by-step guide to authoring skills for Claude Code.",
+    href: "https://support.claude.com/en/articles/12512180-using-skills-in-claude",
   },
   {
     title: "Building MCP Servers",
     type: "Technical Guide",
-    difficulty: "Advanced",
-    summary: "Learn how to connect skills to external APIs using the open Model Context Protocol (MCP) standard.",
-    icon: <FileText className="w-5 h-5 text-purple-400" />,
-    link: "https://modelcontextprotocol.io/docs/first-server",
-    color: "border-purple-500/20"
+    level: "Advanced",
+    description: "Connect skills to external APIs using the open Model Context Protocol standard.",
+    href: "https://modelcontextprotocol.io/docs/first-server",
   },
   {
     title: "Agentic IDE Mastery",
     type: "Video Series",
-    difficulty: "Intermediate",
-    summary: "Visual walkthroughs for Cursor, Windsurf, and Claude Code — from setup to end-to-end workflows.",
-    icon: <Video className="w-5 h-5 text-pink-400" />,
-    link: "#",
-    color: "border-pink-500/20"
+    level: "Intermediate",
+    description: "Visual walkthroughs for Cursor, Windsurf, and Claude Code — setup through end-to-end workflows.",
+    href: "#",
   },
   {
     title: "Skill Architecture Patterns",
     type: "Deep Dive",
-    difficulty: "Intermediate",
-    summary: "Advanced patterns for state-aware agents, hierarchical skill trees, and multi-agent orchestration.",
-    icon: <GraduationCap className="w-5 h-5 text-orange-400" />,
-    link: "#",
-    color: "border-orange-500/20"
-  }
+    level: "Intermediate",
+    description: "Advanced patterns: hierarchical skill trees, state-aware agents, and multi-agent orchestration.",
+    href: "#",
+  },
 ];
 
-const difficultyColors: Record<string, string> = {
-  Beginner: "text-green-400 bg-green-900/50 border-green-700/50",
-  Intermediate: "text-yellow-400 bg-yellow-900/50 border-yellow-700/50",
-  Advanced: "text-red-400 bg-red-900/50 border-red-700/50",
+const levelColors: Record<string, string> = {
+  Beginner: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800",
+  Intermediate: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800",
+  Advanced: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800",
 };
 
 export default function Tutorials() {
   return (
-    <section id="tutorials" className="scroll-mt-32">
-      <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-12">
-        <div className="max-w-xl">
-          <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-orange-400 mb-4">
-            LEARN
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 glow-text text-white">Tutorials & Guides</h2>
-          <p className="text-zinc-400 font-medium leading-relaxed">
-            Curated learning paths for every skill level — from your first SKILL.md to running complex multi-agent systems.
+    <section id="tutorials" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="flex items-end justify-between mb-10">
+        <div>
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Tutorials & Guides</h2>
+          <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed max-w-xl">
+            Curated learning paths for every level — from your first SKILL.md to multi-agent orchestration.
           </p>
         </div>
         <a
           href="https://github.com/heilcheng/awesome-agent-skills"
-          className="text-sm font-bold tracking-tight pb-2 border-b border-white/30 hover:border-white text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
+          className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors whitespace-nowrap"
         >
-          Full Wiki →
+          Full wiki <ArrowUpRight className="w-4 h-4" />
         </a>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6">
-        {resources.map((resource, i) => (
-          <motion.a
-            key={resource.title}
-            href={resource.link}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className={`group flex flex-col p-8 glass-panel border ${resource.color} hover:scale-[1.02] active:scale-[0.99] transition-all text-left`}
+      <div className="grid sm:grid-cols-2 gap-4">
+        {resources.map((r) => (
+          <a
+            key={r.title}
+            href={r.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col p-5 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-sm transition-all"
           >
-            <div className="flex items-start justify-between mb-6">
-              <div className="p-3 bg-black/50 rounded-2xl border border-white/10 group-hover:scale-110 transition-transform">
-                {resource.icon}
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">{r.type}</span>
+                <span className={`text-xs px-2 py-0.5 rounded font-medium ${levelColors[r.level]}`}>{r.level}</span>
               </div>
-              <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+              <ArrowUpRight className="w-4 h-4 text-neutral-300 dark:text-neutral-600 group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors" />
             </div>
-
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">{resource.type}</span>
-              <span className={`text-[10px] px-2 py-1 border rounded-lg font-bold uppercase tracking-widest ${difficultyColors[resource.difficulty]}`}>
-                {resource.difficulty}
-              </span>
-            </div>
-
-            <h3 className="text-xl font-bold mb-3 tracking-tight text-white group-hover:underline underline-offset-4 decoration-2">
-              {resource.title}
-            </h3>
-
-            <p className="text-sm text-zinc-400 leading-relaxed mt-auto">
-              {resource.summary}
-            </p>
-          </motion.a>
+            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">{r.title}</h3>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{r.description}</p>
+          </a>
         ))}
       </div>
     </section>

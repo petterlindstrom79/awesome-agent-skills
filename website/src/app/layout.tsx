@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "awesome-agent-skills",
+  title: "awesome-agent-skills — Curated AI Agent Capabilities",
   description: "A curated source of truth for modular AI agent capabilities, tools, and workflows in 2026.",
 };
 
@@ -28,14 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-white selection:text-black min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-white text-neutral-900`}
       >
         <Navbar />
-        <div className="flex flex-1 pt-16">
+        <div className="flex flex-1 pt-14">
           <WikiSidebar />
-          <main className="flex-1 min-w-0 lg:pl-72 flex justify-center">
+          <main className="flex-1 min-w-0 lg:pl-64 flex justify-center bg-white dark:bg-neutral-950">
             {children}
           </main>
         </div>

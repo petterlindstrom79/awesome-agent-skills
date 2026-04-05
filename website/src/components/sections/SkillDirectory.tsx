@@ -2,244 +2,117 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ExternalLink, Code2, Cloud, Wrench, Shield, Briefcase, Zap } from "lucide-react";
+import { Search, ExternalLink, Cloud, Wrench, Shield, Briefcase, Cpu, Globe } from "lucide-react";
 
-// Mapped from the actual README categories
 const skillTabs = [
   { id: "official", label: "Official AI Providers" },
   { id: "cloud", label: "Cloud & Infrastructure" },
   { id: "devtools", label: "Developer Tools" },
   { id: "business", label: "Business & Utility" },
   { id: "security", label: "Security & Audit" },
-  { id: "community", label: "Community Repos" },
+  { id: "community", label: "Community" },
 ];
 
-const mockSkills = [
+const skills = [
   // Official
-  {
-    id: "anthropic-docx",
-    name: "anthropics/docx",
-    description: "Create, edit, and analyze Word documents with Claude.",
-    category: "official",
-    tags: ["Document", "Office"],
-    icon: <Zap className="w-5 h-5 text-purple-500" />,
-    url: "https://agent-skill.co/anthropics/skills/docx"
-  },
-  {
-    id: "anthropic-webapp",
-    name: "anthropics/webapp-testing",
-    description: "Test local web applications using Playwright natively.",
-    category: "official",
-    tags: ["Testing", "E2E"],
-    icon: <Zap className="w-5 h-5 text-purple-500" />,
-    url: "https://agent-skill.co/anthropics/skills/webapp-testing"
-  },
-  {
-    id: "openai-cloudflare",
-    name: "openai/cloudflare-deploy",
-    description: "Deploy apps to Cloudflare using Workers and Pages",
-    category: "official",
-    tags: ["Deployment", "Edge"],
-    icon: <Zap className="w-5 h-5 text-green-500" />,
-    url: "https://agent-skill.co/openai/skills/cloudflare-deploy"
-  },
-  {
-    id: "gemini-api",
-    name: "google-gemini/gemini-api-dev",
-    description: "Best practices for developing Gemini-powered apps",
-    category: "official",
-    tags: ["LLM", "Google"],
-    icon: <Zap className="w-5 h-5 text-blue-500" />,
-    url: "https://agent-skill.co/google-gemini/skills/gemini-api-dev"
-  },
-  
+  { id: "anthropic-docx", name: "anthropics/docx", description: "Create, edit, and analyze Word documents with Claude.", category: "official", tags: ["Document", "Office"], Icon: Cpu },
+  { id: "anthropic-webapp", name: "anthropics/webapp-testing", description: "Test local web applications using Playwright natively.", category: "official", tags: ["Testing", "E2E"], Icon: Cpu },
+  { id: "openai-cloudflare", name: "openai/cloudflare-deploy", description: "Deploy apps to Cloudflare using Workers and Pages.", category: "official", tags: ["Deployment", "Edge"], Icon: Cpu },
+  { id: "gemini-api", name: "google-gemini/gemini-api-dev", description: "Best practices for developing Gemini-powered applications.", category: "official", tags: ["LLM", "Google"], Icon: Cpu },
   // Cloud
-  {
-    id: "cf-agents",
-    name: "cloudflare/agents-sdk",
-    description: "Build stateful AI agents with scheduling, RPC, and MCP servers",
-    category: "cloud",
-    tags: ["Workers", "State"],
-    icon: <Cloud className="w-5 h-5 text-orange-500" />,
-    url: "https://agent-skill.co/cloudflare/skills/agents-sdk"
-  },
-  {
-    id: "vercel-react",
-    name: "vercel-labs/react-best-practices",
-    description: "React best practices and modern server component patterns",
-    category: "cloud",
-    tags: ["React", "UI"],
-    icon: <Cloud className="w-5 h-5 text-white" />,
-    url: "https://agent-skill.co/vercel-labs/skills/react-best-practices"
-  },
-  {
-    id: "hashi-tf",
-    name: "hashicorp/terraform-style-guide",
-    description: "Generate Terraform HCL code following HashiCorp's official style",
-    category: "cloud",
-    tags: ["IaC", "AWS"],
-    icon: <Cloud className="w-5 h-5 text-indigo-500" />,
-    url: "https://agent-skill.co/hashicorp/skills/terraform-style-guide"
-  },
-
-  // Dev Tools
-  {
-    id: "figma-impl",
-    name: "figma/figma-implement-design",
-    description: "Translate Figma designs into production-ready code with 1:1 fidelity",
-    category: "devtools",
-    tags: ["UI", "CSS"],
-    icon: <Wrench className="w-5 h-5 text-pink-500" />,
-    url: "https://agent-skill.co/figma/skills/figma-implement-design"
-  },
-  {
-    id: "duckdb-query",
-    name: "duckdb/query",
-    description: "Run SQL queries against attached databases or ad-hoc files",
-    category: "devtools",
-    tags: ["Data", "SQL"],
-    icon: <Wrench className="w-5 h-5 text-yellow-500" />,
-    url: "https://agent-skill.co/duckdb/skills/query"
-  },
-
+  { id: "cf-agents", name: "cloudflare/agents-sdk", description: "Build stateful AI agents with scheduling, RPC, and MCP servers.", category: "cloud", tags: ["Workers", "State"], Icon: Cloud },
+  { id: "vercel-react", name: "vercel-labs/react-best-practices", description: "React best practices and modern server component patterns.", category: "cloud", tags: ["React", "UI"], Icon: Cloud },
+  { id: "hashi-tf", name: "hashicorp/terraform-style-guide", description: "Generate Terraform HCL code following HashiCorp's official style.", category: "cloud", tags: ["IaC", "AWS"], Icon: Cloud },
+  // DevTools
+  { id: "figma-impl", name: "figma/figma-implement-design", description: "Translate Figma designs into production-ready code with 1:1 fidelity.", category: "devtools", tags: ["UI", "CSS"], Icon: Wrench },
+  { id: "duckdb-query", name: "duckdb/query", description: "Run SQL queries against attached databases or ad-hoc files.", category: "devtools", tags: ["Data", "SQL"], Icon: Wrench },
   // Business
-  {
-    id: "stripe-best",
-    name: "stripe/stripe-best-practices",
-    description: "Best practices for building Stripe billing and checkout integrations",
-    category: "business",
-    tags: ["Payments", "API"],
-    icon: <Briefcase className="w-5 h-5 text-indigo-400" />,
-    url: "https://agent-skill.co/stripe/skills/stripe-best-practices"
-  },
-  {
-    id: "notion-intel",
-    name: "makenotion/meeting-intelligence",
-    description: "Prepare meeting materials by gathering real-time Notion context",
-    category: "business",
-    tags: ["Productivity", "Docs"],
-    icon: <Briefcase className="w-5 h-5 text-zinc-400" />,
-    url: "https://agent-skill.co/makenotion/skills/meeting-intelligence"
-  },
-
+  { id: "stripe-best", name: "stripe/stripe-best-practices", description: "Best practices for building Stripe billing and checkout integrations.", category: "business", tags: ["Payments", "API"], Icon: Briefcase },
+  { id: "notion-intel", name: "makenotion/meeting-intelligence", description: "Prepare meeting materials by gathering real-time Notion context.", category: "business", tags: ["Productivity", "Docs"], Icon: Briefcase },
   // Security
-  {
-    id: "trail-audit",
-    name: "trailofbits/static-analysis",
-    description: "Static analysis toolkit with CodeQL and Semgrep for vulnerability hunting",
-    category: "security",
-    tags: ["Audit", "CodeQL"],
-    icon: <Shield className="w-5 h-5 text-red-500" />,
-    url: "https://agent-skill.co/trailofbits/skills/static-analysis"
-  },
-
+  { id: "trail-audit", name: "trailofbits/static-analysis", description: "Static analysis with CodeQL and Semgrep for vulnerability hunting.", category: "security", tags: ["Audit", "CodeQL"], Icon: Shield },
   // Community
-  {
-    id: "agentops-eval",
-    name: "agentops/eval-framework",
-    description: "Community maintained framework for evaluating agent trajectory behavior",
-    category: "community",
-    tags: ["Eval", "Testing"],
-    icon: <Code2 className="w-5 h-5 text-teal-400" />,
-    url: "https://agent-skill.co/agentops/skills/eval-framework"
-  }
+  { id: "agentops-eval", name: "agentops/eval-framework", description: "Community framework for evaluating agent trajectory behavior.", category: "community", tags: ["Eval", "Testing"], Icon: Globe },
 ];
 
 export default function SkillDirectory() {
   const [activeTab, setActiveTab] = useState("official");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredSkills = mockSkills.filter((skill) => {
-    const matchesCategory = skill.category === activeTab;
-    const matchesSearch =
-      skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      skill.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filtered = skills.filter((s) =>
+    s.category === activeTab &&
+    (s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+     s.description.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
 
   return (
-    <section id="directory" className="scroll-mt-32">
-      <div className="mb-10">
-        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-blue-400 mb-4">
-          THE RESOURCES
-        </div>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Skill Directory</h2>
-        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-          The central hub for off-the-shelf capabilities. Click to drop them into your agent framework.
-        </p>
+    <section id="directory" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Skill Directory</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl text-base leading-relaxed">
+        Official and community-maintained capabilities organised by category. Click any card to visit the source.
+      </p>
+
+      {/* Tabs */}
+      <div className="flex flex-wrap gap-1 mb-6 border-b border-neutral-200 dark:border-neutral-800 pb-px">
+        {skillTabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => { setActiveTab(tab.id); setSearchQuery(""); }}
+            className={`px-4 py-2 text-sm font-medium rounded-t-md transition-colors relative -mb-px ${
+              activeTab === tab.id
+                ? "text-neutral-900 dark:text-white border border-b-white dark:border-neutral-700 dark:border-b-neutral-950 bg-white dark:bg-neutral-950"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
-      <div className="glass-panel p-2 flex flex-wrap gap-2 mb-8 relative z-10 w-full overflow-x-auto hide-scrollbar">
-        {skillTabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`relative px-5 py-3 rounded-2xl text-sm font-bold whitespace-nowrap transition-colors duration-300 ${
-                isActive ? "text-black" : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              {isActive && (
-                <motion.div
-                  layoutId="activeDirectoryTab"
-                  className="absolute inset-0 bg-white rounded-2xl -z-10"
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{tab.label}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="relative mb-12 z-20">
-        <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
+      {/* Search */}
+      <div className="relative mb-6">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
         <input
           type="text"
-          placeholder={`Search ${skillTabs.find(t => t.id === activeTab)?.label}...`}
+          placeholder={`Search ${skillTabs.find(t => t.id === activeTab)?.label.toLowerCase()}...`}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-14 pr-6 py-5 bg-black/40 border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder:text-zinc-500 shadow-inner"
+          className="w-full pl-9 pr-4 py-2 text-sm bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-300 dark:focus:ring-neutral-600 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400"
         />
       </div>
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 min-h-[400px]">
+      {/* Grid */}
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <AnimatePresence mode="popLayout">
-          {filteredSkills.map((skill) => (
+          {filtered.map((skill) => (
             <motion.a
               layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
               key={skill.id}
-              href={skill.url}
+              href={`https://github.com/heilcheng/awesome-agent-skills`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group glass p-6 rounded-3xl flex items-start gap-5 hover:bg-white/5 transition-colors cursor-pointer relative overflow-hidden h-fit"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.15 }}
+              className="group flex items-start gap-4 p-4 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-white dark:bg-neutral-900 hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-sm transition-all"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ExternalLink className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
+              <div className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 shrink-0">
+                <skill.Icon className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
               </div>
-              <div className="p-4 rounded-2xl bg-black/50 border border-white/5 flex items-center justify-center shrink-0">
-                {skill.icon}
-              </div>
-              <div className="flex flex-col h-full justify-between">
-                <div>
-                  <h3 className="text-lg font-bold tracking-tight mb-2 text-white group-hover:text-blue-400 transition-colors">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-white font-mono group-hover:underline underline-offset-2">
                     {skill.name}
                   </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-medium mb-4">
-                    {skill.description}
-                  </p>
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-300 dark:text-neutral-600 group-hover:text-neutral-500 dark:group-hover:text-neutral-400 transition-colors shrink-0 mt-0.5" />
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed mt-1 mb-2">
+                  {skill.description}
+                </p>
+                <div className="flex flex-wrap gap-1">
                   {skill.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 rounded-lg text-xs font-bold bg-white/5 text-zinc-300 border border-white/10"
-                    >
+                    <span key={tag} className="px-2 py-0.5 rounded text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
                       {tag}
                     </span>
                   ))}
@@ -248,20 +121,13 @@ export default function SkillDirectory() {
             </motion.a>
           ))}
         </AnimatePresence>
-        
-        {filteredSkills.length === 0 && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="col-span-full flex flex-col items-center justify-center py-20 text-center"
-          >
-            <div className="w-16 h-16 mb-4 rounded-full bg-white/5 flex items-center justify-center">
-              <Search className="w-8 h-8 text-zinc-500" />
-            </div>
-            <p className="text-zinc-400 font-medium">No skills found in this category matching "{searchQuery}"</p>
-          </motion.div>
-        )}
       </motion.div>
+
+      {filtered.length === 0 && (
+        <div className="py-16 text-center text-sm text-neutral-400">
+          No skills found matching "{searchQuery}"
+        </div>
+      )}
     </section>
   );
 }

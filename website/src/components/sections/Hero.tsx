@@ -9,7 +9,6 @@ import { Github } from "../Icons";
 import Link from "next/link";
 import * as THREE from "three";
 
-// Custom type augmentation since maath is causing issues
 function generateSpherePositions(count: number, radius: number): Float32Array {
   const positions = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
@@ -19,7 +18,6 @@ function generateSpherePositions(count: number, radius: number): Float32Array {
     const phi = Math.acos(2.0 * v - 1.0);
     const r = Math.cbrt(Math.random()) * radius;
     const sinPhi = Math.sin(phi);
-    
     positions[i * 3] = r * sinPhi * Math.cos(theta);
     positions[i * 3 + 1] = r * sinPhi * Math.sin(theta);
     positions[i * 3 + 2] = r * Math.cos(phi);
@@ -27,26 +25,24 @@ function generateSpherePositions(count: number, radius: number): Float32Array {
   return positions;
 }
 
-function Starfield(props: any) {
+function Starfield() {
   const ref = useRef<THREE.Points>(null);
-  
-  // Custom random generation instead of maath/random to avoid type issues
-  const sphere = useMemo(() => generateSpherePositions(3000, 1.5), []);
-  
-  useFrame((state, delta) => {
+  const sphere = useMemo(() => generateSpherePositions(2000, 1.5), []);
+
+  useFrame((_, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x -= delta / 12;
+      ref.current.rotation.y -= delta / 18;
     }
   });
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#888"
-          size={0.003}
+          color="#a1a1aa"
+          size={0.004}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -57,48 +53,47 @@ function Starfield(props: any) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20">
-      <div className="absolute inset-0 -z-10">
+    <section className="relative min-h-[80vh] flex flex-col items-start justify-center pt-12 pb-20 border-b border-neutral-200 dark:border-neutral-800">
+      {/* Subtle canvas background */}
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-40">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Starfield />
         </Canvas>
       </div>
-      
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center z-10 w-full"
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md mb-8 shadow-sm">
-          <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
-          <span className="text-xs font-bold tracking-widest uppercase text-zinc-600 dark:text-zinc-400">Agentic Standards 2026</span>
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 mb-6">
+          <span className="h-1.5 w-1.5 rounded-full bg-green-500 inline-block" />
+          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 tracking-wide">Updated April 2026</span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 glow-text">
-          awesome-<br className="md:hidden"/>agent-skills
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-neutral-900 dark:text-white mb-6 max-w-3xl leading-none">
+          Awesome<br />Agent Skills
         </h1>
-        
-        <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-          A curated ecosystem of structured skills, toolsets, and workflows enabling AI agents to interact with the real world securely and deterministically.
+
+        <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-10 max-w-xl leading-relaxed">
+          A curated, community-maintained collection of modular AI agent capabilities. Skills, tools, and workflows for the modern agentic era.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-start gap-3">
           <Link
             href="#directory"
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-black text-white dark:bg-white dark:text-black font-bold hover:scale-105 transition-all w-full sm:w-auto shadow-2xl shadow-black/20 dark:shadow-white/20"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-semibold hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
           >
-            Explore Directory <ArrowRight className="w-5 h-5" />
+            Browse Directory <ArrowRight className="w-4 h-4" />
           </Link>
           <a
             href="https://github.com/heilcheng/awesome-agent-skills"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl glass-panel font-bold hover:bg-zinc-100 dark:hover:bg-white/10 transition-all w-full sm:w-auto"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 text-sm font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
           >
-            <Github className="w-5 h-5" /> View on GitHub
+            <Github className="w-4 h-4" /> View on GitHub
           </a>
         </div>
       </motion.div>
