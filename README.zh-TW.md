@@ -2,7 +2,24 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
-精選的 AI 程式編碼代理技能、工具和功能列表。
+維護者：[Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
+
+從未聽說過「agent skills」？你來對地方了。這是一份由社群精選的清單，收錄了簡單的文字檔案，能教 AI 助理（如 Claude、Copilot 或 Codex）按需學習新能力，無需重新訓練。把每個技能想像成一張食譜卡：AI 讀取它、按照步驟執行，然後完成工作。
+
+---
+
+## 快速開始（30 秒）
+
+**步驟 1 — 選擇一個技能**，從下方目錄中選取（或瀏覽 [agent-skill.co](https://agent-skill.co)）
+
+**步驟 2 — 將其載入你的 AI 代理：**
+- Claude Code：`/skills add <github-url>`
+- Claude.ai：在新對話中貼上 SKILL.md 的原始 URL
+- Codex / Copilot：參閱[使用技能](#使用技能)中的平台文件
+
+**步驟 3 — 用自然語言告訴 AI 你想要做什麼。**
+
+就這樣。無需安裝。無需設定。無需編程。
 
 ---
 
@@ -17,6 +34,7 @@
 - [社群資源](#社群資源)
 - [常見問題](#常見問題)
 - [貢獻](#貢獻)
+- [聯絡](#聯絡)
 - [授權](#授權)
 - [參考資料](#參考資料)
 
@@ -497,6 +515,18 @@ Agent Skills 是教導 AI 助理如何執行特定任務的指令檔案。將它
 
 完整指南：[如何建立自訂技能](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 
+### 我不是開發者，可以使用技能嗎？
+
+可以。技能是純文字的指令檔案，不是程式碼。你只需要一個 AI 助理（如 Claude.ai）即可，不需要終端機、GitHub 帳號或技術背景。只需將技能的 URL 貼到你的 AI 聊天中即可開始使用。
+
+### 技能是免費的嗎？
+
+技能本身是免費的文字檔案 — 此列表中的任何技能都可免費下載和使用。但你需要 AI 訂閱（如 Claude Pro、GitHub Copilot）來執行它們，因為技能是由 AI 讀取並遵循的。
+
+### 我怎麼知道一個技能是否安全？
+
+此列表中的每個技能都是公開的 GitHub 儲存庫 — 你可以在載入任何內容之前閱讀完整的指令。查看儲存庫的星星數、最後更新日期和 README。技能是純文字：沒有可在你的機器上執行的可執行程式碼。
+
 ---
 
 ## 貢獻
@@ -510,6 +540,16 @@ Agent Skills 是教導 AI 助理如何執行特定任務的指令檔案。將它
 - 記錄權衡和潛在問題
 - 為了最佳效能，將 SKILL.md 保持在 500 行以下
 - 在新增之前驗證技能確實存在
+
+---
+
+## 聯絡
+
+有關此專案的問題、合作洽詢或意見回饋：
+
+- LinkedIn: [Hailey Cheng](https://www.linkedin.com/in/heilcheng/)
+- X / Twitter: [@haileyhmt](https://x.com/haileyhmt)
+- Email: [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
 ---
 

@@ -2,7 +2,24 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
-AI・コーディング・エージェントのためのスキル、ツール、機能を厳選したリストです。
+メンテナー：[Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
+
+「agent skills」を聞いたことがない方も、ご心配なく。ここは、Claude・Copilot・Codex などの AI アシスタントに新しいことを「その場で」教えられるシンプルなテキストファイルを集めたコミュニティキュレーションリストです。再トレーニング不要。各スキルはレシピカードのようなもの — AI がそれを読み、手順に従い、作業を完了させます。
+
+---
+
+## クイックスタート（30 秒）
+
+**ステップ 1 — スキルを選ぶ**：下のディレクトリから選択（または [agent-skill.co](https://agent-skill.co) で検索）
+
+**ステップ 2 — AI エージェントに読み込む：**
+- Claude Code：`/skills add <github-url>`
+- Claude.ai：新しい会話に SKILL.md の raw URL を貼り付ける
+- Codex / Copilot：[スキルの使い方](#スキルの使い方) のプラットフォームドキュメントを参照
+
+**ステップ 3 — 普通の言葉で AI に指示する。**
+
+以上。インストール不要。設定不要。プログラミング不要。
 
 ---
 
@@ -17,6 +34,7 @@ AI・コーディング・エージェントのためのスキル、ツール、
 - [コミュニティリソース](#コミュニティリソース)
 - [よくある質問 (FAQ)](#よくある質問-faq)
 - [貢献](#貢献)
+- [お問い合わせ](#お問い合わせ)
 - [ライセンス](#ライセンス)
 - [参考文献](#参考文献)
 
@@ -497,6 +515,18 @@ Agent Skillsは、AIアシスタントに特定のタスクを行う方法を教
 
 完全ガイド：[カスタムスキルの作成方法](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 
+### 開発者でなくてもスキルを使えますか？
+
+はい。スキルは自然言語の指示ファイルであり、コードではありません。必要なのは AI アシスタント（例：Claude.ai）だけです。ターミナル、GitHub アカウント、技術的な知識は不要です。スキルの URL を AI チャットに貼り付けるだけで使い始められます。
+
+### スキルは無料ですか？
+
+スキル自体は無料のテキストファイルです — このリストのスキルはすべて無料でダウンロードして使用できます。スキルは AI が読んで実行するため、実行するには AI サブスクリプション（例：Claude Pro、GitHub Copilot）が必要です。
+
+### スキルが安全かどうかはどうすればわかりますか？
+
+このリストの各スキルは公開 GitHub リポジトリです — 何かを読み込む前に完全な指示を読むことができます。リポジトリのスター数、最終更新日、README を確認してください。スキルはプレーンテキストです：あなたのマシンで実行できる実行可能コードはありません。
+
 ---
 
 ## 貢献する
@@ -510,6 +540,16 @@ Agent Skillsは、AIアシスタントに特定のタスクを行う方法を教
 - トレードオフと潜在的な問題を文書化してください
 - 最適なパフォーマンスのためにSKILL.mdを500行以下に保ってください
 - 追加する前にスキルが実際に存在することを確認してください
+
+---
+
+## お問い合わせ
+
+このプロジェクトへの質問、パートナーシップのお問い合わせ、またはフィードバック：
+
+- LinkedIn: [Hailey Cheng](https://www.linkedin.com/in/heilcheng/)
+- X / Twitter: [@haileyhmt](https://x.com/haileyhmt)
+- Email: [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
 ---
 

@@ -2,7 +2,24 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
-Una lista seleccionada de habilidades, herramientas y capacidades para agentes de codificación de IA.
+Mantenido por [Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
+
+¿Nunca has oído hablar de "agent skills"? Estás en el lugar correcto. Esta es una lista curada por la comunidad de simples archivos de texto que enseñan a los asistentes de IA (como Claude, Copilot o Codex) a hacer cosas nuevas — bajo demanda, sin reentrenamiento. Piensa en cada skill como una tarjeta de receta: la IA la lee, sigue los pasos y hace el trabajo.
+
+---
+
+## Inicio Rápido (30 segundos)
+
+**Paso 1 — Elige una habilidad** del directorio de abajo (o navega en [agent-skill.co](https://agent-skill.co))
+
+**Paso 2 — Cárgala en tu agente de IA:**
+- Claude Code: `/skills add <github-url>`
+- Claude.ai: pega la URL raw del SKILL.md en una nueva conversación
+- Codex / Copilot: sigue los docs de la plataforma en [Usando Habilidades](#usando-habilidades)
+
+**Paso 3 — Pídele a tu IA que la use.** Solo describe lo que quieres en lenguaje natural.
+
+Eso es todo. Sin instalación. Sin configuración. Sin necesidad de programar.
 
 ---
 
@@ -17,6 +34,7 @@ Una lista seleccionada de habilidades, herramientas y capacidades para agentes d
 - [Recursos de la Comunidad](#recursos-de-la-comunidad)
 - [Preguntas Frecuentes (FAQ)](#preguntas-frecuentes-faq)
 - [Contribuyendo](#contribuyendo)
+- [Contacto](#contacto)
 - [Licencia](#licencia)
 - [Referencias](#referencias)
 
@@ -497,6 +515,18 @@ No. Las habilidades son solo instrucciones de texto, la IA las lee y las sigue c
 
 Guía completa: [Cómo crear habilidades personalizadas](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 
+### ¿Puedo usar las habilidades si no soy desarrollador?
+
+Sí. Las habilidades son archivos de instrucciones en lenguaje natural, no código. Solo necesitas un asistente de IA (como Claude.ai) y nada más. Sin terminal, sin cuenta de GitHub, sin conocimientos técnicos. Solo pega la URL de una habilidad en tu chat de IA y empieza a usarla.
+
+### ¿Son gratuitas las habilidades?
+
+Las habilidades en sí son archivos de texto gratuitos — puedes descargar y usar cualquier habilidad de esta lista sin costo. Sí necesitas una suscripción de IA (por ejemplo, Claude Pro, GitHub Copilot) para ejecutarlas, ya que las habilidades las lee y ejecuta la IA.
+
+### ¿Cómo sé si una habilidad es segura de usar?
+
+Cada habilidad en esta lista es un repositorio público de GitHub — puedes leer las instrucciones completas antes de cargar nada. Revisa las estrellas del repositorio, la fecha de última actualización y el README. Las habilidades son texto plano: no hay código ejecutable que pueda correr en tu máquina.
+
 ---
 
 ## Contribuyendo
@@ -510,6 +540,16 @@ Resumen rápido:
 - Documenta las compensaciones y problemas potenciales
 - Mantén SKILL.md por debajo de 500 líneas para un rendimiento óptimo
 - Verifica que las habilidades existan realmente antes de agregarlas
+
+---
+
+## Contacto
+
+Preguntas, consultas de colaboración o comentarios sobre este proyecto:
+
+- LinkedIn: [Hailey Cheng](https://www.linkedin.com/in/heilcheng/)
+- X / Twitter: [@haileyhmt](https://x.com/haileyhmt)
+- Email: [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
 ---
 

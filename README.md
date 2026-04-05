@@ -2,9 +2,24 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
-A curated list of skills, tools, and capabilities for AI coding agents. Unlike bulk-generated skill repositories, this collection focuses on real-world Agent Skills created and used by actual engineering teams.
+Maintained by [Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
-Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+Never heard of "agent skills" before? You're in the right place. This is a community-curated list of simple text files that teach AI assistants (like Claude, Copilot, or Codex) how to do new things — on demand, without retraining. Unlike bulk-generated skill repositories, this collection focuses on real-world Agent Skills created and used by actual engineering teams. Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+
+---
+
+## Quick Start (30 seconds)
+
+**Step 1 — Pick a skill** from the directory below (or browse at [agent-skill.co](https://agent-skill.co))
+
+**Step 2 — Load it into your AI agent:**
+- Claude Code: `/skills add <github-url>`
+- Claude.ai: paste the raw SKILL.md URL in a new conversation
+- Codex / Copilot: follow platform docs linked in [Using Skills](#using-skills)
+
+**Step 3 — Ask your AI to use it.** Just describe what you want in plain English.
+
+That's it. No installation. No configuration. No coding required.
 
 ---
 
@@ -33,6 +48,7 @@ Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copi
 - [Trends & Capabilities (2026)](#trends--capabilities-2026)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Contributing](#contributing)
+- [Contact](#contact)
 - [License](#license)
 
 ---
@@ -760,6 +776,18 @@ No. Skills are just text instructions — the AI reads and follows them like a r
 
 Full guide: [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 
+### I'm not a developer — can I still use skills?
+
+Yes. Skills are plain-English instruction files, not code. You need an AI assistant (like Claude.ai) and nothing else. No terminal, no GitHub account, no technical background required. Just paste a skill's URL into your AI chat and start using it.
+
+### Are skills free?
+
+Skills themselves are free text files — you can download and use any skill in this list at no cost. You do need an AI subscription (e.g., Claude Pro, GitHub Copilot) to run them, since skills are read and followed by the AI.
+
+### How do I know if a skill is safe to use?
+
+Every skill in this list is a public GitHub repository — you can read the full instructions before loading anything. Check the repo's stars, last update date, and README. Skills are plain text: there's no executable code that can run on your machine.
+
 ---
 
 ## Contributing
@@ -773,6 +801,16 @@ Quick summary:
 - Document trade-offs and potential issues
 - Keep SKILL.md under 500 lines for optimal performance
 - Verify that skills actually exist before adding them
+
+---
+
+## Contact
+
+Questions, partnership inquiries, or feedback about this project:
+
+- LinkedIn: [Hailey Cheng](https://www.linkedin.com/in/heilcheng/)
+- X / Twitter: [@haileyhmt](https://x.com/haileyhmt)
+- Email: [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
 ---
 
