@@ -2,6 +2,8 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
+[![Awesome Agent Skills Banner](assets/banner.png)](https://agent-skill.co)
+
 > 🌐 **[agent-skill.co](https://agent-skill.co)**: Explora el directorio en vivo
 
 Mantenido por [Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
