@@ -5,88 +5,90 @@ import { motion } from "framer-motion";
 
 const standards = [
   {
-    icon: <Target className="w-6 h-6 text-black dark:text-white" />,
+    icon: <Target className="w-6 h-6 text-blue-400" />,
     title: "Clarity & Precision",
-    description: "Instructions must be unambiguous. Avoid 'try to' or 'maybe'—use direct, imperative language like 'Execute' or 'Generate'."
+    description: "Instructions must be unambiguous. Avoid 'try to' or 'maybe'—use direct language like 'Execute' or 'Generate'.",
+    border: "border-blue-500/20"
   },
   {
-    icon: <Zap className="w-6 h-6 text-black dark:text-white" />,
+    icon: <Zap className="w-6 h-6 text-yellow-400" />,
     title: "Operational Scope",
-    description: "A good skill does one thing perfectly. Monolithic skills slow down agents and increase token noise."
+    description: "A good skill does one thing perfectly. Monolithic skills slow down agents and increase token noise.",
+    border: "border-yellow-500/20"
   },
   {
-    icon: <ShieldCheck className="w-6 h-6 text-black dark:text-white" />,
+    icon: <ShieldCheck className="w-6 h-6 text-green-400" />,
     title: "Safety & Reliability",
-    description: "Define error handling and edge cases. A skill should know when to stop and ask for human verification."
+    description: "Define error handling and edge cases. A skill should know when to stop and ask for human verification.",
+    border: "border-green-500/20"
   },
   {
-    icon: <Star className="w-6 h-6 text-black dark:text-white" />,
+    icon: <Star className="w-6 h-6 text-purple-400" />,
     title: "Proven Examples",
-    description: "Include at least two real-world usage examples in the SKILL.md to ground the agent's behavior."
+    description: "Include at least two real-world usage examples in SKILL.md to ground the agent's behavior firmly.",
+    border: "border-purple-500/20"
   }
 ];
 
 export default function QualityStandards() {
   return (
-    <section id="standards" className="py-24 bg-white dark:bg-black transition-colors">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl font-bold tracking-tight">The Standard of Excellence</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 font-medium max-w-2xl mx-auto leading-relaxed">
-            Not all skills are created equal. We maintain a high bar for inclusion in this repository to ensure agentic stability and peak performance.
-          </p>
+    <section id="quality-standards" className="scroll-mt-32">
+      <div className="mb-12">
+        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-green-400 mb-4">
+          THE STANDARD
         </div>
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Quality Standards</h2>
+        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          Not all skills are created equal. We maintain a high bar for what gets merged, to ensure agents stay stable and predictable.
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {standards.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-[2rem] glass border border-zinc-100 dark:border-zinc-800"
-            >
-              <div className="mb-6 p-3 bg-zinc-100 dark:bg-zinc-800 w-fit rounded-2xl">
-                {s.icon}
-              </div>
-              <h3 className="text-lg font-bold mb-3 tracking-tight">{s.title}</h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                {s.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {standards.map((s, i) => (
+          <motion.div
+            key={s.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className={`glass-panel p-8 border ${s.border}`}
+          >
+            <div className="mb-6 p-3 bg-black/40 w-fit rounded-2xl border border-white/10">
+              {s.icon}
+            </div>
+            <h3 className="text-lg font-bold mb-3 tracking-tight text-white">{s.title}</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">{s.description}</p>
+          </motion.div>
+        ))}
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-8 ring-1 ring-zinc-200 dark:ring-zinc-800 rounded-[3rem] p-8 md:p-12 bg-zinc-50/50 dark:bg-zinc-950/50 backdrop-blur-2xl">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-[10px] font-bold tracking-widest text-green-700 dark:text-green-300 uppercase">
-              <CheckCircle2 className="w-3 h-3" /> Preferred Pattern
+      {/* Good vs Bad example */}
+      <div className="glass-panel p-2">
+        <div className="grid md:grid-cols-2 gap-2">
+          <div className="p-8 space-y-6 rounded-3xl border border-green-500/20 bg-green-950/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/50 border border-green-500/30 text-[10px] font-bold tracking-widest text-green-400 uppercase">
+              <CheckCircle2 className="w-3 h-3" /> Good Pattern
             </div>
-            <div className="space-y-4">
-              <h4 className="text-2xl font-bold tracking-tight">Explicit Instruction</h4>
-              <div className="p-6 bg-white dark:bg-black rounded-2xl border border-green-100 dark:border-green-900/20 text-sm font-mono text-zinc-600 dark:text-zinc-400">
-                "When a PR is opened, immediately scan the `packages/core` directory for changes. If changes exist, run `npm test` and output the results as a summary table."
-              </div>
-              <p className="text-sm text-zinc-500 font-medium italic">
-                Why? It provides clear triggers, specific targets, and defined output formats.
-              </p>
+            <h4 className="text-2xl font-bold tracking-tight text-white">Explicit Instruction</h4>
+            <div className="p-5 bg-black/60 rounded-2xl border border-green-900/30 text-sm font-mono text-green-300/80 leading-relaxed">
+              "When a PR is opened, scan the `packages/core` directory for changes. If changes exist, run `npm test` and output results as a summary table."
             </div>
+            <p className="text-sm text-zinc-500 font-medium italic">
+              ✓ Clear trigger, specific target, defined output format.
+            </p>
           </div>
 
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/30 text-[10px] font-bold tracking-widest text-red-700 dark:text-red-300 uppercase">
+          <div className="p-8 space-y-6 rounded-3xl border border-red-500/20 bg-red-950/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/50 border border-red-500/30 text-[10px] font-bold tracking-widest text-red-400 uppercase">
               <XCircle className="w-3 h-3" /> Anti-Pattern
             </div>
-            <div className="space-y-4">
-              <h4 className="text-2xl font-bold tracking-tight">Vague Suggestion</h4>
-              <div className="p-6 bg-white dark:bg-black rounded-2xl border border-red-100 dark:border-red-900/20 text-sm font-mono text-zinc-600 dark:text-zinc-400 opacity-60">
-                "Try to look at the code if you have time and maybe let me know if anything looks weird or if there are bugs."
-              </div>
-              <p className="text-sm text-zinc-500 font-medium italic">
-                Why? Hallucination-prone. No specific trigger, no defined success criteria.
-              </p>
+            <h4 className="text-2xl font-bold tracking-tight text-white/60">Vague Suggestion</h4>
+            <div className="p-5 bg-black/60 rounded-2xl border border-red-900/30 text-sm font-mono text-red-300/50 leading-relaxed">
+              "Try to look at the code if you have time and maybe let me know if anything looks weird or if there are bugs."
             </div>
+            <p className="text-sm text-zinc-600 font-medium italic">
+              ✗ No trigger, no target, no success criteria — hallucinates easily.
+            </p>
           </div>
         </div>
       </div>

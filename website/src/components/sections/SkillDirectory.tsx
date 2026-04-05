@@ -4,23 +4,23 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ExternalLink, Code2, Cloud, Wrench, Shield, Briefcase, Zap } from "lucide-react";
 
-// Parsed from README.md
-const skillCategories = [
-  { id: "all", label: "All Skills" },
-  { id: "ai", label: "AI Platforms" },
-  { id: "cloud", label: "Cloud & Infra" },
-  { id: "devtools", label: "Dev Tools" },
-  { id: "business", label: "Business" },
-  { id: "security", label: "Security" },
+// Mapped from the actual README categories
+const skillTabs = [
+  { id: "official", label: "Official AI Providers" },
+  { id: "cloud", label: "Cloud & Infrastructure" },
+  { id: "devtools", label: "Developer Tools" },
+  { id: "business", label: "Business & Utility" },
+  { id: "security", label: "Security & Audit" },
+  { id: "community", label: "Community Repos" },
 ];
 
 const mockSkills = [
-  // AI Platforms
+  // Official
   {
     id: "anthropic-docx",
     name: "anthropics/docx",
-    description: "Create, edit, and analyze Word documents with Claude",
-    category: "ai",
+    description: "Create, edit, and analyze Word documents with Claude.",
+    category: "official",
     tags: ["Document", "Office"],
     icon: <Zap className="w-5 h-5 text-purple-500" />,
     url: "https://agent-skill.co/anthropics/skills/docx"
@@ -28,8 +28,8 @@ const mockSkills = [
   {
     id: "anthropic-webapp",
     name: "anthropics/webapp-testing",
-    description: "Test local web applications using Playwright natively",
-    category: "ai",
+    description: "Test local web applications using Playwright natively.",
+    category: "official",
     tags: ["Testing", "E2E"],
     icon: <Zap className="w-5 h-5 text-purple-500" />,
     url: "https://agent-skill.co/anthropics/skills/webapp-testing"
@@ -38,7 +38,7 @@ const mockSkills = [
     id: "openai-cloudflare",
     name: "openai/cloudflare-deploy",
     description: "Deploy apps to Cloudflare using Workers and Pages",
-    category: "ai",
+    category: "official",
     tags: ["Deployment", "Edge"],
     icon: <Zap className="w-5 h-5 text-green-500" />,
     url: "https://agent-skill.co/openai/skills/cloudflare-deploy"
@@ -47,7 +47,7 @@ const mockSkills = [
     id: "gemini-api",
     name: "google-gemini/gemini-api-dev",
     description: "Best practices for developing Gemini-powered apps",
-    category: "ai",
+    category: "official",
     tags: ["LLM", "Google"],
     icon: <Zap className="w-5 h-5 text-blue-500" />,
     url: "https://agent-skill.co/google-gemini/skills/gemini-api-dev"
@@ -131,15 +131,26 @@ const mockSkills = [
     tags: ["Audit", "CodeQL"],
     icon: <Shield className="w-5 h-5 text-red-500" />,
     url: "https://agent-skill.co/trailofbits/skills/static-analysis"
+  },
+
+  // Community
+  {
+    id: "agentops-eval",
+    name: "agentops/eval-framework",
+    description: "Community maintained framework for evaluating agent trajectory behavior",
+    category: "community",
+    tags: ["Eval", "Testing"],
+    icon: <Code2 className="w-5 h-5 text-teal-400" />,
+    url: "https://agent-skill.co/agentops/skills/eval-framework"
   }
 ];
 
 export default function SkillDirectory() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeTab, setActiveTab] = useState("official");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredSkills = mockSkills.filter((skill) => {
-    const matchesCategory = activeCategory === "all" || skill.category === activeCategory;
+    const matchesCategory = skill.category === activeTab;
     const matchesSearch =
       skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       skill.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -147,94 +158,110 @@ export default function SkillDirectory() {
   });
 
   return (
-    <section id="directory" className="relative scroll-mt-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 dark:via-white/[0.02] to-transparent pointer-events-none rounded-[3rem]" />
-      <div className="relative">
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6">Directory</h2>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12 max-w-2xl">
-          Browse official and community-maintained capabilities across AI platforms, cloud infrastructure, and security workflows.
-        </p>
-
-        {/* Controls */}
-        <div className="flex flex-col md:flex-row gap-6 mb-12">
-          <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
-            <input
-              type="text"
-              placeholder="Search skills (e.g., 'figma' or 'database')..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-800 transition-all font-medium placeholder:text-zinc-500"
-            />
-          </div>
-          <div className="flex overflow-x-auto pb-2 md:pb-0 gap-2 hide-scrollbar">
-            {skillCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-5 py-3 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${
-                  activeCategory === category.id
-                    ? "bg-black text-white dark:bg-white dark:text-black shadow-lg"
-                    : "glass hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
+    <section id="directory" className="scroll-mt-32">
+      <div className="mb-10">
+        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-blue-400 mb-4">
+          THE RESOURCES
         </div>
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Skill Directory</h2>
+        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          The central hub for off-the-shelf capabilities. Click to drop them into your agent framework.
+        </p>
+      </div>
 
-        {/* Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence>
-            {filteredSkills.map((skill) => (
-              <motion.a
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                key={skill.id}
-                href={skill.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group glass-panel p-6 flex flex-col items-start gap-4 hover:scale-[1.02] transition-transform cursor-pointer relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ExternalLink className="w-5 h-5 text-zinc-400" />
-                </div>
-                <div className="w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-black border border-zinc-200 dark:border-white/10 flex items-center justify-center">
-                  {skill.icon}
-                </div>
+      <div className="glass-panel p-2 flex flex-wrap gap-2 mb-8 relative z-10 w-full overflow-x-auto hide-scrollbar">
+        {skillTabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`relative px-5 py-3 rounded-2xl text-sm font-bold whitespace-nowrap transition-colors duration-300 ${
+                isActive ? "text-black" : "text-zinc-400 hover:text-white"
+              }`}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="activeDirectoryTab"
+                  className="absolute inset-0 bg-white rounded-2xl -z-10"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{tab.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="relative mb-12 z-20">
+        <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
+        <input
+          type="text"
+          placeholder={`Search ${skillTabs.find(t => t.id === activeTab)?.label}...`}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full pl-14 pr-6 py-5 bg-black/40 border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder:text-zinc-500 shadow-inner"
+        />
+      </div>
+
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 min-h-[400px]">
+        <AnimatePresence mode="popLayout">
+          {filteredSkills.map((skill) => (
+            <motion.a
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              key={skill.id}
+              href={skill.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group glass p-6 rounded-3xl flex items-start gap-5 hover:bg-white/5 transition-colors cursor-pointer relative overflow-hidden h-fit"
+            >
+              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ExternalLink className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
+              </div>
+              <div className="p-4 rounded-2xl bg-black/50 border border-white/5 flex items-center justify-center shrink-0">
+                {skill.icon}
+              </div>
+              <div className="flex flex-col h-full justify-between">
                 <div>
-                  <h3 className="text-lg font-bold tracking-tight mb-2 group-hover:text-blue-500 transition-colors">
+                  <h3 className="text-lg font-bold tracking-tight mb-2 text-white group-hover:text-blue-400 transition-colors">
                     {skill.name}
                   </h3>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-medium mb-4">
                     {skill.description}
                   </p>
                 </div>
-                <div className="mt-auto pt-6 flex flex-wrap gap-2 w-full">
+                <div className="flex flex-wrap gap-2">
                   {skill.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-lg text-xs font-bold bg-zinc-100 dark:bg-white/5 text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-white/10"
+                      className="px-2.5 py-1 rounded-lg text-xs font-bold bg-white/5 text-zinc-300 border border-white/10"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </motion.a>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </motion.a>
+          ))}
+        </AnimatePresence>
         
         {filteredSkills.length === 0 && (
-          <div className="w-full text-center py-20 text-zinc-500 font-medium">
-            No agent skills found matching your search.
-          </div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="col-span-full flex flex-col items-center justify-center py-20 text-center"
+          >
+            <div className="w-16 h-16 mb-4 rounded-full bg-white/5 flex items-center justify-center">
+              <Search className="w-8 h-8 text-zinc-500" />
+            </div>
+            <p className="text-zinc-400 font-medium">No skills found in this category matching "{searchQuery}"</p>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

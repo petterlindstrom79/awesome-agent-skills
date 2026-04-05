@@ -13,19 +13,17 @@ import Contributing from "@/components/sections/Contributing";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="w-full max-w-5xl px-6 md:px-12 space-y-40 mb-40">
-        <Hero />
-        <WhatIsIt />
-        <SkillDirectory />
-        <QualityStandards />
-        <UsingSkills />
-        <CreatingSkills />
-        <Tutorials />
-        <Trends />
-        <FAQ />
-        <Contributing />
-      </div>
+    <div className="w-full max-w-4xl px-6 md:px-10 space-y-36 pb-36 pt-4">
+      <Hero />
+      <WhatIsIt />
+      <SkillDirectory />
+      <QualityStandards />
+      <UsingSkills />
+      <CreatingSkills />
+      <Tutorials />
+      <Trends />
+      <FAQ />
+      <Contributing />
     </div>
   );
 }

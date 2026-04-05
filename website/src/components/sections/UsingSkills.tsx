@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Copy, Check, Play, Settings, Combine } from "lucide-react";
+import { Terminal, Copy, Check, Play, Combine, Settings } from "lucide-react";
 import { useState } from "react";
 
 const steps = [
   {
-    icon: <Terminal className="w-5 h-5" />,
-    title: "Discovery",
-    description: "The agent identifies a gap in its current capabilities and searches for a compatible skill."
+    icon: <Terminal className="w-5 h-5 text-blue-400" />,
+    title: "1. Find a skill",
+    description: "Browse the Directory to find an official or community skill that matches your workflow. Each one is a self-contained folder you can inspect before adding it."
   },
   {
-    icon: <Play className="w-5 h-5" />,
-    title: "Activation",
-    description: "Metadata is parsed from the SKILL.md and cached for immediate situational awareness."
+    icon: <Play className="w-5 h-5 text-purple-400" />,
+    title: "2. Add it to your project",
+    description: "Drop the skill folder into `.github/skills/` (or wherever your agent indexes skills). The agent reads SKILL.md automatically next time it starts."
   },
   {
-    icon: <Combine className="w-5 h-5" />,
-    title: "Execution",
-    description: "The agent follows the step-by-step instructions and accesses any local scripts or templates."
+    icon: <Combine className="w-5 h-5 text-green-400" />,
+    title: "3. It just works",
+    description: "Your agent now knows exactly when and how to run this capability. No prompting needed — the skill activates based on semantic context."
   }
 ];
 
@@ -32,72 +32,72 @@ export default function UsingSkills() {
   };
 
   return (
-    <section id="guides" className="py-24 bg-[#fafafa] dark:bg-[#111111] transition-colors">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-12">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold tracking-tight">Using Skills</h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed">
-              We've made using skills as simple as adding a dependency to your project. Whether you're using the CLI or manual placement, the process is streamlined for the modern agentic IDE.
-            </p>
-          </div>
+    <section id="using-skills" className="scroll-mt-32">
+      <div className="mb-12">
+        <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-purple-400 mb-4">
+          GET STARTED
+        </div>
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 glow-text text-white">Using Skills</h2>
+        <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          Adding a skill to your project is a three-step process and takes under a minute. No config files, no complicated setup.
+        </p>
+      </div>
 
-          <div className="space-y-8">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-6 group"
-              >
-                <div className="flex-shrink-0 w-12 h-12 glass rounded-2xl flex items-center justify-center border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
-                  {step.icon}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-1 tracking-tight">{step.title}</h3>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium">
-                    {step.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="space-y-6">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex gap-6 group glass-panel p-6"
+            >
+              <div className="flex-shrink-0 w-12 h-12 bg-black/40 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
+                {step.icon}
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-1 tracking-tight text-white">{step.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="space-y-8">
-          <div className="glass rounded-[2rem] p-8 border border-zinc-200 dark:border-zinc-800 space-y-6">
-            <h3 className="text-xl font-bold tracking-tight mb-4">CLI Installation</h3>
+        <div className="space-y-6">
+          {/* CLI */}
+          <div className="glass-panel p-8 space-y-5">
+            <h3 className="text-xl font-bold tracking-tight text-white">CLI Quick-add</h3>
             <div className="relative group">
-              <pre className="bg-black text-zinc-300 p-6 rounded-2xl font-mono text-sm overflow-x-auto border border-zinc-800">
+              <pre className="bg-black/60 text-zinc-300 p-6 rounded-2xl font-mono text-sm overflow-x-auto border border-white/10">
                 <code>npx skills add anthropics/skills/docx</code>
               </pre>
               <button
                 onClick={copyCode}
-                className="absolute top-4 right-4 p-2 rounded-lg bg-zinc-800/50 hover:bg-zinc-800 transition-colors text-zinc-400 hover:text-white"
+                className="absolute top-3 right-3 p-2 rounded-lg bg-white/5 hover:bg-white/20 transition-colors text-zinc-400 hover:text-white"
               >
                 {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
-            <p className="text-xs text-zinc-500 font-medium italic">
-              * Supports GitHub shorthand, full URL, or local relative paths.
+            <p className="text-xs text-zinc-600 italic">
+              Supports GitHub shorthand, full URLs, or local relative paths.
             </p>
           </div>
 
-          <div className="glass rounded-[2rem] p-8 border border-zinc-200 dark:border-zinc-800">
-            <h3 className="text-xl font-bold tracking-tight mb-4">Manual Integration</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800">
-                <Settings className="w-5 h-5 text-zinc-400" />
-                <div className="text-sm font-medium">
-                  <span className="text-zinc-400">Path:</span> <code className="text-black dark:text-white">.github/skills/skill-name/</code>
-                </div>
+          {/* Manual */}
+          <div className="glass-panel p-8 space-y-5">
+            <h3 className="text-xl font-bold tracking-tight text-white">Manual Drop-in</h3>
+            <div className="flex items-center gap-4 p-4 bg-black/40 rounded-xl border border-white/10">
+              <Settings className="w-5 h-5 text-zinc-400" />
+              <div className="text-sm font-medium text-zinc-300">
+                <span className="text-zinc-500">Path: </span>
+                <code className="text-white">.github/skills/skill-name/</code>
               </div>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-                Simply drop your `SKILL.md` (and any scripts) into this directory. Modern agents automatically index these folders on startup.
-              </p>
             </div>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Drop your SKILL.md (and optional scripts) into this directory. Modern agents automatically index these folders on startup — no restart needed.
+            </p>
           </div>
         </div>
       </div>

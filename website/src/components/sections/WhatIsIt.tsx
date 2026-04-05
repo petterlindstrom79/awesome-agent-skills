@@ -1,132 +1,58 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import * as d3 from "d3";
-import { motion } from "framer-motion";
+import { Code2, BookOpen } from "lucide-react";
 
 export default function WhatIsIt() {
-  const d3Container = useRef(null);
-
-  useEffect(() => {
-    if (d3Container.current) {
-      const svg = d3.select(d3Container.current);
-      svg.selectAll("*").remove();
-
-      const width = 800;
-      const height = 400;
-      const nodes = [
-        { id: "User", group: 1, label: "User" },
-        { id: "Agent", group: 2, label: "Agent" },
-        { id: "Tools", group: 3, label: "Tools" },
-        { id: "Skills", group: 4, label: "Skills" },
-        { id: "Context", group: 5, label: "Context" },
-      ];
-
-      const links = [
-        { source: "User", target: "Agent" },
-        { source: "Agent", target: "Tools" },
-        { source: "Agent", target: "Skills" },
-        { source: "Agent", target: "Context" },
-        { source: "Skills", target: "Tools" },
-      ];
-
-      const simulation = d3.forceSimulation(nodes as any)
-        .force("link", d3.forceLink(links).id((d: any) => d.id).distance(150))
-        .force("charge", d3.forceManyBody().strength(-300))
-        .force("center", d3.forceCenter(width / 2, height / 2));
-
-      const link = svg.append("g")
-        .attr("stroke", "#e4e4e7")
-        .attr("stroke-opacity", 0.6)
-        .selectAll("line")
-        .data(links)
-        .join("line")
-        .attr("stroke-width", 1.5);
-
-      const node = svg.append("g")
-        .selectAll("g")
-        .data(nodes)
-        .join("g");
-
-      node.append("circle")
-        .attr("r", 12)
-        .attr("fill", (d: any) => d.group === 4 ? "#000" : "#fff")
-        .attr("stroke", "#000")
-        .attr("stroke-width", 2);
-
-      node.append("text")
-        .text((d: any) => d.label)
-        .attr("x", 0)
-        .attr("y", 25)
-        .attr("text-anchor", "middle")
-        .attr("class", "text-[10px] uppercase tracking-tighter font-bold dark:fill-white fill-black");
-
-      simulation.on("tick", () => {
-        link
-          .attr("x1", (d: any) => d.source.x)
-          .attr("y1", (d: any) => d.source.y)
-          .attr("x2", (d: any) => d.target.x)
-          .attr("y2", (d: any) => d.target.y);
-
-        node
-          .attr("transform", (d: any) => `translate(${d.x},${d.y})`);
-      });
-    }
-  }, []);
-
   return (
-    <section id="what-is-it" className="py-24 bg-white dark:bg-black transition-colors">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
-              What This Repository Is
-            </h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
-              Think of **Agent Skills** as a high-fidelity "how-to guide" for AI assistants. Instead of requiring the AI to memorize every workflow upfront, skills provide situational capabilities as they are needed—reducing noise and increasing reliability.
+    <section id="what-are-skills" className="scroll-mt-32 relative">
+      <div className="absolute -inset-10 bg-white/5 dark:bg-white/[0.02] rounded-[3rem] -z-10 blur-xl" />
+      
+      <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex-1 space-y-6">
+          <div className="inline-block px-3 py-1 rounded-full border border-white/20 bg-white/10 text-sm font-bold tracking-wider text-purple-400">
+            THE CONCEPT
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight glow-text">
+            What exactly is an <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Agent Skill?</span>
+          </h2>
+          <div className="space-y-4 text-zinc-300 font-medium text-lg leading-relaxed content-text">
+            <p>
+              Imagine if every time you cooked a new dish, you didn't just learn the recipe—you magically downloaded the muscle memory, the tools, and the exact timing required to make it perfectly every single time.
+            </p>
+            <p>
+              An <strong>Agent Skill</strong> is exactly that for an AI. 
+            </p>
+            <p>
+              Instead of just giving an AI a general "cookbook" (like a giant prompt), a skill is a modular package that gives the AI the specific tools (API connections), the exact context (documentation), and the explicit recipes (workflows) to achieve a highly specific goal—like pushing a repo, designing a UI, or auditing a smart contract.
             </p>
           </div>
+        </div>
 
-          <div className="space-y-6">
-            <div className="p-6 glass rounded-2xl border border-zinc-100 dark:border-zinc-800">
-              <h3 className="font-bold text-lg mb-2 uppercase tracking-widest text-[10px] text-zinc-500">The Problem</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                Generic agents hallucinate when performing complex, multi-step engineering tasks. They lack the specific domain knowledge of your project's architecture, dependencies, and style guides.
-              </p>
+        <div className="flex-1 glass-panel p-8 w-full">
+          <div className="space-y-8">
+            <div className="flex gap-4 items-start">
+              <div className="p-3 rounded-2xl bg-black/40 border border-white/10 glow-text shadow-[0_0_20px_rgba(251,146,60,0.2)]">
+                <BookOpen className="w-6 h-6 text-orange-400" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-white">The Old Way (Cookbook)</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Pasting a massive, generic prompt into the context window. The AI has to "read the cookbook" every time and guess which tools to use. It frequently hallucinates or gets confused by complex workflows.
+                </p>
+              </div>
             </div>
-            
-            <div className="p-6 glass rounded-2xl border border-zinc-100 dark:border-zinc-800">
-              <h3 className="font-bold text-lg mb-2 uppercase tracking-widest text-[10px] text-zinc-500">The Solution</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                Skills are modular instruction sets (SKILL.md) that teach an agent how to execute specific workflows seamlessly across Claude, Antigravity, and other modern agentic environments.
-              </p>
+
+            <div className="flex gap-4 items-start relative">
+              <div className="p-3 rounded-2xl bg-white/10 border border-white/20 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+                <Code2 className="w-6 h-6 text-purple-400" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-white">The New Way (Skills)</h3>
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  Providing a structured folder with an exact `SKILL.md` file, validated examples, and tied directly to MCP servers or local functions. The AI acts deterministically because it inherently "knows" the tool architecture.
+                </p>
+              </div>
             </div>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative glass-darker rounded-[2.5rem] p-8 aspect-square flex items-center justify-center border border-zinc-100 dark:border-zinc-800"
-        >
-          <svg
-            ref={d3Container}
-            width="100%"
-            height="100%"
-            viewBox="0 0 800 400"
-            className="w-full h-full"
-          />
-          <div className="absolute top-8 left-8 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-black dark:bg-white animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Agentic Interoperability Map</span>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

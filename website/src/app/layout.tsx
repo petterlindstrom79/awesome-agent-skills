@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import WikiSidebar from "@/components/WikiSidebar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -32,7 +33,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-white selection:text-black min-h-screen flex flex-col`}
       >
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <div className="flex flex-1 pt-16">
+          <WikiSidebar />
+          <main className="flex-1 min-w-0 lg:pl-72 flex justify-center">
+            {children}
+          </main>
+        </div>
         <Footer />
         <Analytics />
         <SpeedInsights />
