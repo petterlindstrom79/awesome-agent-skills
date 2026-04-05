@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import WikiSidebar from "@/components/WikiSidebar";
 
 const geistSans = Geist({
@@ -16,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "awesome-agent-skills | The Modern Agent Wiki",
-  description: "A curated source of truth for modular AI agent capabilities, tools, and workflows in 2026.",
+  title: "Agent Skills",
+  description: "A simple, open format for giving agents new capabilities and expertise.",
 };
 
 export default function RootLayout({
@@ -28,14 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black min-h-screen flex flex-col bg-background`}
       >
         <Navbar />
-        <div className="flex-grow flex max-w-[1600px] mx-auto w-full">
+        <div className="flex flex-1 pt-16">
           <WikiSidebar />
-          <main className="flex-grow min-w-0">{children}</main>
+          <main className="flex-1 min-w-0 md:pl-72 flex justify-center">
+            {children}
+          </main>
         </div>
-        <Footer />
       </body>
     </html>
   );

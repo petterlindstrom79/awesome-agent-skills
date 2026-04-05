@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rm -rf ../docs && mkdir -p ../docs && cp -r out/* ../docs/ && cp public/CNAME ../docs/CNAME",
+    "build": "next build && rm -rf ../docs && mkdir -p ../docs && cp -r out/* ../docs/ && cp public/CNAME ../docs/CNAME && touch ../docs/.nojekyll",
     "start": "next start",
     "lint": "eslint"
   },
