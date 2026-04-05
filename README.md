@@ -816,6 +816,21 @@ Questions, partnership inquiries, or feedback about this project:
 
 ---
 
+## Citation
+
+If you use these skill patterns in your research or project, please cite:
+
+```bibtex
+@misc{awesome-agent-skills,
+  author = {Hailey Cheng},
+  title = {Awesome Agent Skills},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/heilcheng/awesome-agent-skills}}
+}
+```
+
 ## License
 
 MIT License. See LICENSE file for details.

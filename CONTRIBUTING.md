@@ -74,6 +74,11 @@ When making changes:
 - **Duplicate** of an existing entry
 - **Broken formatting** (not a valid table row)
 
-## Questions?
+## Reach out to us
+
+Questions, partnership inquiries, or feedback about this project:
+- **LinkedIn:** [Hailey Cheng](https://www.linkedin.com/in/heilcheng/)
+- **X / Twitter:** [@haileyhmt](https://x.com/haileyhmt)
+- **Email:** [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
 Open an issue if you're unsure where an entry belongs or need help with formatting.

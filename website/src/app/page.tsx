@@ -14,6 +14,7 @@ import Tutorials from "@/components/sections/Tutorials";
 import Trends from "@/components/sections/Trends";
 import AdoptionTimeline from "@/components/sections/AdoptionTimeline";
 import FAQ from "@/components/sections/FAQ";
+import Endorsements from "@/components/sections/Endorsements";
 import Contributing from "@/components/sections/Contributing";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       <Tutorials />
       <Trends />
       <AdoptionTimeline />
+      <Endorsements />
       <FAQ />
       <Contributing />
     </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import WikiSidebar from "@/components/WikiSidebar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import LayoutShell from "@/components/LayoutShell";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         {/* Anti-flash: apply saved theme before first paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
+             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()`,
           }}
         />
       </head>
@@ -43,12 +43,9 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <div className="flex flex-1 pt-14">
-            <WikiSidebar />
-            <main className="flex-1 min-w-0 lg:pl-64 flex justify-center bg-white dark:bg-neutral-950">
-              {children}
-            </main>
-          </div>
+          <LayoutShell>
+            {children}
+          </LayoutShell>
           <Footer />
         </Providers>
         <Analytics />

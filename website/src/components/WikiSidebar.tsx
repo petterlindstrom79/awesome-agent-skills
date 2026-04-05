@@ -5,6 +5,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { BookOpen, Grid3X3, Shield, Lightbulb, ChevronDown, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "@/lib/i18n";
+import { useSidebar } from "@/lib/SidebarContext";
 
 interface SidebarItem {
   labelKey: string;
@@ -82,6 +83,7 @@ export default function WikiSidebar() {
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const observerRef = useRef<IntersectionObserver | null>(null);
   const t = useTranslations();
+  const { isOpen } = useSidebar();
 
   // IntersectionObserver for active section tracking
   useEffect(() => {
@@ -122,7 +124,9 @@ export default function WikiSidebar() {
   };
 
   return (
-    <aside className="hidden lg:block w-64 h-[calc(100vh-3.5rem)] fixed left-0 top-14 overflow-y-auto sidebar-scroll backdrop-blur-sm bg-white/90 dark:bg-neutral-950/90 border-r border-neutral-200/60 dark:border-neutral-800/60 py-6 px-4">
+    <aside className={`w-64 h-[calc(100vh-3.5rem)] fixed left-0 top-14 overflow-y-auto sidebar-scroll backdrop-blur-sm bg-white/90 dark:bg-neutral-950/90 border-r border-neutral-200/60 dark:border-neutral-800/60 py-6 px-4 transition-transform duration-300 ease-in-out z-40 ${
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    }`}>
       <div className="space-y-5">
         {sidebarGroups.map((group) => {
           const Icon = group.icon;

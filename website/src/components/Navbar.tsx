@@ -6,6 +6,8 @@ import { Github } from "./Icons";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage, useTranslations, LANGUAGES } from "@/lib/i18n";
+import { useSidebar } from "@/lib/SidebarContext";
+import { PanelLeft } from "lucide-react";
 
 const mobileNavItems = [
   "What Is It?", "Directory", "Quality Standards",
@@ -22,6 +24,7 @@ export default function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const { lang, setLang } = useLanguage();
+  const { toggleSidebar } = useSidebar();
   const t = useTranslations();
 
   useEffect(() => {
@@ -78,8 +81,15 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-neutral-950/80 border-b border-neutral-200/60 dark:border-neutral-800/60 h-14">
       <div className="w-full h-full flex items-center justify-between px-6">
 
-        {/* Left: logo */}
+        {/* Left: logo and toggle */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={toggleSidebar}
+            className="p-1.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400 transition-colors"
+            title="Toggle Sidebar"
+          >
+            <PanelLeft className="w-4 h-4 cursor-pointer" />
+          </button>
           <Link href="/" className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight hover:opacity-70 transition-opacity">
             awesome-agent-skills
           </Link>
