@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { Github } from "../Icons";
 import Link from "next/link";
 import * as THREE from "three";
+import { useTranslations } from "@/lib/i18n";
 
 function generateSpherePositions(count: number, radius: number): Float32Array {
   const positions = new Float32Array(count * 3);
@@ -52,6 +53,8 @@ function Starfield() {
 }
 
 export default function Hero() {
+  const t = useTranslations();
+
   return (
     <section className="relative min-h-[80vh] flex flex-col items-start justify-center pt-12 pb-20 border-b border-neutral-200 dark:border-neutral-800">
       {/* Subtle canvas background */}
@@ -69,7 +72,7 @@ export default function Hero() {
       >
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 mb-6">
           <span className="h-1.5 w-1.5 rounded-full bg-green-500 inline-block" />
-          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 tracking-wide">Updated April 2026</span>
+          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 tracking-wide">{t.hero.badge}</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-neutral-900 dark:text-white mb-6 max-w-3xl leading-none">
@@ -77,7 +80,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-10 max-w-xl leading-relaxed">
-          A curated, community-maintained collection of modular AI agent capabilities. Skills, tools, and workflows for the modern agentic era.
+          {t.hero.subtitle}
         </p>
 
         <div className="flex flex-col sm:flex-row items-start gap-3">
@@ -85,7 +88,7 @@ export default function Hero() {
             href="#directory"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-semibold hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
           >
-            Browse Directory <ArrowRight className="w-4 h-4" />
+            {t.hero.browseBtn} <ArrowRight className="w-4 h-4" />
           </Link>
           <a
             href="https://github.com/heilcheng/awesome-agent-skills"
@@ -93,7 +96,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 text-sm font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
           >
-            <Github className="w-4 h-4" /> View on GitHub
+            <Github className="w-4 h-4" /> {t.hero.githubBtn}
           </a>
         </div>
       </motion.div>

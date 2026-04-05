@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { useTranslations } from "@/lib/i18n";
 
 const steps = [
   {
@@ -12,17 +13,18 @@ const steps = [
   {
     step: "02",
     title: "Add it to your project",
-    description: "Drop the skill folder into `.github/skills/` in your repo. Modern agentic IDEs — Cursor, Claude Code, Windsurf — automatically index this directory on startup.",
+    description: "Drop the skill folder into `.github/skills/` in your repo. Modern agentic IDEs (Cursor, Claude Code, Windsurf) automatically index this directory on startup.",
   },
   {
     step: "03",
     title: "It just works",
-    description: "Your agent now knows when and how to run this capability based on semantic context. No manual prompting needed — the skill activates automatically.",
+    description: "Your agent now knows when and how to run this capability based on semantic context. No manual prompting needed. The skill activates automatically.",
   },
 ];
 
 export default function UsingSkills() {
   const [copied, setCopied] = useState(false);
+  const t = useTranslations();
 
   const copyCode = () => {
     navigator.clipboard.writeText("npx skills add anthropics/skills/docx");
@@ -32,9 +34,9 @@ export default function UsingSkills() {
 
   return (
     <section id="using-skills" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Using Skills</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.using.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        Adding a skill takes under a minute. No configuration files, no runtime changes.
+        {t.using.subtitle}
       </p>
 
       <div className="grid lg:grid-cols-2 gap-8">

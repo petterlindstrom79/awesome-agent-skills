@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "@/lib/i18n";
 
 const resources = [
   {
@@ -12,14 +15,14 @@ const resources = [
     title: "Building MCP Servers",
     type: "Technical Guide",
     level: "Advanced",
-    description: "Connect skills to external APIs using the open Model Context Protocol standard.",
+    description: "Connect skills to external APIs using the open Model Context Protocol (a shared language for AI tools) standard.",
     href: "https://modelcontextprotocol.io/docs/first-server",
   },
   {
     title: "Agentic IDE Mastery",
     type: "Video Series",
     level: "Intermediate",
-    description: "Visual walkthroughs for Cursor, Windsurf, and Claude Code — setup through end-to-end workflows.",
+    description: "Visual walkthroughs for Cursor, Windsurf, and Claude Code, covering setup through end-to-end workflows.",
     href: "#",
   },
   {
@@ -38,13 +41,15 @@ const levelColors: Record<string, string> = {
 };
 
 export default function Tutorials() {
+  const t = useTranslations();
+
   return (
     <section id="tutorials" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
       <div className="flex items-end justify-between mb-10">
         <div>
-          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Tutorials & Guides</h2>
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.tutorials.title}</h2>
           <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed max-w-xl">
-            Curated learning paths for every level — from your first SKILL.md to multi-agent orchestration.
+            {t.tutorials.subtitle}
           </p>
         </div>
         <a

@@ -1,9 +1,12 @@
+"use client";
+
 import { CheckCircle2, XCircle } from "lucide-react";
+import { useTranslations } from "@/lib/i18n";
 
 const standards = [
   {
     title: "Clarity & Precision",
-    description: "Instructions must be unambiguous. Avoid 'try to' or 'maybe' — use direct language like 'Execute' or 'Generate'.",
+    description: "Instructions must be unambiguous. Avoid 'try to' or 'maybe'. Use direct language like 'Execute' or 'Generate'.",
   },
   {
     title: "Focused Scope",
@@ -20,11 +23,13 @@ const standards = [
 ];
 
 export default function QualityStandards() {
+  const t = useTranslations();
+
   return (
     <section id="quality-standards" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Quality Standards</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.quality.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        Not all skills are created equal. We maintain a high bar for what gets merged to ensure agents stay stable and predictable.
+        {t.quality.subtitle}
       </p>
 
       {/* Standards list */}
@@ -49,7 +54,7 @@ export default function QualityStandards() {
           </div>
           <div className="p-4">
             <p className="text-xs font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg border border-neutral-200 dark:border-neutral-800">
-              "When a PR is opened, scan the `packages/core` directory for changes. If changes exist, run `npm test` and output the results as a summary table."
+              &quot;When a PR is opened, scan the `packages/core` directory for changes. If changes exist, run `npm test` and output the results as a summary table.&quot;
             </p>
             <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-3 italic">Clear trigger, specific target, defined output format.</p>
           </div>
@@ -62,9 +67,9 @@ export default function QualityStandards() {
           </div>
           <div className="p-4">
             <p className="text-xs font-mono text-neutral-400 dark:text-neutral-600 leading-relaxed bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 opacity-70">
-              "Try to look at the code if you have time and maybe let me know if anything looks weird or if there are bugs."
+              &quot;Try to look at the code if you have time and maybe let me know if anything looks weird or if there are bugs.&quot;
             </p>
-            <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-3 italic">No trigger, no target, no success criteria — prone to hallucination.</p>
+            <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-3 italic">No trigger, no target, no success criteria. Prone to hallucination.</p>
           </div>
         </div>
       </div>

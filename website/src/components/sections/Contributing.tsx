@@ -1,12 +1,17 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Github } from "../Icons";
+import { useTranslations } from "@/lib/i18n";
 
 export default function Contributing() {
+  const t = useTranslations();
+
   return (
     <section id="contributing" className="scroll-mt-20 py-16">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Contributing</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.contributing.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        awesome-agent-skills is a living repository. We rely on the community to discover, refine, and standardize the skills that power the next generation of AI assistants.
+        {t.contributing.subtitle}
       </p>
 
       <div className="grid md:grid-cols-3 gap-4 mb-8">

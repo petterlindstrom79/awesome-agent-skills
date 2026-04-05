@@ -5,12 +5,14 @@ import WhatIsIt from "@/components/sections/WhatIsIt";
 import HowItWorks from "@/components/sections/HowItWorks";
 import FindingSkills from "@/components/sections/FindingSkills";
 import CompatibleAgents from "@/components/sections/CompatibleAgents";
+import Ads from "@/components/sections/Ads";
 import SkillDirectory from "@/components/sections/SkillDirectory";
 import QualityStandards from "@/components/sections/QualityStandards";
 import UsingSkills from "@/components/sections/UsingSkills";
 import CreatingSkills from "@/components/sections/CreatingSkills";
 import Tutorials from "@/components/sections/Tutorials";
 import Trends from "@/components/sections/Trends";
+import AdoptionTimeline from "@/components/sections/AdoptionTimeline";
 import FAQ from "@/components/sections/FAQ";
 import Contributing from "@/components/sections/Contributing";
 
@@ -22,12 +24,14 @@ export default function Home() {
       <HowItWorks />
       <FindingSkills />
       <CompatibleAgents />
+      <Ads />
       <SkillDirectory />
       <QualityStandards />
       <UsingSkills />
       <CreatingSkills />
       <Tutorials />
       <Trends />
+      <AdoptionTimeline />
       <FAQ />
       <Contributing />
     </div>

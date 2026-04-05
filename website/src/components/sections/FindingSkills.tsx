@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { useTranslations } from "@/lib/i18n";
 
 const cliCommands = [
   { cmd: "npx skills find [query]", desc: "Search for related skills" },
@@ -14,6 +15,7 @@ const cliCommands = [
 
 export default function FindingSkills() {
   const [copied, setCopied] = useState<string | null>(null);
+  const t = useTranslations();
 
   const copy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -23,9 +25,9 @@ export default function FindingSkills() {
 
   return (
     <section id="finding-skills" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">How to Find Skills</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.finding.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        There are three recommended ways to discover and install skills.
+        {t.finding.subtitle}
       </p>
 
       <div className="space-y-6">
@@ -40,7 +42,7 @@ export default function FindingSkills() {
           </div>
           <div className="px-5 py-4">
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Automatically indexes all Skill projects on GitHub and organises them by category, update time, star count, and other tags — making it the easiest way to discover and evaluate skills.
+              Automatically indexes all Skill projects on GitHub and organises them by category, update time, star count, and other tags, making it the easiest way to discover and evaluate skills.
             </p>
           </div>
         </div>
@@ -53,7 +55,7 @@ export default function FindingSkills() {
           </div>
           <div className="px-5 py-4">
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Vercel's leaderboard for intuitively viewing the most popular Skills repositories and individual skill usage statistics.
+              Vercel&apos;s leaderboard for intuitively viewing the most popular Skills repositories and individual skill usage statistics.
             </p>
           </div>
         </div>

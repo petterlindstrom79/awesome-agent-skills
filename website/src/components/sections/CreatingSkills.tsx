@@ -1,18 +1,23 @@
+"use client";
+
 import { FolderOpen, FileText, Code2, Layers, ArrowRight } from "lucide-react";
+import { useTranslations } from "@/lib/i18n";
 
 const structure = [
   { Icon: FolderOpen, path: "my-skill/", desc: "Kebab-case root folder" },
-  { Icon: FileText, path: "├── SKILL.md", desc: "Required — the core instructions" },
-  { Icon: Code2, path: "├── scripts/", desc: "Optional — helper scripts" },
-  { Icon: Layers, path: "└── templates/", desc: "Optional — file output templates" },
+  { Icon: FileText, path: "├── SKILL.md", desc: "Required: the core instructions" },
+  { Icon: Code2, path: "├── scripts/", desc: "Optional: helper scripts" },
+  { Icon: Layers, path: "└── templates/", desc: "Optional: file output templates" },
 ];
 
 export default function CreatingSkills() {
+  const t = useTranslations();
+
   return (
     <section id="creating-skills" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">Creating Skills</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.creating.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        Skills are not code — they are structured instruction files. Think of a well-written README that an AI agent can truly internalize and act on reliably.
+        {t.creating.subtitle}
       </p>
 
       <div className="grid lg:grid-cols-2 gap-8">

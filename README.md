@@ -2,22 +2,24 @@
 
 [English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md)
 
+> 🌐 Browse the live directory at **[agent-skill.co](https://agent-skill.co)**
+
 Maintained by [Hailey Cheng](https://www.linkedin.com/in/heilcheng/) · X [@haileyhmt](https://x.com/haileyhmt) · [haileycheng@proton.me](mailto:haileycheng@proton.me)
 
-Never heard of "agent skills" before? You're in the right place. This is a community-curated list of simple text files that teach AI assistants (like Claude, Copilot, or Codex) how to do new things — on demand, without retraining. Unlike bulk-generated skill repositories, this collection focuses on real-world Agent Skills created and used by actual engineering teams. Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+Never heard of "agent skills" before? You're in the right place. This is a community-curated list of simple text files that teach AI assistants (like Claude, Copilot, or Codex) how to do new things on demand, without retraining. Unlike bulk-generated skill repositories, this collection focuses on real-world Agent Skills created and used by actual engineering teams. Compatible with Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 ---
 
 ## Quick Start (30 seconds)
 
-**Step 1 — Pick a skill** from the directory below (or browse at [agent-skill.co](https://agent-skill.co))
+**Step 1: Pick a skill** from the directory below (or browse at [agent-skill.co](https://agent-skill.co))
 
-**Step 2 — Load it into your AI agent:**
+**Step 2: Load it into your AI agent:**
 - Claude Code: `/skills add <github-url>`
 - Claude.ai: paste the raw SKILL.md URL in a new conversation
 - Codex / Copilot: follow platform docs linked in [Using Skills](#using-skills)
 
-**Step 3 — Ask your AI to use it.** Just describe what you want in plain English.
+**Step 3: Ask your AI to use it.** Just describe what you want in plain English.
 
 That's it. No installation. No configuration. No coding required.
 
@@ -55,7 +57,7 @@ That's it. No installation. No configuration. No coding required.
 
 ## What Are Agent Skills?
 
-Think of **Agent Skills** as "how-to guides" for AI assistants. Instead of the AI needing to know everything upfront, skills let it learn new abilities on the fly — like giving someone a recipe card instead of making them memorize an entire cookbook.
+Think of **Agent Skills** as "how-to guides" for AI assistants. Instead of the AI needing to know everything upfront, skills let it learn new abilities on the fly, like giving someone a recipe card instead of making them memorize an entire cookbook.
 
 Skills are simple text files (called `SKILL.md`) that teach an AI how to do specific tasks. When you ask the AI to do something, it finds the right skill, reads the instructions, and gets to work.
 
@@ -63,15 +65,15 @@ Skills are simple text files (called `SKILL.md`) that teach an AI how to do spec
 
 Skills load in three stages:
 
-1. **Browse** — The AI sees a list of available skills (just names and short descriptions)
-2. **Load** — When a skill is needed, the AI reads the full instructions
-3. **Use** — The AI follows the instructions and accesses any helper files
+1. **Browse**: The AI sees a list of available skills (just names and short descriptions)
+2. **Load**: When a skill is needed, the AI reads the full instructions
+3. **Use**: The AI follows the instructions and accesses any helper files
 
 ### Why This Matters
 
-- **Faster and lighter** — The AI only loads what it needs, when it needs it
-- **Works everywhere** — Create a skill once, use it with any compatible AI tool
-- **Easy to share** — Skills are just files you can copy, download, or share on GitHub
+- **Faster and lighter**: The AI only loads what it needs, when it needs it
+- **Works everywhere**: Create a skill once, use it with any compatible AI tool
+- **Easy to share**: Skills are just files you can copy, download, or share on GitHub
 
 Skills are **instructions**, not code. The AI reads them like a human would read a guide, then follows the steps.
 
@@ -816,4 +818,4 @@ Questions, partnership inquiries, or feedback about this project:
 
 ## License
 
-MIT License — see LICENSE file for details.
+MIT License. See LICENSE file for details.

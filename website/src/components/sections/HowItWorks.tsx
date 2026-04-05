@@ -1,27 +1,21 @@
+"use client";
+
+import { useTranslations } from "@/lib/i18n";
+
 export default function HowItWorks() {
+  const t = useTranslations();
+
   const stages = [
-    {
-      step: "01",
-      title: "Browse",
-      description: "The AI sees a list of available skills — just names and short descriptions. It scans this list to understand what capabilities are available.",
-    },
-    {
-      step: "02",
-      title: "Load",
-      description: "When a skill is needed, the AI reads the full instructions from the SKILL.md file. It only loads what's relevant to your current task.",
-    },
-    {
-      step: "03",
-      title: "Use",
-      description: "The AI follows the instructions and accesses any helper files — scripts, templates, or reference documents included with the skill.",
-    },
+    { step: "01", title: t.how.steps.browse.title, description: t.how.steps.browse.desc },
+    { step: "02", title: t.how.steps.load.title, description: t.how.steps.load.desc },
+    { step: "03", title: t.how.steps.use.title, description: t.how.steps.use.desc },
   ];
 
   return (
     <section id="how-it-works" className="scroll-mt-20 py-16 border-b border-neutral-200 dark:border-neutral-800">
-      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">How It Works</h2>
+      <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">{t.how.title}</h2>
       <p className="text-neutral-600 dark:text-neutral-400 mb-10 max-w-2xl text-base leading-relaxed">
-        Skills load in three stages. This keeps the AI fast — it never loads more than it needs.
+        {t.how.subtitle}
       </p>
 
       <div className="grid md:grid-cols-3 gap-4">
