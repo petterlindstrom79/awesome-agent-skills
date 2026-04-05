@@ -112,7 +112,9 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 | [huggingface/skills](https://github.com/huggingface/skills) | Habilidades de HuggingFace (compatible con Claude, Codex, Gemini) |
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | Colección de SkillCreator.ai con instalador CLI |
 | [agentskill.sh](https://agentskill.sh) | Directorio de 44k+ habilidades con escaneo de seguridad e instalador `/learn` |
+| [TutuoAI](https://www.tutuoai.com/) | Marketplace nativo para agentes de habilidades, herramientas y plantillas de flujos de trabajo (catálogo legible por máquinas) |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | Más de 50 habilidades verificadas para Claude Code y Claude.ai |
+| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5 habilidades UX/UI: evalúa interfaces contra 168 principios respaldados por investigación, detecta antipatrones, inyecta contexto UX en sesiones de codificación con IA |
 | [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | Habilidades para capacidades especializadas |
 | [GuDaStudio/skills](https://github.com/GuDaStudio/skills) | Habilidades de colaboración multi-agente |
 | [DougTrajano/pydantic-ai-skills](https://github.com/DougTrajano/pydantic-ai-skills) | Integración de Pydantic AI |
@@ -129,6 +131,8 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 | [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Crowdfunding para agentes de IA en cadena Base — custodia por hitos |
 | [browser-act/skills](https://github.com/browser-act/skills) | 22 habilidades de automatización de navegador para extracción de datos estructurados de Amazon, YouTube, Google Maps, Reddit, WeChat y Zhihu |
 | [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | Colección de habilidades de diseño UI multi-agente para convertir briefs y maquetas en pantallas, variantes, HTML y capturas de pantalla |
+| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | Auditoría de repositorios, investigación de mercado, posicionamiento y planificación de alcance comunitario |
+| [noizai/skills](https://github.com/noizai/skills) | Habilidades orientadas a la voz: TTS con doblaje SRT y preajustes de voz |
 
 #### Procesamiento de Documentos
 
@@ -151,6 +155,7 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 | [Obsidian Plugin](https://github.com/gapmiss/obsidian-plugin-skill) | Desarrollo de plugins para Obsidian.md |
 | [Stream Coding](https://github.com/frmoretto/stream-coding) | Metodología de Stream Coding |
 | [Tool Advisor](https://github.com/dragon1086/claude-skills) | Analiza prompts y recomienda herramientas, habilidades, agentes y patrones de orquestación óptimos |
+| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | Convierte reglas de IDE AI entre Cursor (.mdc), CLAUDE.md, AGENTS.md, Copilot y Windsurf. Bidireccional, sin dependencias |
 | [Vibe Testing](https://github.com/knot0-com/vibe-testing) | Prueba de estrés de documentos de especificación con razonamiento LLM antes de escribir código |
 | [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams) | Genera diagramas Excalidraw a mano alzada desde un prompt — SVG animado, enlace de edición alojado y exportación PNG |
 | [codex-stitch-local](https://github.com/yshishenya/codex-stitch-local) | Generación de UI con Stitch con HTML local y capturas de pantalla |
@@ -159,6 +164,11 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 | [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | Especificación de diseño CLI — 98 reglas para construir herramientas CLI seguras para agentes |
 | [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | Convierte Claude en un Tech Lead que orquesta Worker Agents paralelos: alineación de PRD, arquitectura, codificación, QA y revisión de PR |
 | [Mantra](https://mantra.gonewx.com) | Gestión de sesiones de codificación AI — guardar, restaurar y viajar en el tiempo en sesiones de Claude Code, Cursor y Windsurf |
+| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | Habilidad para revisar y estructurar productos agente en torno a arneses, memoria, permisos, recuperación y UX |
+| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | Esquema de arnés para ensamblaje de solicitudes, bucles de control, límites de memoria, permisos y recuperación |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Genera reglas de codificación IA desde tu base de código usando Google Gemini. Salidas para Cursor, Claude Code, Copilot y Windsurf |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | Despliega aplicaciones con frontend, backend, base de datos, cron, almacenamiento, IA, auth y notificaciones y obtén una URL en vivo |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | Habilidades Flutter comunitarias para implementación, pruebas, integración de API, depuración y flujos de publicación |
 
 #### Datos y Análisis
 
@@ -166,12 +176,14 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 |------|------|
 | [CSV Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | Analizar archivos CSV y generar insights con visualizaciones |
 | [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | Integración completa de Kaggle — configuración de cuenta, informes de competencias, descarga de datasets/modelos, ejecución de notebooks, envíos y colección de insignias |
+| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | Kit de análisis de genoma personal con scripts Python para analizar datos de ADN crudo en 17 categorías y generar visualización HTML |
 
 #### Integración y Automatización
 
 | Habilidad | Descripción |
 |------|------|
 | [Dev Browser](https://github.com/SawyerHood/dev-browser) | Capacidad de navegador web para agentes |
+| [Lumen](https://github.com/omxyz/lumen) | Agente de navegador con visión artificial y reproducción determinista autocorregible sobre CDP |
 | [Vectorize MCP Worker](https://github.com/dannwaneri/vectorize-mcp-worker) | Patrones de servidor MCP nativos de borde para RAG en producción |
 | [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | Gestiona agentes de IA CLI locales vía tmux (iniciar/parar/monitorear/asignar + programación cron) |
 | [HOL Claude Skills](https://github.com/hashgraph-online/hol-claude-skills) | Descubrimiento de agentes de IA vía Registry Broker - /hol-search, /hol-resolve, /hol-chat |
@@ -183,6 +195,9 @@ Habilidades y colecciones mantenidas por la comunidad (verificar antes de usar):
 | [commune](https://github.com/shanjairaj7/commune-skill) | Bandeja de correo nativa para agentes — dirección permanente @commune.ai con envío/recepción completo, búsqueda semántica, triaje y webhooks |
 | [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | Servidor MCP de Bitcoin con 49 herramientas — inteligencia de comisiones, análisis de mempool, inspección de bloques/transacciones, estadísticas de minería, datos de precio y suministro |
 | [datadog-observability](https://github.com/Ivlad003/plugins) | Consulta y analiza logs, métricas, monitores y trazas de Datadog directamente desde Claude Code vía API REST |
+| [meyhem-search](https://github.com/c5huracan/meyhem) | Búsqueda web nativa para agentes con clasificación basada en retroalimentación vía API REST y servidor MCP |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | Habilidad de automatización de navegador con sesiones para navegación web, extracción, capturas de pantalla y PDFs |
+| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | Cotizaciones y transacciones de intercambio de tokens en 18 cadenas EVM |
 
 #### Colaboración y Gestión de Proyectos
 

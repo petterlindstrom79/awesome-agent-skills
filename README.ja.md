@@ -112,7 +112,9 @@ Codexは異なるスコープのスキルをサポートしています：
 | [huggingface/skills](https://github.com/huggingface/skills) | HuggingFaceスキル（Claude, Codex, Gemini互換）|
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | SkillCreator.aiコレクション（CLIインストーラー付き）|
 | [agentskill.sh](https://agentskill.sh) | 44k+のスキルディレクトリ、セキュリティスキャンと`/learn`インストーラー付き |
+| [TutuoAI](https://www.tutuoai.com/) | エージェント向けスキル、ツール、ワークフロープループリントのマーケットプレイス（機械可読カタログ） |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | Claude CodeおよびClaude.ai向けの50以上の検証済みスキル |
+| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5つのUX/UIスキル：168の研究に基づく原則でインターフェースを評価し、アンチパターンを検出し、AIコーディングセッションにUXコンテキストを注入 |
 | [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | 専門的な機能のためのスキル |
 | [GuDaStudio/skills](https://github.com/GuDaStudio/skills) | マルチエージェントコラボレーションスキル |
 | [DougTrajano/pydantic-ai-skills](https://github.com/DougTrajano/pydantic-ai-skills) | Pydantic AI統合 |
@@ -129,6 +131,8 @@ Codexは異なるスコープのスキルをサポートしています：
 | [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Baseチェーン上のAIエージェント向けクラウドファンディング — マイルストーンエスクロー |
 | [browser-act/skills](https://github.com/browser-act/skills) | Amazon、YouTube、Google Maps、Reddit、WeChat、知乎からの構造化データ抽出のための22のブラウザ自動化スキル |
 | [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | ブリーフやモックアップを画面、バリアント、HTML、スクリーンショットに変換するクロスエージェントUIデザインスキルコレクション |
+| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | リポジトリ監査、市場調査、ポジショニング、コミュニティアウトリーチ計画 |
+| [noizai/skills](https://github.com/noizai/skills) | 音声ファーストスキル：SRTダビング対応TTSとコンパニオン音声プリセット |
 
 #### ドキュメント処理
 
@@ -151,6 +155,7 @@ Codexは異なるスコープのスキルをサポートしています：
 | [Obsidian Plugin](https://github.com/gapmiss/obsidian-plugin-skill) | Obsidian.mdプラグイン開発 |
 | [Stream Coding](https://github.com/frmoretto/stream-coding) | ストリームコーディング手法 |
 | [Tool Advisor](https://github.com/dragon1086/claude-skills) | プロンプトを分析し、最適なツール、スキル、エージェント、オーケストレーションパターンを推奨 |
+| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | AI IDEルールをCursor (.mdc)、CLAUDE.md、AGENTS.md、Copilot、Windsurfの間で双方向変換。依存関係なし |
 | [Vibe Testing](https://github.com/knot0-com/vibe-testing) | コードを書く前にLLM推論で仕様書を圧力テスト |
 | [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams) | プロンプトからExcalidrawの手描き図を生成 — アニメーションSVG、ホスト型編集リンク、PNG出力 |
 | [codex-stitch-local](https://github.com/yshishenya/codex-stitch-local) | ローカルHTMLとスクリーンショット出力によるStitch UI生成 |
@@ -159,6 +164,11 @@ Codexは異なるスコープのスキルをサポートしています：
 | [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | CLIデザイン仕様 — エージェント安全なCLIツール構築のための98のルール |
 | [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | ClaudeをTech Leadに変え、PRD整合、アーキテクチャ、コーディング、QA、PRレビューでWorker Agentsを並列オーケストレーション |
 | [Mantra](https://mantra.gonewx.com) | AIコーディングセッション管理 — Claude Code、Cursor、Windsurfセッションの保存・復元・タイムトラベル |
+| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | ハーネス、メモリ、権限、リカバリ、UXに関するエージェント製品のレビューと構造化スキル |
+| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | リクエスト組み立て、制御ループ、メモリ境界、権限、リカバリのハーネスブループリントスキル |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Google Geminiを使用してコードベースからAIコーディングルールを生成。Cursor、Claude Code、Copilot、Windsurfに出力 |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | フロントエンド、バックエンド、データベース、cron、ファイルストレージ、AI、認証、通知を含むアプリをデプロイしてライブURLを取得 |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | 実装、テスト、API統合、デバッグ、リリースワークフロー向けコミュニティFlutterスキル |
 
 #### データ・分析
 
@@ -166,12 +176,14 @@ Codexは異なるスコープのスキルをサポートしています：
 |------|------|
 | [CSV Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | CSVファイルを分析し、視覚化を伴う洞察を生成 |
 | [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | 完全なKaggle統合 — アカウント設定、コンペレポート、データセット/モデルダウンロード、ノートブック実行、提出、バッジ収集 |
+| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | Pythonスクリプトで17カテゴリのDNAデータを分析し、ターミナル風HTML可視化を生成する個人ゲノム解析ツールキット |
 
 #### 統合・自動化
 
 | スキル | 説明 |
 |------|------|
 | [Dev Browser](https://github.com/SawyerHood/dev-browser) | エージェント向けWebブラウザ機能 |
+| [Lumen](https://github.com/omxyz/lumen) | CDP上で自己修復型確定的リプレイを備えたビジョンファーストブラウザエージェント |
 | [Vectorize MCP Worker](https://github.com/dannwaneri/vectorize-mcp-worker) | 本番RAG向けのエッジネイティブMCPサーバーパターン |
 | [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | tmux経由でのローカルCLI AIエージェントの管理（開始/停止/監視/割り当て + cronスケジューリング） |
 | [HOL Claude Skills](https://github.com/hashgraph-online/hol-claude-skills) | Registry Broker経由のAIエージェント検出 - /hol-search, /hol-resolve, /hol-chat |
@@ -183,6 +195,9 @@ Codexは異なるスコープのスキルをサポートしています：
 | [commune](https://github.com/shanjairaj7/commune-skill) | エージェントネイティブメール受信箱 — 永続的な@commune.aiアドレス、完全な送受信、セマンティック検索、トリアージ、Webhook |
 | [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | 49ツールを持つBitcoin MCPサーバー — 手数料インテリジェンス、メンプール分析、ブロック/トランザクション検査、マイニング統計、価格と供給データ |
 | [datadog-observability](https://github.com/Ivlad003/plugins) | REST API経由でClaude CodeからDatadogのログ、メトリクス、モニター、トレースを直接クエリ・分析 |
+| [meyhem-search](https://github.com/c5huracan/meyhem) | REST APIとMCPサーバーによるフィードバック駆動ランキングのエージェントネイティブウェブ検索 |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | Webナビゲーション、抽出、スクリーンショット、PDF向けセッションバックドブラウザ自動化スキル |
+| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | 18のEVMチェーンでのトークンスワップ見積もりとトランザクション |
 
 #### コラボレーション・プロジェクト管理
 

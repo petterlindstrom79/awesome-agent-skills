@@ -112,7 +112,7 @@ Community-maintained skills and collections (verify before use):
 | [huggingface/skills](https://github.com/huggingface/skills) | HuggingFace skills (compatible with Claude, Codex, Gemini) |
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | SkillCreator.ai collection with CLI installer |
 | [agentskill.sh](https://agentskill.sh) | 44k+ skills directory with security scanning and `/learn` installer |
-| [TutuoAI](https://www.tutuoai.com/) | Agent-native marketplace for skills, tools, and workflow blueprints (machine-readable catalog). |
+| [TutuoAI](https://www.tutuoai.com/) | Agent-native marketplace for skills, tools, and workflow blueprints (machine-readable catalog) |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | 50+ verified skills for Claude Code and Claude.ai |
 | [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5 UX/UI skills: evaluate interfaces against 168 research-backed principles, detect antipatterns, inject UX context into AI coding sessions |
 | [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | Skills for specialized capabilities |
@@ -124,13 +124,15 @@ Community-maintained skills and collections (verify before use):
 | [dmgrok/agent_skills_directory](https://github.com/dmgrok/agent_skills_directory) | npm-like CLI for skills (`brew install dmgrok/tap/skills`) - aggregates 177+ skills from 24 providers |
 | [gotalab/skillport](https://github.com/gotalab/skillport) | Skills distribution via CLI or MCP |
 | [mhattingpete/claude-skills-marketplace](https://github.com/mhattingpete/claude-skills-marketplace) | Git, code review, and testing skills |
-| [kukapay/crypto-skills](https://github.com/kukapay/crypto-skills) |  cryptocurrency, web3 and blockchain skills. |
+| [kukapay/crypto-skills](https://github.com/kukapay/crypto-skills) | Cryptocurrency, web3 and blockchain skills |
 | [chadboyda/agent-gtm-skills](https://github.com/chadboyda/agent-gtm-skills) | 18 go-to-market skills: pricing, outbound, SEO, ads, retention, and ops |
 | [product-on-purpose/pm-skills](https://github.com/product-on-purpose/pm-skills) | 24 product management skills covering discovery, definition, delivery, and optimization |
 | [sanjay3290/ai-skills](https://github.com/sanjay3290/ai-skills) | Google Workspace (Gmail, Chat, Calendar, Docs, Drive, Sheets, Slides), AI delegation (Jules, Manus, Deep Research), and database skills |
 | [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Crowdfunding for AI agents on Base chain - milestone escrow |
 | [browser-act/skills](https://github.com/browser-act/skills) | 22 browser automation skills for structured data extraction from Amazon, YouTube, Google Maps, Reddit, WeChat, and Zhihu |
 | [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | Cross-agent UI design skill collection for turning briefs and mockups into screens, variants, HTML, and screenshots |
+| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | Repo audit, market research, positioning, and community outreach planning |
+| [noizai/skills](https://github.com/noizai/skills) | Voice-first skills: TTS with SRT dubbing and companion voice presets |
 
 #### Document Processing
 
@@ -162,6 +164,11 @@ Community-maintained skills and collections (verify before use):
 | [naming](https://github.com/glacierphonk/naming) | Metaphor-driven naming for products, SaaS, brands, and open source projects |
 | [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | CLI design spec — 98 rules for building agent-safe CLI tools |
 | [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | Turns Claude into a Tech Lead orchestrating parallel Worker Agents through a full dev workflow: PRD alignment, architecture, coding, QA, and PR review |
+| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | Skill for reviewing and structuring agent products around harnesses, memory, permissions, recovery, and UX |
+| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | Harness blueprint skill for request assembly, control loops, memory boundaries, permissions, and recovery |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Generate AI coding rules from your codebase using Google Gemini. Outputs rules for Cursor, Claude Code, Copilot, and Windsurf |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | Deploy apps with frontend, backend, database, cron, file storage, AI capabilities, auth, and notifications and get a live URL back |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | Community Flutter skills for implementation, testing, API integration, debugging, and release workflows |
 
 #### Data & Analysis
 
@@ -188,8 +195,9 @@ Community-maintained skills and collections (verify before use):
 | [commune](https://github.com/shanjairaj7/commune-skill) | Agent-native email inbox — permanent @commune.ai address with full send/receive, semantic search, triage, and webhooks |
 | [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | Bitcoin MCP server with 49 tools — fee intelligence, mempool analysis, block/transaction inspection, mining stats, price and supply data |
 | [datadog-observability](https://github.com/Ivlad003/plugins) | Query and analyze Datadog logs, metrics, monitors, and traces directly from Claude Code via REST API |
-
 | [meyhem-search](https://github.com/c5huracan/meyhem) | Agent-native web search with feedback-driven ranking via REST API and MCP server |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | Session-backed browser automation skill for web navigation, extraction, screenshots, and PDFs |
+| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | Token swap quotes and transactions across 18 EVM chains |
 
 #### Collaboration & Project Management
 

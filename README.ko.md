@@ -112,7 +112,9 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 | [huggingface/skills](https://github.com/huggingface/skills) | HuggingFace 스킬 (Claude, Codex, Gemini 호환) |
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | SkillCreator.ai 컬렉션 (CLI 설치 프로그램 포함) |
 | [agentskill.sh](https://agentskill.sh) | 44k+ 스킬 디렉토리, 보안 스캔 및 `/learn` 설치 프로그램 포함 |
+| [TutuoAI](https://www.tutuoai.com/) | 에이전트 네이티브 스킬, 도구, 워크플로우 청사진 마켓플레이스 (기계 판독 가능 카탈로그) |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | Claude Code 및 Claude.ai를 위한 50개 이상의 검증된 스킬 |
+| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5개의 UX/UI 스킬: 168개 연구 기반 원칙에 따라 인터페이스 평가, 안티패턴 감지, AI 코딩 세션에 UX 컨텍스트 주입 |
 | [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | 전문 기능 스킬 |
 | [GuDaStudio/skills](https://github.com/GuDaStudio/skills) | 멀티 에이전트 협업 스킬 |
 | [DougTrajano/pydantic-ai-skills](https://github.com/DougTrajano/pydantic-ai-skills) | Pydantic AI 통합 |
@@ -129,6 +131,8 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 | [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Base 체인의 AI 에이전트용 크라우드펀딩 — 마일스톤 에스크로 |
 | [browser-act/skills](https://github.com/browser-act/skills) | Amazon, YouTube, Google Maps, Reddit, WeChat, 知乎에서 구조화된 데이터를 추출하는 22개의 브라우저 자동화 스킬 |
 | [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | 브리프와 목업을 화면, 변형, HTML, 스크린샷으로 변환하는 크로스 에이전트 UI 디자인 스킬 컬렉션 |
+| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | 저장소 감사, 시장 조사, 포지셔닝, 커뮤니티 아웃리치 계획 |
+| [noizai/skills](https://github.com/noizai/skills) | 음성 우선 스킬: SRT 더빙 TTS 및 동반자 음성 프리셋 |
 
 #### 문서 처리
 
@@ -151,6 +155,7 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 | [Obsidian Plugin](https://github.com/gapmiss/obsidian-plugin-skill) | Obsidian.md 플러그인 개발 |
 | [Stream Coding](https://github.com/frmoretto/stream-coding) | 스트림 코딩 방법론 |
 | [Tool Advisor](https://github.com/dragon1086/claude-skills) | 프롬프트를 분석하고 최적의 도구, 스킬, 에이전트 및 오케스트레이션 패턴 추천 |
+| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | Cursor (.mdc), CLAUDE.md, AGENTS.md, Copilot, Windsurf 간 AI IDE 규칙 양방향 변환, 의존성 없음 |
 | [Vibe Testing](https://github.com/knot0-com/vibe-testing) | 코드 작성 전 LLM 추론으로 사양 문서 압력 테스트 |
 | [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams) | 프롬프트에서 손으로 그린 Excalidraw 다이어그램 생성 — 애니메이션 SVG, 호스팅된 편집 링크, PNG 내보내기 |
 | [codex-stitch-local](https://github.com/yshishenya/codex-stitch-local) | 로컬 HTML 및 스크린샷 출력으로 Stitch UI 생성 |
@@ -159,6 +164,11 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 | [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | CLI 디자인 사양 — 에이전트 안전 CLI 도구 구축을 위한 98개의 규칙 |
 | [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | Claude를 PRD 정렬, 아키텍처, 코딩, QA, PR 리뷰의 완전한 개발 워크플로우로 Worker Agent를 병렬 오케스트레이션하는 Tech Lead로 전환 |
 | [Mantra](https://mantra.gonewx.com) | AI 코딩 세션 관리 — Claude Code, Cursor, Windsurf 세션 저장, 복원, 타임 트래블 |
+| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | 하네스, 메모리, 권한, 복구, UX를 중심으로 에이전트 제품을 검토하고 구조화하는 스킬 |
+| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | 요청 조립, 제어 루프, 메모리 경계, 권한, 복구를 위한 하네스 청사진 스킬 |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | Google Gemini를 사용하여 코드베이스에서 AI 코딩 규칙 생성, Cursor, Claude Code, Copilot, Windsurf용 출력 |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | 프론트엔드, 백엔드, 데이터베이스, cron, 파일 스토리지, AI, 인증, 알림 포함 앱 배포 후 라이브 URL 반환 |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | 구현, 테스트, API 통합, 디버깅, 릴리스 워크플로우를 위한 커뮤니티 Flutter 스킬 |
 
 #### 데이터 및 분석
 
@@ -166,12 +176,14 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 |------|------|
 | [CSV Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | CSV 파일을 분석하고 시각화를 포함한 인사이트 생성 |
 | [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | 완전한 Kaggle 통합 — 계정 설정, 대회 보고서, 데이터셋/모델 다운로드, 노트북 실행, 제출 및 배지 수집 |
+| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | Python 스크립트로 17개 카테고리에 걸쳐 원시 DNA 데이터를 분석하고 터미널 스타일 HTML 시각화를 생성하는 개인 게놈 분석 도구 |
 
 #### 통합 및 자동화
 
 | 스킬 | 설명 |
 |------|------|
 | [Dev Browser](https://github.com/SawyerHood/dev-browser) | 에이전트를 위한 웹 브라우저 기능 |
+| [Lumen](https://github.com/omxyz/lumen) | CDP 위에서 자가 치유 결정론적 재생을 갖춘 비전 우선 브라우저 에이전트 |
 | [Vectorize MCP Worker](https://github.com/dannwaneri/vectorize-mcp-worker) | 프로덕션 RAG를 위한 엣지 네이티브 MCP 서버 패턴 |
 | [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | tmux를 통한 로컬 CLI AI 에이전트 관리 (시작/중지/모니터링/할당 + cron 스케줄링) |
 | [HOL Claude Skills](https://github.com/hashgraph-online/hol-claude-skills) | Registry Broker를 통한 AI 에이전트 검색 - /hol-search, /hol-resolve, /hol-chat |
@@ -183,6 +195,9 @@ Codex는 다양한 범위의 스킬을 지원합니다:
 | [commune](https://github.com/shanjairaj7/commune-skill) | 에이전트 네이티브 이메일 수신함 — 영구 @commune.ai 주소, 완전한 송수신, 시맨틱 검색, 분류 및 웹훅 |
 | [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | 49개 도구를 갖춘 Bitcoin MCP 서버 — 수수료 인텔리전스, 멤풀 분석, 블록/트랜잭션 검사, 채굴 통계, 가격 및 공급 데이터 |
 | [datadog-observability](https://github.com/Ivlad003/plugins) | REST API를 통해 Claude Code에서 직접 Datadog 로그, 메트릭, 모니터, 트레이스를 쿼리하고 분석 |
+| [meyhem-search](https://github.com/c5huracan/meyhem) | REST API 및 MCP 서버를 통한 피드백 기반 순위를 가진 에이전트 네이티브 웹 검색 |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | 웹 탐색, 추출, 스크린샷, PDF를 위한 세션 기반 브라우저 자동화 스킬 |
+| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | 18개 EVM 체인에서 토큰 스왑 견적 및 트랜잭션 |
 
 #### 협업 및 프로젝트 관리
 

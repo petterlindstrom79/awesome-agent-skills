@@ -112,7 +112,9 @@ Codex 支援不同範圍的技能：
 | [huggingface/skills](https://github.com/huggingface/skills) | HuggingFace 技能（相容 Claude、Codex、Gemini）|
 | [skillcreatorai/Ai-Agent-Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) | SkillCreator.ai 集合，附 CLI 安裝程式 |
 | [agentskill.sh](https://agentskill.sh) | 44k+ 技能目錄，內建安全掃描和 `/learn` 安裝程式 |
+| [TutuoAI](https://www.tutuoai.com/) | 代理原生技能、工具和工作流程藍圖市場（機器可讀目錄） |
 | [karanb192/awesome-claude-skills](https://github.com/karanb192/awesome-claude-skills) | 50+ 經過驗證的 Claude Code 和 Claude.ai 技能 |
+| [uxuiprinciples/agent-skills](https://github.com/uxuiprinciples/agent-skills) | 5個UX/UI技能：根據168項研究支持的原則評估介面、檢測反模式、將UX上下文注入AI編碼會話 |
 | [shajith003/awesome-claude-skills](https://github.com/shajith003/awesome-claude-skills) | 專業功能技能 |
 | [GuDaStudio/skills](https://github.com/GuDaStudio/skills) | 多代理協作技能 |
 | [DougTrajano/pydantic-ai-skills](https://github.com/DougTrajano/pydantic-ai-skills) | Pydantic AI 整合 |
@@ -129,6 +131,8 @@ Codex 支援不同範圍的技能：
 | [RioBot-Grind/agentfund-skill](https://github.com/RioBot-Grind/agentfund-skill) | Base 鏈上 AI 代理的群眾募資 — 里程碑託管 |
 | [browser-act/skills](https://github.com/browser-act/skills) | 22個瀏覽器自動化技能，用於從Amazon、YouTube、Google Maps、Reddit、微信和知乎提取結構化數據 |
 | [yshishenya/stitchflow](https://github.com/yshishenya/stitchflow) | 跨代理UI設計技能集合，將簡報和原型轉化為螢幕、變體、HTML和截圖 |
+| [cuongducle/community-demand-prospecting-skill](https://github.com/cuongducle/community-demand-prospecting-skill) | 倉庫審計、市場調研、定位分析和社群外展規劃 |
+| [noizai/skills](https://github.com/noizai/skills) | 語音優先技能：支援SRT配音的TTS和伴侶語音預設 |
 
 #### 文件處理
 
@@ -151,6 +155,7 @@ Codex 支援不同範圍的技能：
 | [Obsidian Plugin](https://github.com/gapmiss/obsidian-plugin-skill) | Obsidian.md 外掛開發 |
 | [Stream Coding](https://github.com/frmoretto/stream-coding) | 串流編碼方法論 |
 | [Tool Advisor](https://github.com/dragon1086/claude-skills) | 分析提示並推薦最佳工具、技能、代理和編排模式 |
+| [rule-porter](https://github.com/nedcodes-ok/rule-porter) | 在Cursor (.mdc)、CLAUDE.md、AGENTS.md、Copilot和Windsurf之間雙向轉換AI IDE規則，零依賴 |
 | [Vibe Testing](https://github.com/knot0-com/vibe-testing) | 在編寫程式碼之前使用 LLM 推理壓力測試規格文件 |
 | [hand-drawn-diagrams](https://github.com/muthuishere/hand-drawn-diagrams) | 從提示生成手繪Excalidraw圖表 — 動畫SVG、託管編輯連結和PNG匯出 |
 | [codex-stitch-local](https://github.com/yshishenya/codex-stitch-local) | 本地HTML和截圖輸出的Stitch UI生成 |
@@ -159,6 +164,11 @@ Codex 支援不同範圍的技能：
 | [ai-native-cli](https://github.com/ChaosRealmsAI/agent-cli-spec) | CLI設計規範 — 構建代理安全CLI工具的98條規則 |
 | [claude-dev-skill](https://github.com/hnaymyh123-henry/claude-dev-skill) | 將Claude轉變為技術負責人，通過PRD對齊、架構、編碼、QA和PR審查的完整工作流程編排並行Worker Agents |
 | [Mantra](https://mantra.gonewx.com) | AI 編碼會話管理 — 儲存、還原和時間旅行 Claude Code、Cursor 和 Windsurf 會話 |
+| [claude-code-philosophy](https://github.com/dadwadw233/claude-code-philosophy) | 圍繞工具鏈、記憶體、權限、恢復和UX審查和構建代理產品的技能 |
+| [claude-code-harness](https://github.com/dadwadw233/claude-code-harness) | 請求組裝、控制迴圈、記憶體邊界、權限和恢復的工具鏈藍圖技能 |
+| [rule-gen](https://github.com/nedcodes-ok/rule-gen) | 使用Google Gemini從程式碼庫生成AI編碼規則，輸出適用於Cursor、Claude Code、Copilot和Windsurf |
+| [AppDeploy](https://github.com/AppDeploy-AI/skills) | 部署包含前端、後端、資料庫、排程、檔案存儲、AI、認證和通知的應用並獲取線上URL |
+| [Dart/Flutter](https://github.com/Wreos/mobile-app-developer/tree/main/platforms/Flutter/skills) | 面向實作、測試、API整合、除錯和發布流程的社群Flutter技能 |
 
 #### 資料和分析
 
@@ -166,12 +176,14 @@ Codex 支援不同範圍的技能：
 |------|------|
 | [CSV Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | 分析 CSV 檔案並產生視覺化洞察 |
 | [Kaggle Skill](https://github.com/shepsci/kaggle-skill) | 完整的 Kaggle 整合 — 帳戶設定、比賽報告、資料集/模型下載、Notebook 執行、提交和徽章收集 |
+| [DNA Claude Analysis](https://github.com/shmlkv/dna-claude-analysis) | 使用Python腳本分析17個類別原始DNA數據並生成終端風格HTML視覺化的個人基因組分析工具包 |
 
 #### 整合和自動化
 
 | 技能 | 描述 |
 |------|------|
 | [Dev Browser](https://github.com/SawyerHood/dev-browser) | 代理的網頁瀏覽器功能 |
+| [Lumen](https://github.com/omxyz/lumen) | 基於CDP的視覺優先瀏覽器代理，支援自癒確定性回放 |
 | [Vectorize MCP Worker](https://github.com/dannwaneri/vectorize-mcp-worker) | 用於生產環境 RAG 的邊緣原生 MCP 伺服器模式 |
 | [Agent Manager](https://github.com/fractalmind-ai/agent-manager-skill) | 透過 tmux 管理本地 CLI AI 代理（啟動/停止/監控/分配 + cron 排程）|
 | [HOL Claude Skills](https://github.com/hashgraph-online/hol-claude-skills) | 透過 Registry Broker 進行 AI 代理發現 - /hol-search, /hol-resolve, /hol-chat |
@@ -183,6 +195,9 @@ Codex 支援不同範圍的技能：
 | [commune](https://github.com/shanjairaj7/commune-skill) | 代理原生電子郵件收件匣 — 永久 @commune.ai 地址，完整收發、語義搜尋、分類和 Webhook |
 | [bitcoin-mcp](https://github.com/Bortlesboat/bitcoin-mcp) | 擁有49個工具的Bitcoin MCP伺服器 — 手續費智能、記憶體池分析、區塊/交易檢查、採礦統計、價格和供應數據 |
 | [datadog-observability](https://github.com/Ivlad003/plugins) | 通過REST API直接從Claude Code查詢和分析Datadog日誌、指標、監控和追蹤 |
+| [meyhem-search](https://github.com/c5huracan/meyhem) | 通過REST API和MCP伺服器提供反饋驅動排名的代理原生網絡搜尋 |
+| [steel-browser](https://github.com/steel-dev/cli/tree/main/skills/steel-browser) | 支援Web導航、數據提取、截圖和PDF的會話型瀏覽器自動化技能 |
+| [KyberSwap Skills](https://github.com/kybernetwork/kyberswap-skills) | 在18條EVM鏈上進行代幣兌換報價和交易 |
 
 #### 協作與專案管理
 
