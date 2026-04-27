@@ -562,7 +562,7 @@ Install from [microsoft/agent-skills](https://github.com/microsoft/agent-skills)
 <details>
 <summary><strong>Data & Compliance</strong></summary>
 
-- [strale-io/strale](https://github.com/strale-io/strale) - 271 quality-scored API capabilities for company verification, sanctions screening, IBAN/VAT validation, and web intelligence across 27 countries. MCP server + REST API + x402 micropayments.
+- [strale-io/strale](https://github.com/strale-io/strale) - MCP server + REST API exposing Strale’s data capability catalog: company registry lookups across 27 countries, sanctions/PEP screening, IBAN/VAT/LEI validation, web intelligence, and document extraction. Also reachable via x402 micropayments on Base.
 </details>
 
 ---
